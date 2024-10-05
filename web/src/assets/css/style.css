@@ -73,7 +73,7 @@ header {
 
 
 /* Inputs da tela de login */
-input[type="text"], input[type="password"], input[type="email"], input[type="date"], select{
+input[type="text"], input[type="password"], input[type="email"], input[type="date"], select, input[type="file"]{
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -124,6 +124,7 @@ main {
     display: flex;
     align-items: center; 
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .ferramenta {
@@ -175,6 +176,16 @@ main {
     display: flex;
     gap: 10px;
     align-items: center;
+    justify-items: center;
+
+    img{
+        width: 36px;
+        height: auto;
+    }
+
+    .b{
+        margin-bottom: 15px;
+    }
 }
 
 .div-tabela{
