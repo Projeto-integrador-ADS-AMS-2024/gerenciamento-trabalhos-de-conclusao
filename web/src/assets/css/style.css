@@ -220,3 +220,16 @@ main {
         }
     }
 }
+
+
+/* Cadastrar Curso */
+.col-checkbox{
+    display: flex;
+    flex-wrap: wrap; /* Permite que os elementos quebrem de linha */
+    gap: 10px; /* Espaço entre os campos */
+
+
+    input[type="checkbox"]{
+
+    }
+}
