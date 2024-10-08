@@ -47,6 +47,45 @@ header {
     }
 }
 
+.container{
+    display: flex; 
+    height: 100vh; 
+
+    main{
+        flex: 1; 
+        padding: 20px; 
+
+    }
+
+    aside{   
+        width: 110px; 
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+        color: white; 
+        padding: 20px;
+        
+        ul{
+            text-align: center;
+
+            li{
+
+                margin-bottom: 24px;
+
+                p{
+                    color: black;
+                }
+            }
+        }
+        
+        img{
+            width: 40px;
+        }
+
+
+        
+    }
+}
+
+
 /* Login */
 
 /* Corpo da pagina de login*/
@@ -169,6 +208,20 @@ main {
     min-width: 200px; /* Largura mínima para manter responsivo */
 }
 
+.div-form{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.main-forms-cadastro{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 
 
 /* Visualizar Usuarios */
@@ -251,7 +304,7 @@ main {
     justify-content: space-between;
     
     img{
-        width: 30px;
+        width: 5px;
         height: auto;
     }
 }
@@ -278,3 +331,13 @@ main {
         }
     }
 }
+
+
+.corpo-telas-form {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+}
+
