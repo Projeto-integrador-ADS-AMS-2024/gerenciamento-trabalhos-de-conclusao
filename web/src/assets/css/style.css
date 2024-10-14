@@ -204,17 +204,6 @@ main {
 
 
 /* Cadastrar Usuarios */
-.col{
-    display: flex;
-    flex-wrap: wrap; /* Permite que os elementos quebrem de linha */
-    gap: 10px; /* Espaço entre os campos */
-}
-
-.div-input{
-    flex: 1 1 calc(50.00% - 10px); /* Cada coluna ocupa 33.33% com espaço entre colunas */
-    min-width: 200px; /* Largura mínima para manter responsivo */
-}
-
 .div-form{
     margin: 0;
     display: flex;
@@ -227,7 +216,24 @@ main {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    button{
+        background: none;
+        border: none;
+        padding: 0;
+        font: inherit;
+        color: inherit;
+        text-align: left; /* Opcional, se quiser o texto alinhado à esquerda */
+        cursor: pointer; /* Mantém o comportamento de clique */
+    }
+
+    button:hover{
+        opacity: 0.4;
+
+    }
 }
+
+
 
 
 
@@ -303,6 +309,43 @@ main {
     }
 }
 
+/* Estilo do modal (escondido por padrão) */
+.modal {
+    display: none; /* Escondido até ser acionado */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente escuro */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* Botão para fechar o modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
 
 /* Curso Especifico */
 .opcoes-curso{
@@ -348,3 +391,12 @@ main {
     flex-direction: column;
 }
 
+
+
+/* Visualizar Turmas*/
+.div-visualizar-turmas{
+    display: flex;
+    flex-wrap: wrap; /* Permite que os elementos quebrem de linha */
+    gap: 10px; /* Espaço entre os campos */
+    justify-content: center;
+}
