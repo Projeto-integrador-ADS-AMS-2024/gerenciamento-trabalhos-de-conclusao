@@ -50,31 +50,24 @@
                     </li>
                 </ul>
             </aside>
-            <main>
-                <h2>Ferramentas > <a href="diciplinas.html">Diciplinas</a></h2>
-                <div class="conjunto-ferramentas">
-                    <a href="visualizarDiciplinas.html">
-                        <div class="ferramenta">
-                            <img src="../src/assets/img/book-solid.svg" alt="Visualizar Usuários" >
-                            <div>
-                                <span>Visualizar Diciplinas</span>                    
-                            </div>
-                        </div>
-                    </a>
-    
-                    <a href="cadastrarDiciplinas.html">
-                        <div class="ferramenta">
-                            <img src="../src/assets/img/book-medical-solid.svg" alt="Adicionar Usuários" >
-                            <div>
-                                <span>Cadastrar Diciplinas</span>
-                            
-                            </div>
-                        </div>
-                    </a>
-    
-                </div>
+            <main class="main-forms-cadastro">
+                <h2>Ferramentas > <a href="diciplinas.html">Diciplinas</a> > <a href="cadastrarDiciplinas.html"> Cadastrar Diciplinas</a></h2>
+                
+                <form action="turma.html">
+                    <div>
+                        <label for="nome">Nome da Diciplina</label><br>
+                        <input type="text" id="diciplina" name="diciplina" placeholder="Insira a diciplina" ><br>
+                    </div>
+                        
+                    <div class="div-btn-login">
+                        <a href="homeAdmin.html">
+                            <input type="submit" class="buttonForm" value="Enviar">
+                        </a>
+                    </div>
+                </form>
             </main>
         </div>
         
     </body>
+
 </html>
