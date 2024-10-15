@@ -56,28 +56,32 @@
                 <form action="turma.html">
                     <div>
                         <label for="nome">Nome do Curso</label><br>
-                        <input type="text" id="nome" name="nome" placeholder="Insira o nome"><br>
+                        <input type="text" id="nome" name="nome" placeholder="Insira o nome" required><br>
                     </div>
                 
                     <div>
                         <label for="duracao">Duração do Curso</label>                   
                         <div class="div-flex-input">
                             <div>
-                                <input type="number">
+                                <input type="number" id="duracao" name="duracao" min="0" max="10" required>
                             </div>
                             <div>
-                                <select name="duracao" id="duracao">
+                                <select name="tipoPeriodo" id="tipoPeriodo" required>
                                     <option value="" disabled selected>Selecione a Duração do Curso</option>   
-                                    <option value="Semestral">Semestral</option>
-                                    <option value="Anual">Anual</option>
+                                    <option value="Semestral">Meses</option>
+                                    <option value="Anual">Anos</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                 
                     <div>
-                        <label for="coordenador">Coordenador</label><br>
-                        <input type="text" id="coordenador" name="coordenador" placeholder="Insira o Coordenador"><br>
+                        <label for="coordenador">Coordenador do Curso</label><br>
+                        <select name="coodernador" id="coodernador" required>
+                            <option value="" disabled selected>Selecione o Coordenador</option>   
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                        </select>
                     </div>
                 
                     <div>
@@ -99,14 +103,9 @@
                             </div>                           
                         </div>
                     </div>
-                
-                    <div id="turma-container">
-                        <button type="button" id="add-turma-btn">Adicionar turma(s) +</button>
-                    </div>
-                
                     <div class="div-btn-login">
                         <a href="homeAdmin.html">
-                            <input type="submit" class="buttonForm" value="Enviar">
+                            <input type="submit" class="buttonForm" value="Cadastrar Curso">
                         </a>
                     </div>
                 </form>
@@ -116,7 +115,7 @@
         
     </body>
 
-    <script>
+    <!-- <script>
         // Seleciona o botão e o modal
         const modal = document.getElementById("turma-modal");
         const btn = document.getElementById("add-turma-btn");
@@ -140,5 +139,5 @@
         });
 
 
-    </script>
+    </script> -->
 </html>

@@ -55,16 +55,35 @@
                 
                 <form action="turma.html">
                     <div>
-                        <label for="nome">Nome</label><br>
-                        <input type="text" id="nome" name="nome" placeholder="Insira o nome" ><br>
+                        <label for="nome">Nome da Turma</label><br>
+                        <input type="text" id="nome" name="nome" placeholder="Insira o Nome da Turma" required><br>
                     </div>
 
                     <div>
-                        <label>Turno do Curso</label><br>
+                        <label for="diciplina">Diciplina da Turma</label><br>
+                        <select name="diciplina" id="diciplina" required>
+                            <option value="" disabled selected>Selecione a Diciplina da Turma</option>   
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="curso">Curso da Turma</label><br>
+                        <select name="curso" id="curso" required>
+                            <option value="" disabled selected>Selecione o Curso da Turma</option>   
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                        </select>
+                    </div>
+
+
+                    <div>
+                        <label>Turno da Turma</label><br>
                         <div class="col-checkbox">
                             <div>
                                 <input type="checkbox" name="matutino" value="matutino"> 
-                                <label>Matutino </label>
+                                <label>Matutino</label>
                             </div>
 
                             <div>
@@ -78,24 +97,10 @@
                             </div>                           
                         </div>
                     </div>
-
-                    <div id="turma-container">
-                        <button type="button" id="add-turma-btn">Adicionar turma(s) +</button>
-                    </div>
                     
-                    <!-- Modal -->
-                    <div id="turma-modal" class="modal">
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <p>Selecione uma turma...</p>
-                        </div>
-                    </div>
-                    
-
-                        
                     <div class="div-btn-login">
                         <a href="homeAdmin.html">
-                            <input type="submit" class="buttonForm" value="Enviar">
+                            <input type="submit" class="buttonForm" value="Cadastrar Turma">
                         </a>
                     </div>
                 </form>
@@ -104,29 +109,4 @@
         
     </body>
 
-    <script>
-        // Seleciona o botão e o modal
-        const modal = document.getElementById("turma-modal");
-        const btn = document.getElementById("add-turma-btn");
-        const span = document.getElementsByClassName("close")[0];
-
-        // Quando o usuário clica no botão, o modal aparece
-        btn.addEventListener('click', function() {
-            modal.style.display = "block";
-        });
-
-        // Quando o usuário clica no "x", o modal fecha
-        span.addEventListener('click', function() {
-            modal.style.display = "none";
-        });
-
-        // Quando o usuário clica fora do modal, ele fecha
-        window.addEventListener('click', function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        });
-
-
-    </script>
 </html>

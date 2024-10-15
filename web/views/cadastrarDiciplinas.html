@@ -56,12 +56,23 @@
                 <form action="turma.html">
                     <div>
                         <label for="nome">Nome da Diciplina</label><br>
-                        <input type="text" id="diciplina" name="diciplina" placeholder="Insira a diciplina" ><br>
+                        <input type="text" id="diciplina" name="diciplina" placeholder="Insira a diciplina" required><br>
                     </div>
+
+                    
+                    <div>
+                        <label for="professor">Professor:</label>
+                        <select name="professor" id="professor" required>
+                            <option value="" disabled selected>Selecione o Professor</option>   
+                            <option value="A">A1</option>
+                            <option value="B">B1</option>
+                        </select>
+                    </div>
+                    
                         
                     <div class="div-btn-login">
                         <a href="homeAdmin.html">
-                            <input type="submit" class="buttonForm" value="Enviar">
+                            <input type="submit" class="buttonForm" value="Cadastrar Diciplina">
                         </a>
                     </div>
                 </form>

@@ -14,11 +14,13 @@ body{
 
 /* Header */
 header {
-    padding: 1rem;
     display: flex;
+    
+    padding: 1rem;
     justify-content: space-between;
     background-color: #004D73;
     align-items: center;
+ 
     
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
     
@@ -43,7 +45,6 @@ header {
 
     .img-logo{
         width: 90px;
-
     }
 
     .div-logo{
@@ -115,6 +116,24 @@ header {
             text-decoration: none;
             color: white;
             padding: 5px;
+        }
+
+        .ferramenta, .cursos {
+            width: 250px;
+            height: auto;
+
+            img{
+                width: 120px;
+                height: auto;
+            }
+        
+            div{
+        
+                span {
+                    font-size: 1rem; 
+                    font-weight: bold; 
+                }
+            }
         }
     }
 }
@@ -292,7 +311,7 @@ button:hover {
         height: auto;
     }
 
-    .b{
+    .div-logo-pesquisa{
         margin-bottom: 15px;
     }
 }
