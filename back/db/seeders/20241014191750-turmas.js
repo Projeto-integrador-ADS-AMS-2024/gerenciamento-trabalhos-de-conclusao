@@ -17,12 +17,16 @@ module.exports = {
       {
         nome: "1º ano AMS",
         cursoId: 2,
-        disciplinaId: 3
+        disciplinaId: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         nome: "5º Semestre ADS",
         cursoId: 1,
-        disciplinaId: 1
+        disciplinaId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       }
     ])
   },

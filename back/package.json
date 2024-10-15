@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./index.js"
+    "dev": "nodemon ./index.js",
+    "seed": "npx sequelize-cli db:seed --seed 20241014193429-disciplinas  && npx sequelize-cli db:seed --seed 20241014190300-cursos && npx sequelize-cli db:seed --seed 20241014191750-turmas && npx sequelize-cli db:seed --seed 20241015221053-alunos && npx sequelize-cli db:seed --seed 20241015215747-professores"
   },
   "keywords": [],
   "author": "",

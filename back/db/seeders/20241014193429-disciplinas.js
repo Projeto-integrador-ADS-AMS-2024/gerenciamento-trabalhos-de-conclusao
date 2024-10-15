@@ -15,13 +15,19 @@ module.exports = {
 
     return queryInterface.bulkInsert("disciplinas", [
       {
-        nome: "TG 1"
+        nome: "TG 1",
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
-        nome: "TG 2"
+        nome: "TG 2",
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
-        nome: "Projeto Integrador"
+        nome: "Projeto Integrador",
+        createdAt: new Date(),
+        updatedAt: new Date(),
       }
     ])
   },

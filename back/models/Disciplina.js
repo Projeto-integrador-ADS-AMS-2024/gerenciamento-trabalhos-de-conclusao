@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 const db = require("../db/connection.js");
 const Turma = require("./Turma.js");
 
-const Disciplina = db.define('disciplina', {
+const Disciplina = db.define('disciplinas', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
