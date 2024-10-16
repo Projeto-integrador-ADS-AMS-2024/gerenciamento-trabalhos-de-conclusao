@@ -14,14 +14,11 @@ body{
 
 /* Header */
 header {
-    display: flex;
-    
+    display: flex; 
     padding: 1rem;
     justify-content: space-between;
     background-color: #004D73;
-    align-items: center;
- 
-    
+    align-items: center;  
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
     
     a{
@@ -29,7 +26,18 @@ header {
     }
 
     a:visited {
-        color: black; /* Mesma cor do link normal */
+        color: black; 
+    }
+
+    .div-logo{
+        display: flex;
+        align-items: center;
+        color: white;
+        gap: 15px;
+    }
+
+    .img-logo{
+        width: 90px;
     }
 
     .user-logo{
@@ -41,18 +49,6 @@ header {
         }
         
     }
-
-
-    .img-logo{
-        width: 90px;
-    }
-
-    .div-logo{
-        display: flex;
-        align-items: center;
-        color: white;
-        gap: 15px;
-    }
 }
 
 .container{
@@ -62,109 +58,78 @@ header {
     main{
         flex: 1; 
         padding: 20px; 
-
-    }
-
-    aside{   
-        width: 110px; 
-        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
-        color: white; 
-        padding: 20px;
-        
-        ul{
-            text-align: center;
-
-            li{
-
-                margin-bottom: 24px;
-
-                p{
-                    color: black;
-                }
-            }
-        }
-        
-        img{
-            width: 40px;
-        }
-
-
-        
-    }
-
-    @media (max-width: 768px) {
-        aside {
-            background-color: #ECEBE2;
-            box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px; 
-            display: flex;
-            justify-content: center; 
+    
+        h2{
+            margin-bottom: 10px;
         }
     
-        aside ul {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding: 0;
+        a{
+            color: black;
         }
     
-        aside a {
-            text-decoration: none;
-            color: white;
-            padding: 5px;
+        a:visited {
+            color: black; /* Mesma cor do link normal */
         }
 
-        .ferramenta, .cursos {
-            width: 250px;
-            height: auto;
+    }
+}
 
-            img{
-                width: 120px;
-                height: auto;
-            }
-        
-            div{
-        
-                span {
-                    font-size: 1rem; 
-                    font-weight: bold; 
-                }
+aside{   
+    width: 110px; 
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+    color: white; 
+    padding: 20px;
+    
+    ul{
+        text-align: center;
+
+        li{
+            margin-bottom: 24px;
+
+            p{
+                color: black;
             }
         }
     }
+    
+    img{
+        width: 40px;
+    }
+ 
 }
 
 
 /* Login */
 
 /* Corpo da pagina de login*/
-.corpo-login {
+.main-login {
     height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
-}
+    flex-direction: column;
 
-/* Div que une a logo e o nome do sistema */
-.div-logo-login{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    
-    h1{
-        padding-bottom: 10px;
+    /* Div que une a logo e o nome do sistema */
+    .div-logo-login{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        
+        h1{
+            padding-bottom: 10px;
+        }
+
+        img{
+            width: 150px;
+            height: auto;
+        }
     }
 }
 
 
-/* Inputs da tela de login */
+/* Inputs das telas */
 input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"], select, input[type="file"]{
     width: 100%;
     padding: 10px;
@@ -173,58 +138,40 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
     border-radius: 4px;
 } 
 
-.div-btn-login{
-    text-align: center;
+
+.div-btn{
+    text-align: center; 
     
-    .buttonForm{     
+    button {
         background-color: rgb(49, 48, 48);
         padding: 10px;
         width: 50vw;
         color: #e4e2e2;
         border-radius: 4px;
         font-size: 14pt;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        opacity: 1;
     }
 }
 
-.buttonForm:hover{
-    cursor: pointer;
-    background-color: rgb(22, 22, 22);
-}
-
-   
-/* Main */
-
-main {
-    padding: 1rem;
-
-    h2{
-        margin-bottom: 10px;
-    }
-
-    a{
-        color: black;
-    }
-
-    a:visited {
-        color: black; /* Mesma cor do link normal */
-    }
-}
-
-
-/* Home admin */
-.conjunto-ferramentas, .conjunto-cursos {
+.div-cards{
     display: flex;
     align-items: center; 
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
-.ferramenta, .cursos {
+.card {
     display: flex;
     box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
     margin-bottom: 1rem;
     border-radius: 10px;
-    gap: 4rem;
+    gap: 2.5rem;
     flex-direction: column;
     align-items: center;
     width: 400px;
@@ -248,58 +195,94 @@ main {
     }
 }  
 
+.card-longo{
+    display: flex;
+    box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 20px;
+
+    img{
+        width: 150px;
+        height: auto;
+    }
+
+    div{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem; 
+        padding: auto;
+
+        span {
+            font-size: 1.5rem; 
+            font-weight: bold; 
+        }
+    }
+}
+
+.card-usuario{
+    display: flex;
+    box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    padding: 20px;
+
+    img{
+        width: 150px;
+        height: auto;
+    }
+
+    div{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem; 
+        padding: auto;
+
+        span {
+            font-size: 1.5rem; 
+            font-weight: bold; 
+        }
+    }
+}
+
+
 
 /* Cadastrar Usuarios */
-.div-form{
+/* .div-form{
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
-}
+} */
 
-.main-forms-cadastro {
+.main-forms{
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-button {
-    background: none;
-    border: none;
-    padding: 0;
-    font: inherit;
-    color: inherit;
-    text-align: left;
-    cursor: pointer;
-}
-
-button:hover {
-    opacity: 0.4;
 }
 
 .div-flex-input {
     display: flex;
     gap: 10px;
     align-items: center;
+    
+    div {
+        flex: 1; /* Faz com que cada campo ocupe metade da linha */
+    }
+    
+    input, select {
+        width: 100%; 
+    }
 }
 
-.div-flex-input div {
-    flex: 1; /* Faz com que cada campo ocupe metade da linha */
-}
 
-.div-flex-input input,
-.div-flex-input select {
-    width: 100%; 
-}
-
-
-
-
-
-
-
-/* Visualizar Usuarios */
 .div-filtro{
     display: flex;
     gap: 10px;
@@ -313,39 +296,6 @@ button:hover {
 
     .div-logo-pesquisa{
         margin-bottom: 15px;
-    }
-}
-
-.div-tabela{
-    display: flex;
-    
-    justify-content: center;
-
-    
-
-    table{
-        width: 100%;
-        border-collapse: collapse;
-        text-align: center;
-        
-        thead{
-            background-color: rgb(194, 187, 187);
-            
-            th{
-                padding: 10px;    
-
-            }
-            
-        }
-
-        tbody{
-            background-color: rgb(231, 226, 226);
-
-            td{
-                padding: 10px;    
-
-            }
-        }
     }
 }
 
@@ -370,48 +320,9 @@ button:hover {
     }
 }
 
-/* Estilo do modal (escondido por padrão) */
-.modal {
-    display: none; /* Escondido até ser acionado */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente escuro */
-}
-
-/* Conteúdo do modal */
-.modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-/* Botão para fechar o modal */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-
 /* Curso Especifico */
 .opcoes-curso{
     display: flex;
-
     justify-content: space-between;
     
     img{
@@ -420,44 +331,58 @@ button:hover {
     }
 }
 
-.turmas{
-    display: flex;
-    box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    gap: 4rem;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
 
-    img{
-        width: 100px;
-        height: auto;
-    }
-
-    div{
-        span {
-            font-size: 1.5rem; 
-            font-weight: bold; 
-        }
-    }
-}
-
-
-.corpo-telas-form {
+/* .corpo-telas-form {
     height: 100vh;
     margin: 0;
     display: flex;
     font-family: Arial, sans-serif;
     flex-direction: column;
-}
+} */
 
 
+@media (max-width: 768px) {
+    aside {
+        background-color: #ECEBE2;
+        box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px; 
+        display: flex;
+        justify-content: center; 
+    }
 
-/* Visualizar Turmas*/
-.div-visualizar-turmas{
-    display: flex;
-    flex-wrap: wrap; /* Permite que os elementos quebrem de linha */
-    gap: 10px; /* Espaço entre os campos */
-    justify-content: center;
+    aside ul {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0;
+    }
+
+    aside a {
+        text-decoration: none;
+        color: white;
+        padding: 5px;
+    }
+
+    .card{
+        width: 250px;
+        height: auto;
+
+        img{
+            width: 120px;
+            height: auto;
+        }
+    
+        div{
+    
+            span {
+                font-size: 1rem; 
+                font-weight: bold; 
+            }
+        }
+    }
+ 
 }
