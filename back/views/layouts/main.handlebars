@@ -5,10 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SGTC</title>
+
+    {{!-- CSS --}}
+    <link rel="stylesheet" href="../../public/css/style.css">
 </head>
 
 <body>
-    {{{body}}}
+    <header>
+        <a href="homeAdmin.html">
+            <div class="div-logo">     
+                <img src="../../public/img/logo-sgtc.svg" alt="Imagem da logo SGTC" class="img-logo">
+                <h1>SGTC</h1>   
+            </div>
+        </a> 
+        <a href="#" class="user-logo">
+            <img src="../../public/img/user.png" alt="Foto de perfil do usuário" class="img-user">
+        </a>
+    </header>
+    <div class="container">
+        <aside>   
+            <ul>
+                <li>
+                    <a href="/"> 
+                        <img src="../../public/img/user-gear.svg" alt="Ferramenta Usuários" >
+                        <p>Usuários</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/cursos_"> 
+                        <img src="../../public/img/graduation-cap.svg" alt="Ferramenta Cursos" >
+                        <p>Cursos</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/turmas_"> 
+                        <img src="../../public/img/users-rectangle.svg" alt="Ferramenta Turmas" >
+                        <p>Turmas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/disciplinas_"> 
+                        <img src="../../public/img/book-solid.svg" alt="Ferramenta Disciplinas" >
+                        <p>Disciplinas</p>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main>
+            {{{body}}}
+            
+        </main>
+    </div>
 </body>
 
 </html>

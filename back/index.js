@@ -11,12 +11,16 @@ const turmaRoutes = require("./routes/turma.js");
 const professorRoutes = require("./routes/turma.js");
 const alunoRoutes = require("./routes/turma.js");
 const db = require("./db/connection.js");
+const path = require("path");
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
 app.use(express.json());
+
+
+app.use(express.static("./"));
 
 // Handlebars config
 app.engine('handlebars', engine());
@@ -40,6 +44,18 @@ app.use(professorRoutes);
 
 app.get('/', (req, res) => {
     return res.render('home');
+});
+
+app.get('/cursos_', (req, res) => {
+    return res.render('cursos');
+});
+
+app.get('/turmas_', (req, res) => {
+    return res.render('turmas');
+});
+
+app.get('/disciplinas_', (req, res) => {
+    return res.render('disciplinas');
 });
 
 app.listen(process.env.PORT, () => {
