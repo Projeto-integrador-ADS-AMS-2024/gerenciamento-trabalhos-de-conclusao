@@ -60,7 +60,8 @@
                 </div>
                 
                 <div class="div-cards">
-                    <a href="cursoTal.html">
+                    <!-- listar usuarios -->
+                    <a href="cursoTal.html" id="cardLink">
                         <div class="card-usuario">
                             <img src="../src/assets/img/logo.jpg" alt="Visualizar Usuários" >
                             <div>
@@ -68,57 +69,49 @@
                             </div>
                         </div>
                     </a>
-    
-                    <a href="cursoTal.html">
-                        <div class="card-usuario">
-                            <img src="../src/assets/img/logo.jpg" alt="Adicionar Usuários" >
-                            <div>
-                                <span>Curso 2</span>
-                            </div>
-                        </div>
-                    </a>
 
-                    <a href="cursoTal.html">
-                        <div class="card-usuario">
-                            <img src="../src/assets/img/logo.jpg" alt="Adicionar Usuários" >
-                            <div>
-                                <span>Curso 2</span>
-                            </div>
+                    <div id="modal-user" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>Este é o Modal</h2>
+                            <p>Conteúdo do modal vai aqui.</p>
                         </div>
-                    </a>
-
-                    <a href="cursoTal.html">
-                        <div class="card-usuario">
-                            <img src="../src/assets/img/logo.jpg" alt="Adicionar Usuários" >
-                            <div>
-                                <span>Curso 2</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="cursoTal.html">
-                        <div class="card-usuario">
-                            <img src="../src/assets/img/logo.jpg" alt="Adicionar Usuários" >
-                            <div>
-                                <span>Curso 2</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="cursoTal.html">
-                        <div class="card-usuario">
-                            <img src="../src/assets/img/logo.jpg" alt="Adicionar Usuários" >
-                            <div>
-                                <span>Curso 2</span>
-                            </div>
-                        </div>
-                    </a>
-    
-    
+                    </div>
+                   
                 </div>
                 
             </main>
         </div>
+
+        <script>
+            // Pega o modal
+            var modal = document.getElementById("modal-user");
+
+            // Pega o link do card
+            var cardLink = document.getElementById("cardLink");
+
+            // Pega o botão de fechar
+            var closeBtn = document.getElementsByClassName("close")[0];
+
+            // Quando o card for clicado, abre o modal e cancela o redirecionamento
+            cardLink.onclick = function(event) {
+                event.preventDefault(); // Cancela o comportamento padrão do link
+                modal.style.display = "block"; // Exibe o modal
+            }
+
+            // Quando o usuário clicar no botão de fechar, o modal fecha
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // Fecha o modal ao clicar fora dele
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        
         
     </body>
 </html>
