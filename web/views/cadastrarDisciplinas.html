@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SGTC - Admin</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../src/assets/css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <a href="homeAdmin.html">
+                <div class="div-logo">     
+                    <img src="../src/assets/img/logo-sgtc.svg" alt="Imagem da logo SGTC" class="img-logo">
+                    <h1>SGTC</h1>   
+                </div>
+            </a> 
+            <a href="#" class="user-logo">
+                <img src="../src/assets/img/user.png" alt="Foto de perfil do usuário" class="img-user">
+            </a>
+        </header>
+        <div class="container">
+            <aside>   
+                <ul>
+                    <li>
+                        <a href="homeAdmin.html"> 
+                            <img src="../src/assets/img/user-gear.svg" alt="Ferramenta Usuários" >
+                            <p>Usuários</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cursos.html"> 
+                            <img src="../src/assets/img/graduation-cap.svg" alt="Ferramenta Cursos" >
+                            <p>Cursos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="turmas.html"> 
+                            <img src="../src/assets/img/users-rectangle.svg" alt="Ferramenta Turmas" >
+                            <p>Turmas</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="disciplinas.html"> 
+                            <img src="../src/assets/img/book-solid.svg" alt="Ferramenta Disciplinas" >
+                            <p>Disciplinas</p>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <main class="main-forms">
+                <h2>Ferramentas > <a href="disciplinas.html">Disciplinas</a> > <a href="cadastrarDisciplinas.html"> Cadastrar Disciplinas</a></h2>
+                
+                <form action="turma.html">
+                    <div>
+                        <label for="nome">Nome da Disciplina</label><br>
+                        <input type="text" id="disciplina" name="disciplina" placeholder="Insira a disciplina" required><br>
+                    </div>
+
+                    
+                    <div>
+                        <label for="professor">Professor:</label>
+                        <select name="professor" id="professor" required>
+                            <option value="" disabled selected>Selecione o Professor</option>   
+                            <option value="A">A1</option>
+                            <option value="B">B1</option>
+                        </select>
+                    </div>
+                                     
+                    <div class="div-btn">
+                        <button type="submit">Cadastrar Disciplina</button>
+                    </div>
+                </form>
+            </main>
+        </div>
+        
+    </body>
+
+</html>

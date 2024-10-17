@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SGTC - Admin</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../src/assets/css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <a href="homeAdmin.html">
+                <div class="div-logo">     
+                    <img src="../src/assets/img/logo-sgtc.svg" alt="Imagem da logo SGTC" class="img-logo">
+                    <h1>SGTC</h1>   
+                </div>
+            </a> 
+            <a href="#" class="user-logo">
+                <img src="../src/assets/img/user.png" alt="Foto de perfil do usuário" class="img-user">
+            </a>
+        </header>
+        <div class="container">
+            <aside>   
+                <ul>
+                    <li>
+                        <a href="homeAdmin.html"> 
+                            <img src="../src/assets/img/user-gear.svg" alt="Ferramenta Usuários" >
+                            <p>Usuários</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cursos.html"> 
+                            <img src="../src/assets/img/graduation-cap.svg" alt="Ferramenta Cursos" >
+                            <p>Cursos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="turmas.html"> 
+                            <img src="../src/assets/img/users-rectangle.svg" alt="Ferramenta Turmas" >
+                            <p>Turmas</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="disciplinas.html"> 
+                            <img src="../src/assets/img/book-solid.svg" alt="Ferramenta Disciplinas" >
+                            <p>Disciplinas</p>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <main>
+                <h2>Ferramentas > <a href="turmas.html">Turmas</a> > <a href="visualizarTurmas.html"> Visualizar Turmas</a></h2>
+
+                <div class="div-filtro">
+                    <input type="text" id="filtro_turma" name="filtro_turma" class="inpt-filtro" placeholder="Filtrar Turma" ><br>
+                    <div class="b">
+                        <img src="../src/assets/img/icons8-pesquisar.svg" />
+                    </div>
+                </div>
+                
+                <div class="div-cards">
+                    <!-- listar turmas -->
+                    <a href="cursoTal.html" id="cardLink">
+                        <div class="card">
+                            <img src="../src/assets/img/logo.jpg" alt="Visualizar Usuários" >
+                            <div>
+                                <span>Turma 1</span>                    
+                            </div>
+                        </div>
+                    </a>     
+
+
+                    <div id="modal-turma" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <img src="../src/assets/img/logo.jpg" alt="Visualizar Usuários" >
+                            <h2>Nome da turma: </h2>
+                            <p>Turno:</p>
+                            <p>Disciplina:</p>
+                            <div>
+                                <a><button>Editar</button></a>
+                            </div>
+                        </div>
+                    </div> 
+  
+                                   
+                </div>
+                        
+            </main>
+        </div>
+        
+        <script>
+            // Pega o modal
+            var modal = document.getElementById("modal-turma");
+
+            // Pega o link do card
+            var cardLink = document.getElementById("cardLink");
+
+            // Pega o botão de fechar
+            var closeBtn = document.getElementsByClassName("close")[0];
+
+            // Quando o card for clicado, abre o modal e cancela o redirecionamento
+            cardLink.onclick = function(event) {
+                event.preventDefault(); // Cancela o comportamento padrão do link
+                modal.style.display = "block"; // Exibe o modal
+            }
+
+            // Quando o usuário clicar no botão de fechar, o modal fecha
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // Fecha o modal ao clicar fora dele
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+    </body>
+</html>
