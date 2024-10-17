@@ -1,10 +1,30 @@
 const Curso = require("../models/Curso.js");
 
+// Renderizar pagina do curso
+const pageCursos = async (req, res) => {
+    try {
+        return res.render("cursos"); // Retorna a pagina
+    } catch (error) {
+        return res.status(500).json({ message: "Erro ao exibir a página de cursos", error });
+    }
+};
+
+
+// Renderizar pagina de cadastro de curso
+const pageCursosCadastro = async (req, res) => {
+    try {
+        return res.render("cadastrarCursos"); // Retorna a pagina
+    } catch (error) {
+        return res.status(500).json({ message: "Erro ao exibir a página de cadastrar cursos", error });
+    }
+};
+
+
 // Criar um novo curso (Create)
 const createCurso = async (req, res) => {
     try {
         const { nome, duracao, tipoPeriodo } = req.body; // Pegando os dados do corpo da requisição
-
+        console.log(nome, duracao, tipoPeriodo);
         // Validação simples
         if (!nome || !duracao || !tipoPeriodo) {
             return res.status(400).json({ message: "Todos os campos são obrigatórios." });
@@ -27,7 +47,8 @@ const createCurso = async (req, res) => {
 const getAllCursos = async (req, res) => {
     try {
         const cursos = await Curso.findAll();
-        return res.json(cursos); // Retorna todos os cursos
+        return res.render("visualizarCursos", {cursos});
+        // return res.json(cursos); // Retorna todos os cursos
     } catch (error) {
         return res.status(500).json({ message: "Erro ao buscar cursos", error });
     }
@@ -98,6 +119,8 @@ const deleteCurso = async (req, res) => {
 };
 
 module.exports = {
+    pageCursos,
+    pageCursosCadastro,
     createCurso,
     getAllCursos,
     getCursoById,

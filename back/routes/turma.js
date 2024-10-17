@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const turmaController = require('../controllers/turmaController');
 
+//Rota para exibir pagina da ferramenta curso
+router.get('/pageTurmas', turmaController.pageTurmas);
+
 // Rota para criar uma nova turma
 router.post('/turmas', turmaController.createTurma);
 

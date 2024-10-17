@@ -46,17 +46,6 @@ app.get('/', (req, res) => {
     return res.render('home');
 });
 
-app.get('/cursos_', (req, res) => {
-    return res.render('cursos');
-});
-
-app.get('/turmas_', (req, res) => {
-    return res.render('turmas');
-});
-
-app.get('/disciplinas_', (req, res) => {
-    return res.render('disciplinas');
-});
 
 app.listen(process.env.PORT, () => {
     console.log("Servidor rodando na porta " + PORT);
