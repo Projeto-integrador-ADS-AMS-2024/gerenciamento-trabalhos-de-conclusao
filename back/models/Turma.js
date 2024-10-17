@@ -26,7 +26,10 @@ const Turma = db.define('turmas', {
     }
 });
 
-Turma.hasMany(Aluno);
+Turma.hasMany(Aluno, {
+    foreignKey: "turmaId"
+});
+
 Aluno.belongsTo(Turma, {
     foreignKey: "turmaId"
 })
