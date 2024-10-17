@@ -50,30 +50,32 @@
                     </li>
                 </ul>
             </aside>
-            <main>
-                <h2>Ferramentas > <a href="cursos.html">Cursos</a></h2>
-                <div class="div-cards">
-                    <a href="visualizarCursos.html">
-                        <div class="card">
-                            <img src="../src/assets/img/user-group.svg" alt="Visualizar Usuários" >
-                            <div>
-                                <span>Visualizar Cursos</span>                    
-                            </div>
-                        </div>
-                    </a>
-    
-                    <a href="cadastrarCursos.html">
-                        <div class="card">
-                            <img src="../src/assets/img/add-user.svg" alt="Adicionar Usuários" >
-                            <div>
-                                <span>Cadastrar Cursos</span>
-                            </div>
-                        </div>
-                    </a>
-    
-                </div>
+            <main class="main-forms">
+                <h2>Ferramentas > <a href="disciplinas.html">Disciplinas</a> > Editar Disciplina</a></h2>
+                
+                <form action="turma.html">
+                    <div>
+                        <label for="nome">Nome da Disciplina</label><br>
+                        <input type="text" id="disciplina" name="disciplina" placeholder="Insira a disciplina" required><br>
+                    </div>
+
+                    
+                    <div>
+                        <label for="professor">Professor:</label>
+                        <select name="professor" id="professor" required>
+                            <option value="" disabled selected>Selecione o Professor</option>   
+                            <option value="A">A1</option>
+                            <option value="B">B1</option>
+                        </select>
+                    </div>
+                                     
+                    <div class="div-btn">
+                        <button type="submit">Editar Disciplina</button>
+                    </div>
+                </form>
             </main>
         </div>
         
     </body>
+
 </html>

@@ -43,9 +43,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="diciplinas.html"> 
-                            <img src="../src/assets/img/book-solid.svg" alt="Ferramenta Diciplinas" >
-                            <p>Diciplinas</p>
+                        <a href="disciplinas.html"> 
+                            <img src="../src/assets/img/book-solid.svg" alt="Ferramenta Disciplinas" >
+                            <p>Disciplinas</p>
                         </a>
                     </li>
                 </ul>
@@ -62,16 +62,28 @@
                 
                 <div class="div-cards">
                     <!-- listar turmas -->
-                    <div>
-                        <a href="cursoTal.html">
-                            <div class="card">
-                                <img src="../src/assets/img/logo.jpg" alt="Visualizar Usuários" >
-                                <div>
-                                    <span>Turma 1</span>                    
-                                </div>
+                    <a href="cursoTal.html" id="cardLink">
+                        <div class="card">
+                            <img src="../src/assets/img/logo.jpg" alt="Visualizar Usuários" >
+                            <div>
+                                <span>Turma 1</span>                    
                             </div>
-                        </a>     
-                    </div>  
+                        </div>
+                    </a>     
+
+
+                    <div id="modal-turma" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <img src="../src/assets/img/logo.jpg" alt="Visualizar Usuários" >
+                            <h2>Nome da turma: </h2>
+                            <p>Turno:</p>
+                            <p>Disciplina:</p>
+                            <div>
+                                <a><button>Editar</button></a>
+                            </div>
+                        </div>
+                    </div> 
   
                                    
                 </div>
@@ -79,5 +91,34 @@
             </main>
         </div>
         
+        <script>
+            // Pega o modal
+            var modal = document.getElementById("modal-turma");
+
+            // Pega o link do card
+            var cardLink = document.getElementById("cardLink");
+
+            // Pega o botão de fechar
+            var closeBtn = document.getElementsByClassName("close")[0];
+
+            // Quando o card for clicado, abre o modal e cancela o redirecionamento
+            cardLink.onclick = function(event) {
+                event.preventDefault(); // Cancela o comportamento padrão do link
+                modal.style.display = "block"; // Exibe o modal
+            }
+
+            // Quando o usuário clicar no botão de fechar, o modal fecha
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // Fecha o modal ao clicar fora dele
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
     </body>
 </html>
