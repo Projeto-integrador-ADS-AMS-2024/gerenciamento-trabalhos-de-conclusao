@@ -1,4 +1,5 @@
 const express = require("express")
+const { engine } = require("express-handlebars");
 
 // Habilita a leitura de propriedades do arquivo .env
 require("dotenv").config();
@@ -17,6 +18,11 @@ const app = express();
 
 app.use(express.json());
 
+// Handlebars config
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
+app.set('views', './views');
+
 // Inserção das tabelas no banco
 db.sync({ alter: true })
     .then(() => {
@@ -31,6 +37,10 @@ app.use(disciplinaRoutes);
 app.use(turmaRoutes);
 app.use(alunoRoutes);
 app.use(professorRoutes);
+
+app.get('/', (req, res) => {
+    return res.render('home');
+});
 
 app.listen(process.env.PORT, () => {
     console.log("Servidor rodando na porta " + PORT);
