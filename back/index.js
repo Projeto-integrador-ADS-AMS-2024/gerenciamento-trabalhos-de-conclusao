@@ -8,8 +8,9 @@ require("dotenv").config();
 const cursoRoutes = require("./routes/curso.js");
 const disciplinaRoutes = require("./routes/disciplina.js");
 const turmaRoutes = require("./routes/turma.js");
-const professorRoutes = require("./routes/turma.js");
-const alunoRoutes = require("./routes/turma.js");
+const professorRoutes = require("./routes/professor.js");
+const alunoRoutes = require("./routes/aluno.js");
+const usuarioRoutes = require("./routes/usuario.js");
 const db = require("./db/connection.js");
 const path = require("path");
 
@@ -41,6 +42,7 @@ app.use(disciplinaRoutes);
 app.use(turmaRoutes);
 app.use(alunoRoutes);
 app.use(professorRoutes);
+app.use(usuarioRoutes);
 
 app.get('/', (req, res) => {
     return res.render('home');
