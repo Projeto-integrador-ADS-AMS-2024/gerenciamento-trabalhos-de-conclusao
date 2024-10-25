@@ -2,9 +2,6 @@ const express = require('express');
 const cursoController = require('../controllers/cursoController');
 const router = express.Router();
 
-router.get('/pageCursos', cursoController.pageCursos);
-router.get('/pageCursosCadastrar', cursoController.pageCursosCadastro);
-
 router.get('/cursos', cursoController.getAllCursos);
 router.get('/cursos/:id', cursoController.getCursoById);
 

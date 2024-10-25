@@ -1,14 +1,5 @@
 const Disciplina = require("../models/Disciplina.js");
 
-// Renderizar pagina do curso
-const pageDisciplinas = async (req, res) => {
-    try {
-        return res.render("disciplinas"); // Retorna a pagina
-    } catch (error) {
-        return res.status(500).json({ message: "Erro ao exibir a página de disciplinas", error });
-    }
-};
-
 // Criar uma nova disciplina (Create)
 const createDisciplina = async (req, res) => {
     try {
@@ -32,7 +23,8 @@ const createDisciplina = async (req, res) => {
 const getAllDisciplinas = async (req, res) => {
     try {
         const disciplinas = await Disciplina.findAll();
-        return res.render("visualizarDisciplinas", {disciplinas}); // Retorna todas as disciplinas
+        
+        return res.json(disciplinas);
     } catch (error) {
         return res.status(500).json({ message: "Erro ao buscar disciplinas", error });
     }
@@ -101,7 +93,6 @@ const deleteDisciplina = async (req, res) => {
 };
 
 module.exports = {
-    pageDisciplinas,
     createDisciplina,
     getAllDisciplinas,
     getDisciplinaById,

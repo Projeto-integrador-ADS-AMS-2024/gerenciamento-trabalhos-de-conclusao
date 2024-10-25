@@ -2,8 +2,6 @@ const express = require('express');
 const disciplinaController = require('../controllers/disciplinaController');
 const router = express.Router();
 
-router.get('/pageDisciplinas', disciplinaController.pageDisciplinas);
-
 router.get('/disciplinas', disciplinaController.getAllDisciplinas);
 router.get('/disciplinas/:id', disciplinaController.getDisciplinaById);
 

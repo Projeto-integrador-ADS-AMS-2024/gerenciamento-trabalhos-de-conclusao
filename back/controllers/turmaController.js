@@ -1,14 +1,5 @@
 const Turma = require("../models/Turma.js");
 
-// Renderizar pagina do curso
-const pageTurmas = async (req, res) => {
-    try {
-        return res.render("turmas"); // Retorna a pagina
-    } catch (error) {
-        return res.status(500).json({ message: "Erro ao exibir a página de turmas", error });
-    }
-};
-
 // Criar uma nova turma (Create)
 const createTurma = async (req, res) => {
     try {
@@ -36,7 +27,8 @@ const createTurma = async (req, res) => {
 const getAllTurmas = async (req, res) => {
     try {
         const turmas = await Turma.findAll();
-        return res.render("visualizarTurmas", {turmas}); // Retorna todas as turmas
+        
+        return res.json(turmas);
     } catch (error) {
         return res.status(500).json({ message: "Erro ao buscar turmas", error });
     }
@@ -107,7 +99,6 @@ const deleteTurma = async (req, res) => {
 };
 
 module.exports = {
-    pageTurmas,
     createTurma,
     getAllTurmas,
     getTurmaById,

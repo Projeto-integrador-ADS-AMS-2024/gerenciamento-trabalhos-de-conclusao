@@ -1,32 +1,6 @@
 const Curso = require("../models/Curso.js");
 const Coordenador = require("../models/Professor.js");
 
-// Renderizar pagina do curso
-const pageCursos = async (req, res) => {
-    try {
-        return res.render("cursos"); // Retorna a pagina
-    } catch (error) {
-        return res.status(500).json({ message: "Erro ao exibir a página de cursos", error });
-    }
-};
-
-
-// Renderizar pagina de cadastro de curso
-const pageCursosCadastro = async (req, res) => {
-    try {
-        const coordenadores = await Coordenador.findAll({
-            where: {
-                papel: "Coordenador",
-            }
-        })
-
-        return res.render("cadastrarCursos", {coordenadores}); // Retorna a pagina
-    } catch (error) {
-        return res.status(500).json({ message: "Erro ao exibir a página de cadastrar cursos", error });
-    }
-};
-
-
 // Criar um novo curso (Create)
 const createCurso = async (req, res) => {
     try {
@@ -58,8 +32,7 @@ const getAllCursos = async (req, res) => {
     try {
         const cursos = await Curso.findAll();
         
-        return res.render("visualizarCursos", {cursos});
-        // return res.json(cursos); // Retorna todos os cursos
+        return res.json(cursos);
     } catch (error) {
         return res.status(500).json({ message: "Erro ao buscar cursos", error });
     }
@@ -130,8 +103,6 @@ const deleteCurso = async (req, res) => {
 };
 
 module.exports = {
-    pageCursos,
-    pageCursosCadastro,
     createCurso,
     getAllCursos,
     getCursoById,
