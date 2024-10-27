@@ -1,0 +1,421 @@
+/* /*definindo variaveis*/
+:root{
+  --body-bg:#ECEBE2;
+  --div-acessibilidade-bg:#afafaf;
+  --div-menu-bg: #004D73;
+  --a-color: white;
+}
+
+#app {
+  padding: 0;
+  margin: 0;
+  /* width: 100vw; */
+}
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+body{
+  background-color: var(--body-bg);
+  list-style: none;
+  font-family: Arial, sans-serif;
+}
+
+.div-conteudo-principal{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 1rem;
+  flex: 1; 
+}
+
+.div-link-pagina{
+  text-align: center;
+  padding: 1rem;
+}
+
+.div-cards{
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  gap: 2.5rem;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding: 20px;
+
+  img{
+      width: 150px;
+      height: auto;
+  }
+
+  div{
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem; 
+      padding: auto;
+
+      span {
+          font-size: 1.5rem; 
+          font-weight: bold; 
+      }
+  }
+}  
+
+form{
+  div{
+
+    input{
+      width: 100%; /* Ocupa 100% da largura da div */
+      box-sizing: border-box; /* Inclui padding e borda no cálculo do width */
+    }
+  }
+}
+
+
+/* Corpo da pagina de login*/
+.main-login {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  /* Div que une a logo e o nome do sistema */
+  .div-logo-login{
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      
+      h1{
+          padding-bottom: 10px;
+      }
+
+      img{
+          width: 150px;
+          height: auto;
+      }
+  }
+}
+
+
+/* Inputs das telas */
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"], select, input[type="file"]{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+} 
+
+
+.div-btn{
+  text-align: center; 
+  
+  button {
+      background-color: rgb(49, 48, 48);
+      padding: 10px;
+      width: 50vw;
+      color: #e4e2e2;
+      border-radius: 4px;
+      font-size: 14pt;
+      text-align: center;
+      cursor: pointer;
+  }
+  
+  button:hover {
+      opacity: 1;
+  }
+}
+
+.div-cards{
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  gap: 2.5rem;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding: 20px;
+
+  img{
+      width: 150px;
+      height: auto;
+  }
+
+  div{
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem; 
+      padding: auto;
+
+      span {
+          font-size: 1.5rem; 
+          font-weight: bold; 
+      }
+  }
+}  
+
+.card-longo{
+  display: flex;
+  box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 20px;
+
+  img{
+      width: 150px;
+      height: auto;
+  }
+
+  div{
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem; 
+      padding: auto;
+
+      span {
+          font-size: 1.5rem; 
+          font-weight: bold; 
+      }
+  }
+}
+
+.card-usuario{
+  display: flex;
+  box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  padding: 20px;
+
+  img{
+      width: 150px;
+      height: auto;
+  }
+
+  div{
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem; 
+      padding: auto;
+
+      span {
+          font-size: 1.5rem; 
+          font-weight: bold; 
+      }
+  }
+}
+
+
+.div-flex-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  
+  div {
+      flex: 1; /* Faz com que cada campo ocupe metade da linha */
+  }
+  
+  input, select {
+      width: 100%; 
+  }
+}
+
+
+.div-filtro{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+
+  img{
+      width: 36px;
+      height: auto;
+  }
+
+  .div-logo-pesquisa{
+      margin-bottom: 15px;
+  }
+}
+
+
+/* Cadastrar Curso */
+.col-checkbox{
+  display: flex;
+  flex-wrap: wrap; /* Permite que os elementos quebrem de linha */
+  gap: 20px; /* Espaço entre os campos */
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+
+  
+  div{
+    display: flex;
+
+    
+    input[type="checkbox"]{
+        transform: scale(2.5);
+        border: 1px solid #ccc;
+        margin-right: 20px;
+    }
+  }
+}
+
+/* Curso Especifico */
+.opcoes-curso{
+  display: flex;
+  justify-content: space-between;
+  
+  img{
+      width: 5px;
+      height: auto;
+  }
+}
+
+
+/* Estilos do modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  text-align: center;
+
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  
+  img{
+      border: 1px solid black;
+      border-radius: 50%;
+      width: 100px;
+      height: auto;
+  
+  }
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+aside{   
+  width: 110px; 
+  height: 100vh;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+  color: rgb(228, 47, 47); 
+  padding: 20px;
+  
+  ul{
+      text-align: center;
+      li{
+          margin-bottom: 24px;
+          p{
+              color: black;
+          }
+      }
+  }
+  
+  img{
+      width: 40px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  aside {
+    background-color: #ECEBE2;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px; 
+    display: flex;
+    justify-content: center; 
+  }
+
+  aside ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0;
+  }
+
+  aside a {
+      text-decoration: none;
+      color: white;
+      padding: 5px;
+  }
+
+  .card{
+      width: 250px;
+      height: auto;
+
+      img{
+          width: 120px;
+          height: auto;
+      }
+  
+      div{
+  
+          span {
+              font-size: 1rem; 
+              font-weight: bold; 
+          }
+      }
+  }
+
+}
