@@ -1,10 +1,10 @@
 <template>
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/cursos">Cursos</router-link></h2>
+            <h2>Ferramentas > <router-link to="/cursos" class="router-link">Cursos</router-link></h2>
         </div>
         <div class="div-cards">
-            <router-link to="/visualizarCursos">
+            <router-link to="/visualizarCursos" class="router-link">
                 <div class="card">
                     <img src="../../assets/img/user-group.svg" alt="Visualizar Usuários" >
                     <div>
@@ -12,7 +12,7 @@
                     </div>
                 </div>
             </router-link>
-            <router-link to="/cadastrarCursos">
+            <router-link to="/cadastrarCursos" class="router-link">
                 <div class="card">
                     <img src="../../assets/img/add-user.svg" alt="Adicionar Usuários" >
                     <div>

@@ -5,7 +5,7 @@
                 <li>
                     <div>
                         Contraste
-                        <input type="checkbox" id="toggle" name="toggle" class="toggle">
+                        <input type="checkbox" v-model="toggle" id="toggle" name="toggle" class="toggle">
                         <label for="toggle"></label>
                     </div>
                 </li>
@@ -18,7 +18,7 @@
             </ul>
         </div>
         <nav class="menu">
-            <router-link to="/">
+            <router-link to="/" class="router-link">
                 <div class="div-logo">     
                     <img src="../assets/img/logo-sgtc.svg" alt="Imagem da logo SGTC" class="img-logo">
                     <h1>SGTC</h1>   
@@ -33,7 +33,19 @@
     </header>
 </template>
 
-<script>
+<script setup>
+    import { ref, watch } from 'vue'
+
+    const toggle = ref(false)
+
+    watch(toggle, (newVal) => {
+        const html = document.querySelector('html')
+        if (newVal) {
+            html.classList.add('dark-mode')
+        } else {
+            html.classList.remove('dark-mode')
+        }
+    })
 
 </script>
 
@@ -43,15 +55,15 @@
         flex-direction: column;
 
         .div-acessibilidade{
-            display: flex;
+            padding: 0.2rem;
             background-color: var(--div-acessibilidade-bg);
-                    
+            
             ul{
                 display: flex;   
-                align-items: center;
-
+                justify-content: space-around;
+                align-items: center; 
+   
                 li{
-                    justify-content:space-between ;
                     div{  
                         display: flex;
                         align-items: center;
@@ -66,7 +78,7 @@
 
             .toggle + label{
                 width: 32px;
-                height: 25px;
+                height: 20px;
                 background: lightgrey;
                 display: block;
                 position: relative;
@@ -114,7 +126,7 @@
     .div-logo{
         display: flex;
         align-items: center;
-        color: white;
+        color: var(--font-logo);
         gap: 15px;
     }
 
@@ -123,6 +135,7 @@
     }
 
     .user-logo{
+        text-decoration: none;
         .img-user {
             width: 34px;
             padding: 2px;

@@ -1,12 +1,12 @@
 <template>     
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/cursos">Cursos</router-link> > <router-link to="/visualizarCursos">Visualizar Cursos</router-link></h2>
+            <h2>Ferramentas > <router-link to="/cursos" class="router-link">Cursos</router-link> > <router-link to="/visualizarCursos" class="router-link">Visualizar Cursos</router-link></h2>
         </div>
         <div>
             <div class="div-cards">
                 <!-- listar cursos -->
-                <router-link to="cursoEspecifico.html">
+                <router-link to="cursoEspecifico.html" class="router-link">
                     <div class="card">
                         <img src="../../assets/img/graduation-cap.svg" alt="Visualizar Usuários" >
                         <div>

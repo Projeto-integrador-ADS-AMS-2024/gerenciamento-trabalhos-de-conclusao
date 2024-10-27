@@ -1,10 +1,10 @@
 <template>
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/disciplinas">Disciplinas</router-link></h2>
+            <h2>Ferramentas > <router-link to="/disciplinas" class="router-link">Disciplinas</router-link></h2>
         </div>
         <div class="div-cards">
-            <router-link to="/visualizarDisciplinas">
+            <router-link to="/visualizarDisciplinas" class="router-link">
                 <div class="card">
                     <img src="../../assets/img/book-solid.svg" alt="Visualizar Usuários" >
                     <div>
@@ -13,7 +13,7 @@
                 </div>
             </router-link>
 
-            <router-link to="/cadastrarDisciplinas">
+            <router-link to="/cadastrarDisciplinas" class="router-link">
                 <div class="card">
                     <img src="../../assets/img/book-medical-solid.svg" alt="Adicionar Usuários" >
                     <div>

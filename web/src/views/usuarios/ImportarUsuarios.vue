@@ -1,7 +1,7 @@
 <template>
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="homeAdmin.html">Usuários</router-link> > <router-link to="importarUsuarios.html">Importar Usuários</router-link></h2>
+            <h2>Ferramentas > <router-link to="homeAdmin.html" class="router-link">Usuários</router-link> > <router-link to="/importarUsuarios" class="router-link">Importar Usuários</router-link></h2>
         </div>
         <div>
             <form action="turma.html">

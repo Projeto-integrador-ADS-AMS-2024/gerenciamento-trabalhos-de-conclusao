@@ -1,7 +1,7 @@
 <template>     
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/disciplinas">Disciplinas</router-link> > <router-link to="/visualizarDisciplinas">Visualizar Disciplinas</router-link></h2>
+            <h2>Ferramentas > <router-link to="/disciplinas" class="router-link">Disciplinas</router-link> > <router-link to="/visualizarDisciplinas" class="router-link">Visualizar Disciplinas</router-link></h2>
         </div>
         <div>
             <div class="div-filtro">
@@ -13,7 +13,7 @@
             <div class="div-cards">
                 <div class="div-card">
                     <!-- listar disciplina -->
-                    <router-link to="">
+                    <router-link to="" class="router-link">
                         <div class="card-longo">
                             <img src="../../assets/img/book-solid.svg" alt="Visualizar Usuários" >
                             <div>

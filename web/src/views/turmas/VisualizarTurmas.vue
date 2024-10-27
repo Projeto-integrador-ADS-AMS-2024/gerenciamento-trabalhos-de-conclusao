@@ -1,7 +1,7 @@
 <template>     
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/turmas">Turmas</router-link> > <router-link to="/visualizarTurmas">Visualizar Turmas</router-link></h2>
+            <h2>Ferramentas > <router-link to="/turmas" class="router-link">Turmas</router-link> > <router-link to="/visualizarTurmas" class="router-link">Visualizar Turmas</router-link></h2>
         </div>
         <div>
             <div class="div-filtro">
@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="div-cards">
-                <router-link to="cursoTal.html" id="cardLink">
+                <router-link to="cursoTal.html" id="cardLink" class="router-link">
                     <div class="card">
                         <img src="../../assets/img/users-rectangle.svg" alt="Visualizar Usuários" >
                         <div>

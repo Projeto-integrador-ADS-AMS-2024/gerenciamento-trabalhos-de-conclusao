@@ -3,7 +3,16 @@
   --body-bg:#ECEBE2;
   --div-acessibilidade-bg:#afafaf;
   --div-menu-bg: #004D73;
-  --a-color: white;
+  --link-color: rgb(0, 0, 0);
+  --font-logo: white;
+}
+
+.dark-mode:root{
+  --body-bg:#242424;
+  --div-acessibilidade-bg:#2c2c2c;
+  --div-menu-bg: #010d13;
+  --link-color: rgb(255, 239, 9);
+  --font-logo: rgb(255, 239, 9);;
 }
 
 #app {
@@ -32,6 +41,27 @@ body{
   padding: 1rem;
   flex: 1; 
 }
+
+.router-link{
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+main{
+  padding: 20px; 
+
+  h2{
+    margin-bottom: 10px;
+  }
+
+  a{
+    color: black;
+  }
+
+  a:visited {
+    color: black; /* Mesma cor do link normal */
+  }
+} 
 
 .div-link-pagina{
   text-align: center;
@@ -363,7 +393,7 @@ aside{
       li{
           margin-bottom: 24px;
           p{
-              color: black;
+              color: var(--link-color);
           }
       }
   }
@@ -374,6 +404,9 @@ aside{
 
 }
 @media (max-width: 768px) {
+  body {
+    margin-bottom: 250px; /* Altura da sidebar */
+  }
 
   aside {
     background-color: #ECEBE2;

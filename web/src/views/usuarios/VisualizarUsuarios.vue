@@ -1,7 +1,7 @@
 <template>     
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/">Usuários</router-link>  > <router-link to="/visualizarUsuarios">Visualizar Usuários</router-link></h2>
+            <h2>Ferramentas > <router-link to="/" class="router-link">Usuários</router-link>  > <router-link to="/visualizarUsuarios" class="router-link">Visualizar Usuários</router-link></h2>
         </div>
         <div>
             <div class="div-filtro">
@@ -13,7 +13,7 @@
             
             <div class="div-cards">
                 <!-- listar usuarios -->
-                <router-link to="/cursoTal" id="cardLink">
+                <router-link to="/cursoTal" id="cardLink" class="router-link">
                     <div class="card-usuario">
                         <img src="../../assets/img/user-group.svg" alt="Visualizar Usuários" >
                         <div>
