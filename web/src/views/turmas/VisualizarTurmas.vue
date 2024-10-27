@@ -13,25 +13,20 @@
             <div class="div-cards">
                 <router-link to="cursoTal.html" id="cardLink" class="router-link">
                     <div class="card">
-                        <img src="../../assets/img/users-rectangle.svg" alt="Visualizar Usuários" >
-                        <div>
+                        <div class="div-funcoes-card">
+                            <button>
+                                <router-link to="/editarTurma" class="router-link">Editar</router-link>
+                            </button>
+                            <button>
+                                <router-link to="" class="router-link">Excluir</router-link>
+                            </button>
+                        </div>
+                        <div class="div-info">
+                            <img src="../../assets/img/users-rectangle.svg" alt="Visualizar Usuários" >
                             <span>Turma 1</span>                    
                         </div>
                     </div>
                 </router-link>     
-
-                <div id="modal-turma" class="modal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <img src="../src/assets/img/logo.jpg" alt="Visualizar Usuários" >
-                        <h2>Nome da turma: </h2>
-                        <p>Turno:</p>
-                        <p>Disciplina:</p>
-                        <div>
-                            <button>Editar</button>
-                        </div>
-                    </div>
-                </div> 
             </div>
         </div>
     </div>

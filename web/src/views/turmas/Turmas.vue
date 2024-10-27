@@ -6,8 +6,8 @@
         <div class="div-cards">
             <router-link to="/visualizarTurmas" class="router-link">
                 <div class="card">
-                    <img src="../../assets/img/users-rectangle.svg" alt="Visualizar Usuários" >
-                    <div>
+                    <div class="div-info">
+                        <img src="../../assets/img/users-rectangle.svg" alt="Visualizar Usuários" >
                         <span>Visualizar Turmas</span>                    
                     </div>
                 </div>
@@ -15,8 +15,8 @@
 
             <router-link to="/cadastrarTurmas" class="router-link">
                 <div class="card">
-                    <img src="../../assets/img/users-gear.svg" alt="Adicionar Usuários" >
-                    <div>
+                    <div class="div-info">
+                        <img src="../../assets/img/users-gear.svg" alt="Adicionar Usuários" >
                         <span>Cadastrar Turmas</span>                    
                     </div>
                 </div>

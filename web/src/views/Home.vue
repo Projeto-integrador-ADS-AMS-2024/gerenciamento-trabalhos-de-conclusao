@@ -6,24 +6,24 @@
         <div class="div-cards">
             <router-link to="/visualizarUsuarios" class="router-link">
                 <div class="card">
-                    <img src=".././assets/img/user-group.svg" alt="Visualizar Usuários" >
-                    <div>
+                    <div class="div-info">
+                        <img src=".././assets/img/user-group.svg" alt="Visualizar Usuários" >
                         <span>Visualizar Usuários</span>                    
                     </div>
                 </div>
             </router-link>
             <router-link to="/cadastrarUsuarios" class="router-link">
                 <div class="card">
-                    <img src=".././assets/img/add-user.svg" alt="Adicionar Usuários" >
-                    <div>
+                    <div class="div-info">
+                        <img src=".././assets/img/add-user.svg" alt="Adicionar Usuários" >
                         <span>Cadastrar Usuários</span>                     
                     </div>
                 </div>
             </router-link>
             <router-link to="/importarUsuarios" class="router-link">
                 <div class="card">
-                    <img src=".././assets/img/upload.svg" alt="Importar Usuários" >
-                    <div>
+                    <div class="div-info">
+                        <img src=".././assets/img/upload.svg" alt="Importar Usuários" >
                         <span>Importar Usuários</span>
                     </div>
                 </div>

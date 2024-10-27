@@ -6,8 +6,8 @@
         <div class="div-cards">
             <router-link to="/visualizarDisciplinas" class="router-link">
                 <div class="card">
-                    <img src="../../assets/img/book-solid.svg" alt="Visualizar Usuários" >
-                    <div>
+                    <div class="div-info">
+                        <img src="../../assets/img/book-solid.svg" alt="Visualizar Usuários" >
                         <span>Visualizar Disciplinas</span>                    
                     </div>
                 </div>
@@ -15,8 +15,8 @@
 
             <router-link to="/cadastrarDisciplinas" class="router-link">
                 <div class="card">
-                    <img src="../../assets/img/book-medical-solid.svg" alt="Adicionar Usuários" >
-                    <div>
+                    <div class="div-info">
+                        <img src="../../assets/img/book-medical-solid.svg" alt="Adicionar Usuários" >
                         <span>Cadastrar Disciplinas</span>
                     </div>
                 </div>

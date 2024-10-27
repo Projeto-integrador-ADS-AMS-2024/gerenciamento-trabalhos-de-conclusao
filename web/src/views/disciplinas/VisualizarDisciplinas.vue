@@ -15,8 +15,16 @@
                     <!-- listar disciplina -->
                     <router-link to="" class="router-link">
                         <div class="card-longo">
-                            <img src="../../assets/img/book-solid.svg" alt="Visualizar Usuários" >
-                            <div>
+                            <div class="div-funcoes-card">
+                                <button>
+                                <router-link to="/editarDisciplina" class="router-link">Editar</router-link>
+                                </button>
+                                <button>
+                                    <router-link to="" class="router-link">Excluir</router-link>
+                                </button>
+                            </div>
+                            <div class="div-info">
+                                <img src="../../assets/img/book-solid.svg" alt="Visualizar Usuários" >
                                 <span>Disciplinas 1</span>                    
                             </div>
                         </div>

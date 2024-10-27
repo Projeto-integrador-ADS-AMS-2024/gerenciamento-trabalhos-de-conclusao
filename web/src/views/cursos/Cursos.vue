@@ -6,18 +6,18 @@
         <div class="div-cards">
             <router-link to="/visualizarCursos" class="router-link">
                 <div class="card">
-                    <img src="../../assets/img/user-group.svg" alt="Visualizar Usuários" >
-                    <div>
+                    <div class="div-info">
+                        <img src="../../assets/img/user-group.svg" alt="Visualizar Usuários" >
                         <span>Visualizar Cursos</span>                    
                     </div>
                 </div>
             </router-link>
             <router-link to="/cadastrarCursos" class="router-link">
                 <div class="card">
-                    <img src="../../assets/img/add-user.svg" alt="Adicionar Usuários" >
-                    <div>
+                    <div class="div-info">
+                        <img src="../../assets/img/add-user.svg" alt="Adicionar Usuários" >
                         <span>Cadastrar Cursos</span>
-                    </div>
+                    </div>   
                 </div>
             </router-link>
         </div>

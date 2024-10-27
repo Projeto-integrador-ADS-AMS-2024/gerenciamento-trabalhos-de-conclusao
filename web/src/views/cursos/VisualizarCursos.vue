@@ -6,10 +6,18 @@
         <div>
             <div class="div-cards">
                 <!-- listar cursos -->
-                <router-link to="cursoEspecifico.html" class="router-link">
+                <router-link to="/cursoEspecifico" class="router-link">
                     <div class="card">
-                        <img src="../../assets/img/graduation-cap.svg" alt="Visualizar Usuários" >
-                        <div>
+                        <div class="div-funcoes-card">
+                            <button>
+                                <router-link to="/editarCurso" class="router-link">Editar</router-link>
+                            </button>
+                            <button>
+                                <router-link to="" class="router-link">Excluir</router-link>
+                            </button>
+                        </div>
+                        <div class="div-info">
+                            <img src="../../assets/img/graduation-cap.svg" alt="Visualizar Usuários" >
                             <span>Curso 1a</span>                    
                         </div>
                     </div>

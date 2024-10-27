@@ -79,30 +79,35 @@ main{
 .card {
   display: flex;
   box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   border-radius: 10px;
-  gap: 2.5rem;
   flex-direction: column;
-  align-items: center;
   width: 400px;
   padding: 20px;
 
-  img{
-      width: 150px;
-      height: auto;
+  .div-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; 
+    padding: auto;
+    align-items: center;
+    
+    img{
+        width: 150px;
+        height: auto;
+    }
+    span {
+      font-size: 1.5rem; 
+      font-weight: bold; 
+    }
   }
 
-  div{
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem; 
-      padding: auto;
-
-      span {
-          font-size: 1.5rem; 
-          font-weight: bold; 
-      }
-  }
+  .div-funcoes-card {
+    display: flex;
+    gap: 0.5rem; 
+    justify-content: flex-end;
+  } 
+  
 }  
 
 form{
@@ -173,97 +178,72 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
   }
 }
 
-.div-cards{
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.card {
-  display: flex;
-  box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  gap: 2.5rem;
-  flex-direction: column;
-  align-items: center;
-  width: 400px;
-  padding: 20px;
-
-  img{
-      width: 150px;
-      height: auto;
-  }
-
-  div{
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem; 
-      padding: auto;
-
-      span {
-          font-size: 1.5rem; 
-          font-weight: bold; 
-      }
-  }
-}  
-
 .card-longo{
   display: flex;
+  flex-direction: column;
   box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
   margin-bottom: 1rem;
   border-radius: 10px;
   gap: 2.5rem;
-  align-items: center;
   padding: 20px;
+ 
 
-  img{
-      width: 150px;
-      height: auto;
+  .div-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; 
+    padding: auto;
+    align-items: center;
+    
+    img{
+        width: 150px;
+        height: auto;
+    }
+    span {
+      font-size: 1.5rem; 
+      font-weight: bold; 
+    }
   }
 
-  div{
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem; 
-      padding: auto;
-
-      span {
-          font-size: 1.5rem; 
-          font-weight: bold; 
-      }
-  }
+  .div-funcoes-card {
+    display: flex;
+    gap: 0.5rem; 
+    justify-content: flex-end;
+  } 
 }
 
 .card-usuario{
   display: flex;
+  flex-direction: column;
   box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
   margin-bottom: 1rem;
   border-radius: 10px;
   gap: 1rem;
-  flex-direction: column;
-  align-items: center;
   width: 200px;
   padding: 20px;
 
-  img{
-      width: 150px;
-      height: auto;
+  .div-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; 
+    padding: auto;
+    align-items: center;
+    
+    img{
+        width: 150px;
+        height: auto;
+    }
+    span {
+      font-size: 1.5rem; 
+      font-weight: bold; 
+    }
   }
 
-  div{
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem; 
-      padding: auto;
-
-      span {
-          font-size: 1.5rem; 
-          font-weight: bold; 
-      }
-  }
+  .div-funcoes-card {
+    display: flex;
+    gap: 0.5rem; 
+    justify-content: flex-end;
+  } 
 }
 
 
@@ -330,55 +310,6 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
       width: 5px;
       height: auto;
   }
-}
-
-
-/* Estilos do modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  align-items: center;
-  text-align: center;
-
-}
-
-.modal-content {
-  background-color: white;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 500px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  
-  img{
-      border: 1px solid black;
-      border-radius: 50%;
-      width: 100px;
-      height: auto;
-  
-  }
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 aside{   
