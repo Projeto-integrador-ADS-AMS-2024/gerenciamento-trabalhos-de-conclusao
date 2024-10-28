@@ -1,3 +1,20 @@
+<script setup>
+import User from '@/components/User.vue';
+import { onMounted, ref } from 'vue';
+
+const users = ref(null);
+
+const fetchUsers = async () => {
+    const res = await fetch('http://localhost:3000/usuarios'); 
+    const data = await res.json();
+
+    users.value = [...data.alunos, ...data.professores];
+}
+
+onMounted(fetchUsers)
+
+</script>
+
 <template>     
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
@@ -13,7 +30,14 @@
             
             <div class="div-cards">
                 <!-- listar usuarios -->
-                <router-link to="/cursoTal" id="cardLink" class="router-link">
+
+                <span v-if="!users">Carregando usuários...</span>
+                
+                <div v-else class="users">
+                    <User v-for="user in users" :username="user.nome" />
+                </div>
+
+                <!-- <router-link to="/cursoTal" id="cardLink" class="router-link">
                     <div class="card-usuario">
                         <div class="div-funcoes-card">
                             <button>
@@ -28,18 +52,13 @@
                             <span>User 1</span>                    
                         </div>
                     </div>
-                </router-link>           
+                </router-link>            -->
             </div>
         </div>
     </div>
 
 </template>
 
-<script>
-export default {
-    
-}
-</script>
 
 <style >
     
