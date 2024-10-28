@@ -1,5 +1,6 @@
 const { Sequelize } = require("sequelize");
 
+
 // Habilita a leitura de propriedades do arquivo .env
 require("dotenv").config();
 

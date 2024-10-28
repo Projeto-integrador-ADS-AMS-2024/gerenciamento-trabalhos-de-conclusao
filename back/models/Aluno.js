@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 const db = require("../db/connection.js");
 const Turma = require("./Turma.js");
 
-const Aluno = db.define('alunos', {
+const Aluno = db.define("alunos", {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -38,6 +38,5 @@ const Aluno = db.define('alunos', {
     },
 });
 
-Aluno.sync({ alter: true });
-
+// Aluno.belongsTo(Turma, { foreignKey: "turmaId" });
 module.exports = Aluno;

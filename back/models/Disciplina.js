@@ -19,6 +19,4 @@ Turma.belongsTo(Disciplina, {
     foreignKey: "disciplinaId"
 })
 
-Disciplina.sync({ alter: true });
-
 module.exports = Disciplina;

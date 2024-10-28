@@ -1,5 +1,6 @@
 const express = require("express")
 const { engine } = require("express-handlebars");
+const cors = require("cors");
 
 // Habilita a leitura de propriedades do arquivo .env
 require("dotenv").config();
@@ -19,6 +20,7 @@ const app = express();
 
 app.use(express.json());
 
+app.use(cors());
 
 app.use(express.static("./"));
 

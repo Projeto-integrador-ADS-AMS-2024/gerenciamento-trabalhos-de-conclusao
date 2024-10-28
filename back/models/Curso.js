@@ -39,6 +39,4 @@ Turma.belongsTo(Curso, {
     foreignKey: "cursoId"
 })
 
-Curso.sync({ alter: true });
-
 module.exports = Curso;
