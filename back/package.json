@@ -1,0 +1,24 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "seed": "npx sequelize-cli db:seed --seed 20241014193429-disciplinas  && npx sequelize-cli db:seed --seed 20241014190300-cursos && npx sequelize-cli db:seed --seed 20241014191750-turmas && npx sequelize-cli db:seed --seed 20241015221053-alunos && npx sequelize-cli db:seed --seed 20241015215747-professores"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-handlebars": "^8.0.1",
+    "mysql2": "^3.11.3",
+    "sequelize": "^6.37.3",
+    "sequelize-cli": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
