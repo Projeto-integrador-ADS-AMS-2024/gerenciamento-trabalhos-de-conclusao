@@ -56,7 +56,7 @@
 
         .div-acessibilidade{
             padding: 0.2rem;
-            background-color: var(--div-acessibilidade-bg);
+            background-color: var(--bg-div-acessibilidade);
             
             ul{
                 display: flex;   

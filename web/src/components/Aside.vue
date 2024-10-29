@@ -70,6 +70,107 @@
 
 </script>
 
-<style scoped>
-    
+<style scoped>    
+    aside{   /* Menu sidebar */
+        display: flex;
+        flex-direction: column;
+        width: 240px; 
+        padding: 15px;
+        border-radius: 10px;
+        gap: 10px;
+        transition: all 0.3s ease; 
+        /* height: 100vh; */
+        /* box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1); */
+    }
+
+    .img-logo{
+        width: 80px;
+    }
+
+    .div-logo-aside { /* Div que contem a logo com fundo azul */
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        box-sizing: border-box;
+        background-color: var(--bg-div-logo-aside);
+        width: 100%;
+        border-radius: 10px;
+        height: 25vh;
+              
+        h1{
+            color: white;
+        }
+
+        div {
+            gap: 5px;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .div-opcoes-menus-aside{ /* Div que contem os links para navegacao */
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-radius: 10px;
+
+        div{
+            display: flex;
+            align-items: center;
+            background-color: #f1f1f1;
+            padding: 15px;
+            gap: 15px;
+            border-radius: 10px;
+
+            svg,img{
+                width: 35px;
+            }
+        }
+
+        p{
+            color: var(--link-color);
+        }
+    }
+
+    .div-footer-aside { /* Div que fica no final da sidebar */
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        flex: 1;
+        padding: 30px;
+        background-color: #f1f1f1;
+        border-radius: 10px;
+        /* border: 1px solid black; */
+    }
+
+    @media (max-width: 768px) {  
+        aside {
+            flex-direction: column;
+            justify-content: space-around; 
+            align-items: center;
+            position: fixed;
+            background-color: #afafaf;
+            bottom: 0; 
+            left: 0;
+            width: 100%;
+            height: auto; 
+            padding: 15px;
+        }
+
+        .div-logo-aside {
+            height: auto; 
+            width: 90%;
+        }
+
+        .div-opcoes-menus-aside {
+            flex-direction: row; 
+            gap: 5px; 
+        }
+
+        .div-footer-aside {
+            padding: 15px; 
+            justify-content: space-between; 
+        }
+
+    }
 </style>
