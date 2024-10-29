@@ -12,7 +12,7 @@
             <button @click="toggleSidebar" class="close-button">Fechar</button>
         </div>
 
-        <!-- <div v-if="isSidebarOpen" class="overlay" @click="toggleSidebar"></div> -->
+        <!-- <div v-if="isSidebarOpen"   class="overlay" @click="toggleSidebar"></div> -->
             
         <div class="div-juncao-logo-navb">
             <img src="../assets/img/logo-sgtc.svg" alt="Imagem da logo SGTC" class="img-logo">
