@@ -305,3 +305,8 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
   }
 
 }
+
+.open{
+  display: flex;
+}
+

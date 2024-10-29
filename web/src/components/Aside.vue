@@ -163,26 +163,13 @@
 
     
 
-    @media (max-width: 768px) {  
+    @media (max-width: 800px) {  
         aside {
             width: 20vw;
-
-
-            /* flex-direction: column;
-            justify-content: space-around; 
-            align-items: center;
-            position: block;
-            background-color: #afafaf;
-            top: 0; 
-            left: 0;
-            width: 100%;
-            height: 40vh; 
-            padding: 15px; */
         }
 
-        
-
         .div-logo-aside {
+            height: 15vh;
             div{
                 flex-direction: column;    
             }
@@ -194,28 +181,33 @@
             width: 90%; */
         }
 
-        .div-opcoes-menus-aside {
-            
+        .div-opcoes-menus-aside{ /* Div que contem os links para navegacao */         
             div{
-                flex-direction: column;
+                flex-direction: column;          
             }
-            /* display: none; */
         }
 
         .div-footer-aside {
-            /* display: none; */
-            /* padding: 15px; 
-            justify-content: space-between;  */
+
         }
 
     }
 
-    @media (max-width: 648px) {  
-        /* .div-opcoes-menus-aside {
-            
-            div{
+    @media (max-width: 700px) {  
+        aside{
+            display: none;
+        }
 
-            }
-        } */
+        .div-logo-aside {
+
+        }
+
+        .div-opcoes-menus-aside {
+
+        }
+
+        .div-footer-aside {
+
+        }
     }
 </style>

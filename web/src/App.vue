@@ -3,12 +3,14 @@
   import Header from './components/Header.vue'
   import Aside from './components/Aside.vue'
   import PluginAcessibility from './components/PluginAcessibility.vue'
+  import NavbarMobile from './components/NavBarMobile.vue';
   
 </script>
 
 <template>
 
   <Header /> <!-- Componente presente no layout padrao -->
+  <NavbarMobile />
   <div class="container">
     <Aside /><!-- Componente presente no layout padrao -->
     <PluginAcessibility /><!-- Componente presente no layout padrao -->
@@ -24,4 +26,6 @@
     display: flex; 
     height: 100vh; 
   }
+
+
 </style>
