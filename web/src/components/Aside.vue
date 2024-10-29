@@ -1,12 +1,12 @@
 <template>
     <aside>   
         <div class="div-logo-aside">
-            <router-link to="/" class="router-link">
-                <div>     
-                    <img src="../assets/img/logo-sgtc.svg" alt="Imagem da logo SGTC" class="img-logo">
-                    <h1>SGTC</h1>   
-                </div>
-            </router-link> 
+            <!-- <router-link  class="router-link"> -->
+            <div>     
+                <img src="../assets/img/logo-sgtc.svg" alt="Imagem da logo SGTC" class="img-logo">
+                <h1>SGTC</h1>   
+            </div>
+            <!-- </router-link>  -->
         </div>
         <div class="div-opcoes-menus-aside">
             <router-link to="/" class="router-link"> 
@@ -112,15 +112,30 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        border-radius: 10px;
+
+        .router-link{
+            border-radius: 10px;
+            background-color: #f1f1f1;
+        }
+
+        .router-link-active{
+            color: white;
+            border-radius: 10px;
+            background-color: var(--bg-div-logo-aside);
+            p{
+                color: var(--link-color-p);
+            }
+        }
+
 
         div{
             display: flex;
             align-items: center;
-            background-color: #f1f1f1;
+            /* background-color: #b91919; */
+            border-radius: 10px;
             padding: 15px;
             gap: 15px;
-            border-radius: 10px;
+            
 
             svg,img{
                 width: 35px;
@@ -131,6 +146,9 @@
             color: var(--link-color);
         }
     }
+    
+
+    
 
     .div-footer-aside { /* Div que fica no final da sidebar */
         display: flex;
@@ -143,34 +161,61 @@
         /* border: 1px solid black; */
     }
 
+    
+
     @media (max-width: 768px) {  
         aside {
-            flex-direction: column;
+            width: 20vw;
+
+
+            /* flex-direction: column;
             justify-content: space-around; 
             align-items: center;
-            position: fixed;
+            position: block;
             background-color: #afafaf;
-            bottom: 0; 
+            top: 0; 
             left: 0;
             width: 100%;
-            height: auto; 
-            padding: 15px;
+            height: 40vh; 
+            padding: 15px; */
         }
 
+        
+
         .div-logo-aside {
-            height: auto; 
-            width: 90%;
+            div{
+                flex-direction: column;    
+            }
+            
+            img{
+                width: 40px;
+            }
+            /* height: auto; 
+            width: 90%; */
         }
 
         .div-opcoes-menus-aside {
-            flex-direction: row; 
-            gap: 5px; 
+            
+            div{
+                flex-direction: column;
+            }
+            /* display: none; */
         }
 
         .div-footer-aside {
-            padding: 15px; 
-            justify-content: space-between; 
+            /* display: none; */
+            /* padding: 15px; 
+            justify-content: space-between;  */
         }
 
+    }
+
+    @media (max-width: 648px) {  
+        /* .div-opcoes-menus-aside {
+            
+            div{
+
+            }
+        } */
     }
 </style>

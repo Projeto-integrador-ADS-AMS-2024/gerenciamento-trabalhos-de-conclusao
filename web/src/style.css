@@ -6,6 +6,7 @@
   --h1-link-color: white;
   --link-color: rgb(0, 0, 0);
   --font-logo: white;
+  --link-color-p: white;
 }
 
 .dark-mode:root{
@@ -14,7 +15,8 @@
   --bg-div-acessibilidade:#2c2c2c;
   --bg-div-logo-aside: #010d13;
   --link-color: rgb(255, 239, 9);
-  --font-logo: rgb(255, 239, 9);;
+  --font-logo: rgb(255, 239, 9);
+  --link-color-p: rgb(255, 239, 9);
 }
 
 #app {
@@ -50,6 +52,7 @@ body{
   text-decoration: none;
   color: var(--link-color);
 }
+
 
 .div-link-pagina{
   text-align: center;
@@ -300,4 +303,5 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
       }
     }
   }
+
 }
