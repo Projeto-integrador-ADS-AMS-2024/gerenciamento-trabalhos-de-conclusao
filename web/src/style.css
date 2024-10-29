@@ -390,7 +390,7 @@ aside{
 @media (max-width: 768px) {  
   aside {
     position: fixed;
-    bottom: 0;
+    bottom: 0; /* */
     left: 0;
     width: 100%; /* Largura total na tela */
     height: auto; /* Altura automática para caber o conteúdo */
