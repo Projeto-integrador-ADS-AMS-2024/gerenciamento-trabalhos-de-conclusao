@@ -1,24 +1,30 @@
 /* /*definindo variaveis*/
 :root{
-  --body-bg:#ECEBE2;
-  --div-acessibilidade-bg:#afafaf;
-  --div-menu-bg: #004D73;
+  --bg-body:#f8f7f4;
+  --bg-div-acessibilidade:#afafaf;
+  --bg-div-logo-aside: #004D73;
+  --h1-link-color: white;
   --link-color: rgb(0, 0, 0);
   --font-logo: white;
+  --link-color-p: white;
 }
 
 .dark-mode:root{
-  --body-bg:#242424;
-  --div-acessibilidade-bg:#2c2c2c;
-  --div-menu-bg: #010d13;
+  --bg-body:#242424;
+  --h1-link-color: rgb(255, 239, 9);;
+  --bg-div-acessibilidade:#2c2c2c;
+  --bg-div-logo-aside: #010d13;
   --link-color: rgb(255, 239, 9);
-  --font-logo: rgb(255, 239, 9);;
+  --font-logo: rgb(255, 239, 9);
+  --link-color-p: rgb(255, 239, 9);
 }
 
 #app {
   padding: 0;
   margin: 0;
+  bottom: 0;
   /* width: 100vw; */
+  overflow: hidden;
 }
 
 /* Reset */
@@ -29,7 +35,7 @@
 }
 
 body{
-  background-color: var(--body-bg);
+  background-color: var(--bg-body);
   list-style: none;
   font-family: Arial, sans-serif;
 }
@@ -37,9 +43,9 @@ body{
 .div-conteudo-principal{
   display: flex;
   flex-direction: column;
-  gap: 20px;
   padding: 1rem;
-  flex: 1; 
+  gap: 20px;
+  flex: 1;  
 }
 
 .router-link{
@@ -47,21 +53,6 @@ body{
   color: var(--link-color);
 }
 
-main{
-  padding: 20px; 
-
-  h2{
-    margin-bottom: 10px;
-  }
-
-  a{
-    color: black;
-  }
-
-  a:visited {
-    color: black; /* Mesma cor do link normal */
-  }
-} 
 
 .div-link-pagina{
   text-align: center;
@@ -79,12 +70,39 @@ main{
 .card {
   display: flex;
   box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
-  /* margin-bottom: 1rem; */
   border-radius: 10px;
   flex-direction: column;
-  width: 400px;
-  padding: 20px;
+  width: 300px;
+  padding: 20px; 
 
+  .div-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; 
+    padding: auto;
+    align-items: center;
+    
+    img, svg{
+      width: 100px;
+      height: auto;
+    }
+    span {
+      font-size: 1.5rem; 
+      font-weight: bold; 
+    }
+  }
+  
+}  
+
+.card-longo{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  gap: 2.5rem;
+  padding: 20px;
+  
   .div-info{
     display: flex;
     flex-direction: column;
@@ -101,18 +119,48 @@ main{
       font-weight: bold; 
     }
   }
-
-  .div-funcoes-card {
-    display: flex;
-    gap: 0.5rem; 
-    justify-content: flex-end;
-  } 
   
-}  
+}
+
+
+.card-usuario{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  gap: 1rem;
+  width: 200px;
+  padding: 20px;
+
+  .div-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; 
+    padding: auto;
+    align-items: center;
+    
+    img{
+      width: 150px;
+      height: auto;
+    }
+    span {
+      font-size: 1.5rem; 
+      font-weight: bold; 
+    }
+  }
+
+}
+
+.div-funcoes-card {
+  display: flex;
+  gap: 0.5rem; 
+  justify-content: flex-end;
+}
 
 form{
+  
   div{
-
     input{
       width: 100%; /* Ocupa 100% da largura da div */
       box-sizing: border-box; /* Inclui padding e borda no cálculo do width */
@@ -120,6 +168,14 @@ form{
   }
 }
 
+/* Inputs das telas */
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"], select, input[type="file"]{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+} 
 
 /* Corpo da pagina de login*/
 .main-login {
@@ -149,103 +205,24 @@ form{
 }
 
 
-/* Inputs das telas */
-input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"], select, input[type="file"]{
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-} 
-
-
 .div-btn{
   text-align: center; 
   
   button {
-      background-color: rgb(49, 48, 48);
-      padding: 10px;
-      width: 50vw;
-      color: #e4e2e2;
-      border-radius: 4px;
-      font-size: 14pt;
-      text-align: center;
-      cursor: pointer;
+    background-color: rgb(49, 48, 48);
+    padding: 10px;
+    width: 50vw;
+    color: #e4e2e2;
+    border-radius: 4px;
+    font-size: 14pt;
+    text-align: center;
+    cursor: pointer;
   }
   
   button:hover {
-      opacity: 1;
+    opacity: 1;
   }
 }
-
-.card-longo{
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  gap: 2.5rem;
-  padding: 20px;
- 
-
-  .div-info{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem; 
-    padding: auto;
-    align-items: center;
-    
-    img{
-        width: 150px;
-        height: auto;
-    }
-    span {
-      font-size: 1.5rem; 
-      font-weight: bold; 
-    }
-  }
-
-  .div-funcoes-card {
-    display: flex;
-    gap: 0.5rem; 
-    justify-content: flex-end;
-  } 
-}
-
-.card-usuario{
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  gap: 1rem;
-  width: 200px;
-  padding: 20px;
-
-  .div-info{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem; 
-    padding: auto;
-    align-items: center;
-    
-    img{
-        width: 150px;
-        height: auto;
-    }
-    span {
-      font-size: 1.5rem; 
-      font-weight: bold; 
-    }
-  }
-
-  .div-funcoes-card {
-    display: flex;
-    gap: 0.5rem; 
-    justify-content: flex-end;
-  } 
-}
-
 
 .div-flex-input {
   display: flex;
@@ -261,7 +238,6 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
   }
 }
 
-
 .div-filtro{
   display: flex;
   gap: 10px;
@@ -269,12 +245,12 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
   justify-items: center;
 
   img{
-      width: 36px;
-      height: auto;
+    width: 36px;
+    height: auto;
   }
 
   .div-logo-pesquisa{
-      margin-bottom: 15px;
+    margin-bottom: 15px;
   }
 }
 
@@ -287,16 +263,13 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 20px;
-
-  
+ 
   div{
     display: flex;
-
-    
     input[type="checkbox"]{
-        transform: scale(2.5);
-        border: 1px solid #ccc;
-        margin-right: 20px;
+      transform: scale(2.5);
+      border: 1px solid #ccc;
+      margin-right: 20px;
     }
   }
 }
@@ -312,74 +285,23 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
   }
 }
 
-aside{   
-  width: 110px; 
-  height: 100vh;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
-  color: rgb(228, 47, 47); 
-  padding: 20px;
-  
-  ul{
-      text-align: center;
-      li{
-          margin-bottom: 24px;
-          p{
-              color: var(--link-color);
-          }
-      }
-  }
-  
-  img{
-      width: 40px;
-  }
 
-}
-@media (max-width: 768px) {
-  body {
-    margin-bottom: 250px; /* Altura da sidebar */
-  }
-
-  aside {
-    background-color: #ECEBE2;
-    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70px; 
-    display: flex;
-    justify-content: center; 
-  }
-
-  aside ul {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    padding: 0;
-  }
-
-  aside a {
-      text-decoration: none;
-      color: white;
-      padding: 5px;
-  }
-
+@media (max-width: 768px) {  
   .card{
-      width: 250px;
-      height: auto;
+    width: 250px;
+    height: auto;
 
-      img{
-          width: 120px;
-          height: auto;
-      }
+    img{
+      width: 120px;
+      height: auto;
+    }
   
-      div{
-  
-          span {
-              font-size: 1rem; 
-              font-weight: bold; 
-          }
+    div{
+      span {
+        font-size: 1rem; 
+        font-weight: bold; 
       }
+    }
   }
 
 }

@@ -17,7 +17,7 @@
                 </li>
             </ul>
         </div>
-        <nav class="menu">
+        <!-- <nav class="menu">
             <router-link to="/" class="router-link">
                 <div class="div-logo">     
                     <img src="../assets/img/logo-sgtc.svg" alt="Imagem da logo SGTC" class="img-logo">
@@ -29,7 +29,7 @@
                     <img src="../assets/img/user-group.svg" alt="Foto de perfil do usuário" class="img-user">
                 </div>
             </router-link>
-        </nav>
+        </nav> -->
     </header>
 </template>
 
@@ -56,7 +56,7 @@
 
         .div-acessibilidade{
             padding: 0.2rem;
-            background-color: var(--div-acessibilidade-bg);
+            background-color: var(--bg-div-acessibilidade);
             
             ul{
                 display: flex;   

@@ -14,7 +14,7 @@
     <PluginAcessibility /><!-- Componente presente no layout padrao -->
     
     <router-view/><!-- Renderiza conteudo diferenciais das paginas -->
-    <
+    
   </div>
 </template>
 
