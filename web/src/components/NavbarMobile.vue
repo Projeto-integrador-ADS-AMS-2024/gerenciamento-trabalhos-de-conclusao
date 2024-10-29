@@ -17,6 +17,7 @@
         <div class="div-juncao-logo-navb">
             <img src="../assets/img/logo-sgtc.svg" alt="Imagem da logo SGTC" class="img-logo">
             <h1>SGTC</h1>
+            
         </div>
     </nav>
 </template> 
