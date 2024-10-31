@@ -2,8 +2,8 @@
     <header>
         <div class="div-acessibilidade">
             <ul>
-                <li>
-                    <div>
+                <li >
+                    <div id="menu-acessibilidade">
                         Alto Contraste
                         <input type="checkbox" v-model="toggle" id="toggle" name="toggle" class="toggle">
                         <label for="toggle"></label>
@@ -50,6 +50,14 @@
         }
     })
 
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === '1') {
+            window.location.href = '#menu-acessibilidade'; // Redireciona para a seção "Início"
+        }
+    });
+
+
 </script>
 
 <style scoped>
@@ -58,6 +66,7 @@
         flex-direction: column;
         
         .div-acessibilidade{
+            color: var(--font-color-acessibilidade);
             padding: 0.2rem;
             background-color: var(--bg-div-acessibilidade);
             
@@ -117,14 +126,14 @@
             }
         }
 
-        .menu{
+        /* .menu{
             background-color: var(--div-menu-bg);
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 1rem;
             box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);           
-        }
+        } */
     }
 
     .div-logo{
