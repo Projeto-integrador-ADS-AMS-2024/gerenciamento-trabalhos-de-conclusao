@@ -3,7 +3,7 @@
   import Header from './components/Header.vue'
   import Aside from './components/Aside.vue'
   import PluginAcessibility from './components/PluginAcessibility.vue'
-  import NavbarMobile from './components/NavBarMobile.vue';
+  import NavbarMobile from './components/NavbarMobile.vue';
   
 </script>
 
