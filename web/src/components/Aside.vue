@@ -115,15 +115,24 @@
 
         .router-link{
             border-radius: 10px;
-            background-color: #f1f1f1;
+            background-color: var(--bg-option-menu);
+            
+
+                svg{
+                    color: var(--font-color-p-menu);
+                }
         }
 
         .router-link-active{
-            color: white;
+            color: var(--font-color-p-menu);
             border-radius: 10px;
-            background-color: var(--bg-div-logo-aside);
+            background-color: var(--bg-option-menu-active);
             p{
                 color: var(--link-color-p);
+            }
+
+            svg{
+                color: white;
             }
         }
 
@@ -159,6 +168,7 @@
         background-color: #f1f1f1;
         border-radius: 10px;
         /* border: 1px solid black; */
+        background-color: var(--bg-footer-aside);
     }
 
     

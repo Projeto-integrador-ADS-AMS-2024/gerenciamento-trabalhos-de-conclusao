@@ -7,16 +7,38 @@
   --link-color: rgb(0, 0, 0);
   --font-logo: white;
   --link-color-p: white;
+
+  --font-color-h1-linkpag: #000000;
+  --font-color-label: #000000;
+
+  --bg-option-menu: #f1f1f1;
+  --bg-option-menu-active: #004D73;
+  --font-color-p-menu: #000000;
+
+  --bg-footer-aside: #f1f1f1;
+
+  --box-shadow-color: rgba(2, 2, 2, 0.3);
 }
 
 .dark-mode:root{
-  --bg-body:#242424;
-  --h1-link-color: rgb(255, 239, 9);;
+  --bg-body:#000000;
   --bg-div-acessibilidade:#2c2c2c;
-  --bg-div-logo-aside: #010d13;
-  --link-color: rgb(255, 239, 9);
-  --font-logo: rgb(255, 239, 9);
-  --link-color-p: rgb(255, 239, 9);
+  --bg-div-logo-aside: black;
+  --h1-link-color: #fff333;
+  --link-color: #fff333;
+  --font-logo: #fff333;
+  --link-color-p: #fff333;
+
+
+  --font-color-h1-linkpag: #ffffff;
+  --font-color-label: #ffffff;
+  --bg-option-menu: black;
+  --font-color-p-menu: #ffffff;
+  --bg-option-menu-active: #333333;
+
+  --bg-footer-aside: black;
+
+  --box-shadow-color: rgba(255, 255, 255, 0.3);
 }
 
 #app {
@@ -57,6 +79,7 @@ body{
 .div-link-pagina{
   text-align: center;
   padding: 1rem;
+  color: var(--font-color-h1-linkpag);
 }
 
 .div-cards{
@@ -69,11 +92,12 @@ body{
 
 .card {
   display: flex;
-  box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
+  box-shadow: 0px 4px 8px var(--box-shadow-color);
   border-radius: 10px;
   flex-direction: column;
   width: 300px;
   padding: 20px; 
+  
 
   .div-info{
     display: flex;
@@ -81,13 +105,15 @@ body{
     gap: 0.5rem; 
     padding: auto;
     align-items: center;
+    text-align: center;
     
     img, svg{
-      width: 100px;
+      width: 80px;
       height: auto;
+      color: var(--font-color-p-menu);
     }
     span {
-      font-size: 1.5rem; 
+      font-size: 1.2rem; 
       font-weight: bold; 
     }
   }
@@ -159,7 +185,9 @@ body{
 }
 
 form{
-  
+  label{
+    color: var(--font-color-label);
+  }
   div{
     input{
       width: 100%; /* Ocupa 100% da largura da div */
@@ -287,22 +315,6 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
 
 
 @media (max-width: 768px) {  
-  .card{
-    width: 250px;
-    height: auto;
-
-    img{
-      width: 120px;
-      height: auto;
-    }
-  
-    div{
-      span {
-        font-size: 1rem; 
-        font-weight: bold; 
-      }
-    }
-  }
 
 }
 

@@ -4,16 +4,19 @@
             <ul>
                 <li>
                     <div>
-                        Contraste
+                        Alto Contraste
                         <input type="checkbox" v-model="toggle" id="toggle" name="toggle" class="toggle">
                         <label for="toggle"></label>
                     </div>
                 </li>
                 <li>
-                    <div>acessibilidade 2</div>
+                    <div>Atalhos para conteudo</div>
                 </li>
                 <li>
-                    <div>acessibilidade 3</div>
+                    <div>Menu</div>
+                </li>
+                <li>
+                    <div>Busca</div>
                 </li>
             </ul>
         </div>
