@@ -62,13 +62,7 @@ body{
   font-family: Arial, sans-serif;
 }
 
-.div-conteudo-principal{
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  gap: 20px;
-  flex: 1;  
-}
+
 
 .router-link{
   text-decoration: none;
@@ -136,8 +130,8 @@ body{
     padding: auto;
     align-items: center;
     
-    img{
-        width: 150px;
+    img, svg{
+        width: 100px;
         height: auto;
     }
     span {
@@ -166,8 +160,8 @@ body{
     padding: auto;
     align-items: center;
     
-    img{
-      width: 150px;
+    img, svg{
+      width: 80px;
       height: auto;
     }
     span {
@@ -184,26 +178,36 @@ body{
   justify-content: flex-end;
 }
 
-form{
-  label{
-    color: var(--font-color-label);
-  }
-  div{
-    input{
-      width: 100%; /* Ocupa 100% da largura da div */
-      box-sizing: border-box; /* Inclui padding e borda no cálculo do width */
-    }
-  }
-}
-
-/* Inputs das telas */
-input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"], select, input[type="file"]{
+input[type="text"]{
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
-} 
+
+}
+
+form{
+  label{
+    color: var(--font-color-label);
+  }
+  div{
+    /* input{
+      width: 100%; /* Ocupa 100% da largura da div 
+      box-sizing: border-box; /* Inclui padding e borda no cálculo do width 
+    } */
+    /* Inputs das telas */
+    input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"], select, input[type="file"]{
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    } 
+  }
+}
+
+
 
 /* Corpo da pagina de login*/
 .main-login {
@@ -266,13 +270,24 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
   }
 }
 
+.div-conteudo-principal{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 20px;
+  flex: 1;  
+  
+}
+
+
 .div-filtro{
   display: flex;
+  width: 100%;
   gap: 10px;
   align-items: center;
   justify-items: center;
 
-  img{
+  img, svg{
     width: 36px;
     height: auto;
   }

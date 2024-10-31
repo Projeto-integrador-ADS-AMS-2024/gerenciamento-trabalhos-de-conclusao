@@ -56,12 +56,13 @@
     header{
         display: flex; 
         flex-direction: column;
-
+        
         .div-acessibilidade{
             padding: 0.2rem;
             background-color: var(--bg-div-acessibilidade);
             
             ul{
+                flex-wrap: wrap;
                 display: flex;   
                 justify-content: space-around;
                 align-items: center; 
@@ -81,7 +82,7 @@
 
             .toggle + label{
                 width: 32px;
-                height: 20px;
+                height: 24px;
                 background: lightgrey;
                 display: block;
                 position: relative;

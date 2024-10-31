@@ -24,7 +24,7 @@
 <style scoped>
   .container{
     display: flex; 
-    height: 100vh; 
+     
   }
 
 
