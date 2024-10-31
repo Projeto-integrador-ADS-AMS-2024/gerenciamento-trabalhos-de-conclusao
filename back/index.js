@@ -30,13 +30,13 @@ app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 // Inserção das tabelas no banco
-db.sync({ alter: true })
-    .then(() => {
-        console.log("Tabelas criadas");
-    })
-    .catch((error) => {
-        console.error("Erro ao sincronizar o banco de dados:", error);
-    });
+// db.sync({ alter: true })
+//     .then(() => {
+//         console.log("Tabelas criadas");
+//     })
+//     .catch((error) => {
+//         console.error("Erro ao sincronizar o banco de dados:", error);
+//     });
 
 app.use(cursoRoutes);
 app.use(disciplinaRoutes);

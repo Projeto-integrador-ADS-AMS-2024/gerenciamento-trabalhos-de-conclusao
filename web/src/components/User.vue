@@ -1,15 +1,18 @@
 <script setup>
 defineProps({
-    username: String
+    user: Object
 })
 
 </script>
 
 <template>
-<div>
-    <span>{{ username }}</span>
-</div>
+<tr>
+    <td>{{ user.ra || user.matricula }}</td>
+    <td>{{ user.nome }}</td>
+    <td>{{ user.cpf }}</td>
+    <td>{{ user.email }}</td>
+</tr>
 </template>
 
-<style>
+<style scoped>
 </style>

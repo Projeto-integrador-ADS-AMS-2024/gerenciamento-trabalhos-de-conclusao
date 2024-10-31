@@ -11,7 +11,9 @@ const fetchUsers = async () => {
     users.value = [...data.alunos, ...data.professores];
 }
 
-onMounted(fetchUsers)
+onMounted(async () => {
+    await fetchUsers();
+});
 
 </script>
 
@@ -34,7 +36,19 @@ onMounted(fetchUsers)
                 <span v-if="!users">Carregando usuários...</span>
                 
                 <div v-else class="users">
-                    <User v-for="user in users" :username="user.nome" />
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>RA</th>
+                                <th>Nome</th>
+                                <th>CPF</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <User v-for="user in users" :user="user" />
+                        </tbody>
+                    </table>
                 </div>
 
                 <!-- <router-link to="/cursoTal" id="cardLink" class="router-link">
@@ -62,6 +76,27 @@ onMounted(fetchUsers)
 </template>
 
 
-<style >
-    
+<style>
+.users {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+tr:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color .1s;
+}
+
+th:hover, td:hover {
+    cursor: default;
+}   
 </style>
