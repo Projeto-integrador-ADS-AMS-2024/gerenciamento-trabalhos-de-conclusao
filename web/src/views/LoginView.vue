@@ -1,8 +1,40 @@
 <script setup>
-const handleSubmit = (event) => {
+import { ref } from 'vue';
+import { useRoute } from 'vue-router';
+
+const router = useRoute();
+
+const errorRef = ref(null);
+
+const handleSubmit = async (event) => {
     event.preventDefault();
 
-    console.log("Enviado");
+    try {
+        const formData = new FormData(event.currentTarget);
+        const data = Object.fromEntries(formData);
+
+        const loginResponse = await fetch('http://localhost:3000/login', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'Application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        const loginData = await loginResponse.json();
+
+        if (loginData.error) {
+            errorRef.value.textContent = loginData.error;
+        } else {
+            const token = loginData.token;
+
+            localStorage.setItem('token', token);
+
+            location.replace(router.query.redirect);
+        }
+    } catch (err) {
+        console.log(err);
+    }
 }
 </script>
 
@@ -20,6 +52,8 @@ const handleSubmit = (event) => {
                 <label for="password">Senha</label>
                 <input type="password" id="password" name="password" required minlength="8">
             </div>
+
+            <span class="error" ref="errorRef"></span>
 
             <button type="submit">Entrar</button>
         </form>
@@ -55,5 +89,10 @@ button:hover {
     outline: 1px solid black;
 
     transition: .3s;
+}
+
+.error {
+    font-weight: bold;
+    color: red;
 }
 </style>

@@ -34,10 +34,10 @@ const routes = [
   { path: '/editarTurma', meta: { requiresAuth: true }, component: () => import('../views/turmas/EditarTurmas.vue') },
 
   // Rotas de disciplinas
-  { path: '/disciplinas', component: () => import('../views/disciplinas/Disciplinas.vue') },
-  { path: '/cadastrarDisciplinas', component: () => import('../views/disciplinas/CadastrarDisciplinas.vue') },
-  { path: '/visualizarDisciplinas', component: () => import('../views/disciplinas/VisualizarDisciplinas.vue') },
-  { path: '/editarDisciplina', component: () => import('../views/disciplinas/EditarDisciplinas.vue') },
+  { path: '/disciplinas', meta: { requiresAuth: true }, component: () => import('../views/disciplinas/Disciplinas.vue') },
+  { path: '/cadastrarDisciplinas', meta: { requiresAuth: true }, component: () => import('../views/disciplinas/CadastrarDisciplinas.vue') },
+  { path: '/visualizarDisciplinas', meta: { requiresAuth: true }, component: () => import('../views/disciplinas/VisualizarDisciplinas.vue') },
+  { path: '/editarDisciplina', meta: { requiresAuth: true }, component: () => import('../views/disciplinas/EditarDisciplinas.vue') },
   
 ]
 
