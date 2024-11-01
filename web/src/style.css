@@ -62,13 +62,10 @@ body{
   font-family: Arial, sans-serif;
 }
 
-
-
 .router-link{
   text-decoration: none;
   color: var(--link-color);
 }
-
 
 .div-link-pagina{
   text-align: center;
@@ -93,7 +90,7 @@ body{
   padding: 20px; 
   
 
-  .div-info{
+  .div-info {
     display: flex;
     flex-direction: column;
     gap: 0.5rem; 
@@ -101,11 +98,12 @@ body{
     align-items: center;
     text-align: center;
     
-    img, svg{
+    img, svg {
       width: 80px;
       height: auto;
       color: var(--font-color-p-menu);
     }
+
     span {
       font-size: 1.2rem; 
       font-weight: bold; 
@@ -114,7 +112,7 @@ body{
   
 }  
 
-.card-longo{
+.card-longo {
   display: flex;
   flex-direction: column;
   box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
@@ -123,17 +121,18 @@ body{
   gap: 2.5rem;
   padding: 20px;
   
-  .div-info{
+  .div-info {
     display: flex;
     flex-direction: column;
     gap: 0.5rem; 
     padding: auto;
     align-items: center;
     
-    img, svg{
+    img, svg {
         width: 100px;
         height: auto;
     }
+
     span {
       font-size: 1.5rem; 
       font-weight: bold; 
@@ -143,7 +142,7 @@ body{
 }
 
 
-.card-usuario{
+.card-usuario {
   display: flex;
   flex-direction: column;
   box-shadow: 0px 4px 8px rgba(2, 2, 2, 0.3);
@@ -153,17 +152,18 @@ body{
   width: 200px;
   padding: 20px;
 
-  .div-info{
+  .div-info {
     display: flex;
     flex-direction: column;
     gap: 0.5rem; 
     padding: auto;
     align-items: center;
     
-    img, svg{
+    img, svg {
       width: 80px;
       height: auto;
     }
+
     span {
       font-size: 1.5rem; 
       font-weight: bold; 
@@ -178,7 +178,7 @@ body{
   justify-content: flex-end;
 }
 
-input[type="text"]{
+input[type="text"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -187,17 +187,18 @@ input[type="text"]{
 
 }
 
-form{
-  label{
+form {
+  label {
     color: var(--font-color-label);
   }
-  div{
+
+  div {
     /* input{
       width: 100%; /* Ocupa 100% da largura da div 
       box-sizing: border-box; /* Inclui padding e borda no cálculo do width 
     } */
     /* Inputs das telas */
-    input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"], select, input[type="file"]{
+    input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"], select, input[type="file"] {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
@@ -206,8 +207,6 @@ form{
     } 
   }
 }
-
-
 
 /* Corpo da pagina de login*/
 .main-login {
@@ -219,13 +218,13 @@ form{
   flex-direction: column;
 
   /* Div que une a logo e o nome do sistema */
-  .div-logo-login{
+  .div-logo-login {
       display: flex;
       text-align: center;
       align-items: center;
       justify-content: center;
       
-      h1{
+      h1 {
           padding-bottom: 10px;
       }
 
@@ -237,7 +236,7 @@ form{
 }
 
 
-.div-btn{
+.div-btn {
   text-align: center; 
   
   button {
@@ -270,7 +269,7 @@ form{
   }
 }
 
-.div-conteudo-principal{
+.div-conteudo-principal {
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -280,26 +279,26 @@ form{
 }
 
 
-.div-filtro{
+.div-filtro {
   display: flex;
   width: 100%;
   gap: 10px;
   align-items: center;
   justify-items: center;
 
-  img, svg{
+  img, svg {
     width: 36px;
     height: auto;
   }
 
-  .div-logo-pesquisa{
+  .div-logo-pesquisa {
     margin-bottom: 15px;
   }
 }
 
 
 /* Cadastrar Curso */
-.col-checkbox{
+.col-checkbox {
   display: flex;
   flex-wrap: wrap; /* Permite que os elementos quebrem de linha */
   gap: 20px; /* Espaço entre os campos */
@@ -307,9 +306,9 @@ form{
   margin-left: 10px;
   margin-bottom: 20px;
  
-  div{
+  div {
     display: flex;
-    input[type="checkbox"]{
+    input[type="checkbox"] {
       transform: scale(2.5);
       border: 1px solid #ccc;
       margin-right: 20px;
@@ -318,11 +317,11 @@ form{
 }
 
 /* Curso Especifico */
-.opcoes-curso{
+.opcoes-curso {
   display: flex;
   justify-content: space-between;
   
-  img{
+  img {
       width: 5px;
       height: auto;
   }

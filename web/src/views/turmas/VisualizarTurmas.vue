@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="div-cards">
-                <router-link to="cursoTal.html" id="cardLink" class="router-link">
+                <!-- <router-link to="/cursoTal" id="cardLink" class="router-link">
                     <div class="card">
                         <div class="div-funcoes-card">
                             <button>
@@ -28,7 +28,7 @@
                             <span>Turma 1</span>                    
                         </div>
                     </div>
-                </router-link>     
+                </router-link>      -->
             </div>
         </div>
     </div>
