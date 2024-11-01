@@ -12,8 +12,8 @@ const turmaRoutes = require("./routes/turma.js");
 const professorRoutes = require("./routes/professor.js");
 const alunoRoutes = require("./routes/aluno.js");
 const usuarioRoutes = require("./routes/usuario.js");
+const loginRoutes = require("./routes/login.js");
 const db = require("./db/connection.js");
-const hashPassword = require("./utils/hashPassword.js");
 
 const PORT = process.env.PORT || 3000;
 
@@ -31,13 +31,13 @@ app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 // Inserção das tabelas no banco
-// db.sync({ alter: true })
-//     .then(() => {
-//         console.log("Tabelas criadas");
-//     })
-//     .catch((error) => {
-//         console.error("Erro ao sincronizar o banco de dados:", error);
-//     });
+db.sync({ alter: true })
+    .then(() => {
+        console.log("Tabelas criadas");
+    })
+    .catch((error) => {
+        console.error("Erro ao sincronizar o banco de dados:", error);
+    });
 
 app.use(cursoRoutes);
 app.use(disciplinaRoutes);
@@ -45,6 +45,7 @@ app.use(turmaRoutes);
 app.use(alunoRoutes);
 app.use(professorRoutes);
 app.use(usuarioRoutes);
+app.use(loginRoutes);
 
 app.get('/', (req, res) => {
     return res.render('home');
