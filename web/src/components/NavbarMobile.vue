@@ -157,7 +157,7 @@
         justify-content: space-between;
         align-items: center ;
         left: 0;
-        bottom: 0;
+        top: 0;
 
         
 
@@ -172,7 +172,7 @@
         nav{
             width: 100%;
             display: flex;
-            position: fixed;
+            position: static;
         }
 
         .v-btn{

@@ -22,7 +22,7 @@
   --box-shadow-color: rgba(2, 2, 2, 0.3);
 }
 
-.dark-mode:root{
+/* .dark-mode:root{
   --bg-body:#000000;
   --bg-div-acessibilidade:#2c2c2c;
   --font-color-acessibilidade: #ffffff;
@@ -42,7 +42,7 @@
   --bg-footer-aside: black;
 
   --box-shadow-color: rgba(255, 255, 255, 0.3);
-}
+} */
 
 #app {
   padding: 0;
