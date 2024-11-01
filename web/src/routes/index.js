@@ -1,6 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 
+const isAuth = async () => {
+  const token = localStorage.getItem('token');
+
+  try {
+    const res = await fetch('http://localhost:3000/login', {
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    
+    const data = await res.json();
+
+    return data.user;
+  } catch(err) {
+    console.log(err);
+  }
+}
+
 // Rotas do sistema
 const routes = [
   { path: '/', meta: { requiresAuth: true }, component: Home },// Rotas inicial (HOME->usuarios)
@@ -11,6 +30,12 @@ const routes = [
     meta: { 
       hideDefaultComponents: true, // Não mostrar o <RoterView> do App.vue
       requiresAuth: false 
+    },
+    beforeEnter: async () => {
+      const user = await isAuth();
+      if (user) {
+        location.replace('/');
+      }
     },
     component: () => import('../views/LoginView.vue')
   },
@@ -46,10 +71,10 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, from) => {
-  const isAuth = localStorage.getItem('token');
+router.beforeEach(async (to, from) => {
+  const user = await isAuth();
 
-  if (to.meta.requiresAuth && !isAuth && to.name !== 'login') {
+  if (to.meta.requiresAuth && !user && to.name !== 'login') {
     return {
       path: '/login',
 
