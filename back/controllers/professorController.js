@@ -1,4 +1,5 @@
 const Professor = require("../models/Professor.js");
+const hashPassword = require('../utils/hashPassword.js');
 
 // Criar um novo professor (Create)
 const createProfessor = async (req, res) => {
@@ -17,7 +18,7 @@ const createProfessor = async (req, res) => {
             papel,
             cpf,
             email,
-            senha,
+            senha: hashPassword(senha),
             dataNascimento
         });
 

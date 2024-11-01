@@ -1,4 +1,5 @@
 const Aluno = require("../models/Aluno.js");
+const hashPassword = require("../utils/hashPassword.js");
 
 // Criar um novo aluno (Create)
 const createAluno = async (req, res) => {
@@ -16,7 +17,7 @@ const createAluno = async (req, res) => {
             nome,
             cpf,
             email,
-            senha,
+            senha: hashPassword(senha),
             dataNascimento,
             turmaId
         });

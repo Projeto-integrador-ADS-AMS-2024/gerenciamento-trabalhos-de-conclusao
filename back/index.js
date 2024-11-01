@@ -13,6 +13,7 @@ const professorRoutes = require("./routes/professor.js");
 const alunoRoutes = require("./routes/aluno.js");
 const usuarioRoutes = require("./routes/usuario.js");
 const db = require("./db/connection.js");
+const hashPassword = require("./utils/hashPassword.js");
 
 const PORT = process.env.PORT || 3000;
 
