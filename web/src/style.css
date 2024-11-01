@@ -3,6 +3,7 @@
   --bg-body:#f8f7f4;
   --bg-div-acessibilidade:#afafaf;
   --bg-div-logo-aside: #004D73;
+  --bg-div-login:#004D73;
   --h1-link-color: white;
   --link-color: rgb(0, 0, 0);
   --font-logo: white;
@@ -20,7 +21,7 @@
   --box-shadow-color: rgba(2, 2, 2, 0.3);
 }
 
-.dark-mode:root{
+/* .dark-mode:root{
   --bg-body:#000000;
   --bg-div-acessibilidade:#2c2c2c;
   --bg-div-logo-aside: black;
@@ -39,7 +40,7 @@
   --bg-footer-aside: black;
 
   --box-shadow-color: rgba(255, 255, 255, 0.3);
-}
+} */
 
 #app {
   padding: 0;
@@ -328,9 +329,6 @@ form {
 }
 
 
-@media (max-width: 768px) {  
-
-}
 
 .open{
   display: flex;

@@ -40,32 +40,78 @@ const handleSubmit = async (event) => {
 
 <template>
     <div class="login-container">
-        <h1>Login</h1>
-
-        <form @submit="handleSubmit">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+        <div class="div-logo-login">
+            <div>     
+                <img src="../assets/img/logo-sgtc.svg" alt="Imagem da logo SGTC" class="img-logo">
+                <h1>SGTC</h1>   
             </div>
-
-            <div class="form-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" required minlength="8">
-            </div>
-
-            <span class="error" ref="errorRef"></span>
-
-            <button type="submit">Entrar</button>
-        </form>
+        </div>
+        <div class="div-form-login">
+            <form @submit="handleSubmit">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required minlength="8">
+                </div>
+    
+                <span class="error" ref="errorRef"></span>
+    
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
     </div>
 </template>
 
 <style scoped>
 .login-container {
     position: absolute;
+    
+    display: flex;
     top: 50%;
     left: 50%;
+    height: 55vh;
     transform: translate(-50%, -50%);
+}
+
+.div-logo-login{
+    background-color: var(--bg-div-login);
+    border-radius: 15px;
+    width: 400px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    
+    
+    div{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 400px;
+        
+        img{
+            width: 170px;
+        }
+
+        h1{
+            color: white;
+            letter-spacing: 4px;
+            font-size: 24pt;
+        }
+    }
+    
+}
+
+.div-form-login{
+    background-color: #f1f1f1;
+    border-radius: 15px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -95,4 +141,11 @@ button:hover {
     font-weight: bold;
     color: red;
 }
+
+@media (max-width: 900px) {  
+    .login-container{
+        flex-direction: column;
+    }
+}
+
 </style>

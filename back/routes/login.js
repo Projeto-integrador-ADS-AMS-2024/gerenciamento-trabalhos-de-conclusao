@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const Professor = require('../models/Professor');
 const Aluno = require('../models/Aluno');
-const SECRET_KEY = "sua_chave_secreta"; 
+const SECRET_KEY = process.env.SECRET_KEY; 
 
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
