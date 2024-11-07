@@ -23,12 +23,12 @@ onMounted(async () => {
             <h2>Ferramentas > <router-link to="/" class="router-link">Usuários</router-link>  > <router-link to="/visualizarUsuarios" class="router-link">Visualizar Usuários</router-link></h2>
         </div>
         <div>
-            <div class="div-filtro">
+            <!-- <div class="div-filtro">
                 <input type="text" id="filtro_nome" name="filtro_nome" class="inpt-filtro" placeholder="Filtrar Usuário" ><br>
                 <div class="div-logo-pesquisa">
                     <img src="../../assets/img/icons8-pesquisar.svg" />
                 </div>
-            </div>
+            </div> -->
             
             <div class="div-cards">
                 <!-- listar usuarios -->
