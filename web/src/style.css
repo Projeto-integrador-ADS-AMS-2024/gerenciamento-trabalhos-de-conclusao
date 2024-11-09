@@ -2,6 +2,8 @@
 :root{
   --bg-body:#f8f7f4;
   --bg-div-acessibilidade:#afafaf;
+  --font-color-acessibilidade: #000000;
+
   --bg-div-logo-aside: #004D73;
   --bg-div-login:#004D73;
   --h1-link-color: white;
@@ -24,6 +26,7 @@
 /* .dark-mode:root{
   --bg-body:#000000;
   --bg-div-acessibilidade:#2c2c2c;
+  --font-color-acessibilidade: #ffffff;
   --bg-div-logo-aside: black;
   --h1-link-color: #fff333;
   --link-color: #fff333;
@@ -292,7 +295,7 @@ form {
     height: auto;
   }
 
-  .div-logo-pesquisa {
+  .div-icon-pesquisa{
     margin-bottom: 15px;
   }
 }

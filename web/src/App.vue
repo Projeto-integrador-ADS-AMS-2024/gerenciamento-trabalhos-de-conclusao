@@ -1,12 +1,12 @@
 <script setup>
-// Importação dos componentes presentes no layout padrao
-import { useRoute } from 'vue-router';
-import Aside from './components/Aside.vue';
-import NavbarMobile from './components/NavbarMobile.vue';
-import PluginAcessibility from './components/PluginAcessibility.vue';
+  // Importação dos componentes presentes no layout padrao
+  import { useRoute } from 'vue-router';
 
-
-const route = useRoute();
+  import Aside from './components/Aside.vue'
+  import PluginAcessibility from './components/PluginAcessibility.vue'
+  import NavbarMobile from './components/NavbarMobile.vue';
+  
+  const route = useRoute();
 </script>
 
 <template>
