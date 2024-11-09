@@ -1,41 +1,31 @@
 <script setup>
-import { onMounted } from 'vue';
-import Button from '../../components/forms/Button.vue'
+    import { ref } from 'vue';
 
- 
-onMounted(() => {
-    const areaAtuacao = document.getElementById("areaAtuacao");
-    const camposComuns = document.getElementById("campos-comuns");
-    const camposProfessor = document.getElementById("campos-professor");
-    const camposAluno = document.getElementById("campos-aluno");
+    import Button from '../../components/forms/Button.vue';
+    import TextInput from '../../components/forms/TextInput.vue';
+    import SelectInput from '@/components/forms/SelectInput.vue';
 
-    areaAtuacao.addEventListener('change', function() {
-        // Exibe os campos comuns para ambas as posições
-        camposComuns.style.display = "block"; 
+    const duracaoSelected = ref('');
+    const duracaoOptions = ref([
+        { text: '1', },
+        { text: '2', },
+        { text: '3', },
+        { text: '4', },
+        { text: '5', },
+        { text: '6', },
+        { text: '7', },
+        { text: '8', },
+        { text: '9', },
+        { text: '10', },
+        { text: '11', },
+        { text: '12', }, 
+    ]);
 
-        // Limpa a exibição de campos específicos
-        camposAluno.style.display = "none";
-        camposProfessor.style.display = "none";
-
-        const papel = document.getElementById("papel")
-        const ra = document.getElementById("ra")
-        const turma = document.getElementById("turma")
-        
-        papel.removeAttribute("disabled")
-        ra.removeAttribute("disabled")
-        turma.removeAttribute("disabled")
-
-        // Exibe os campos específicos de acordo com a posição selecionada
-        if(areaAtuacao.value === "Aluno"){
-            camposAluno.style.display = "block";
-            papel.setAttribute("disabled", "");
-        } else if(areaAtuacao.value === "Professor"){
-            camposProfessor.style.display = "block";
-            ra.setAttribute("disabled", "");
-            turma.setAttribute("disabled", "");              
-        }
-    });
-})
+    const tipoPeriodoSelected = ref('')
+    const tipoPeriodoOptions = ([
+        {text: 'Meses', value:'semestral'},
+        {text: 'Anos', value:'anual'},
+    ]);
 </script>
 
 <template>
@@ -46,25 +36,41 @@ onMounted(() => {
         <div>        
             <form>
                 <div>
-                    <label for="nome">Nome do Curso</label><br>
-                    <input type="text" id="nome" name="nome" placeholder="Insira o nome" required><br>
+                    <TextInput
+                        label="Nome do Curso:"
+                        inputName="nome"
+                        inputId="nome"
+                        v-model="nome"
+                        ariaLabel="Digite o nome do curso"
+                    />
                 </div>
-            
-                <div>
-                    <label for="duracao">Duração do Curso</label>                   
-                    <div class="div-flex-input">
-                        <div>
-                            <input type="number" id="duracao" name="duracao" min="0" max="10" required>
-                        </div>
-                        <div>
-                            <select name="tipoPeriodo" id="tipoPeriodo" required>
-                                <option value="" disabled selected>Selecione a Duração do Curso</option>   
-                                <option value="Semestral">Meses</option>
-                                <option value="Anual">Anos</option>
-                            </select>
-                        </div>
+
+                <div class="div-flex-input">
+                    <div>
+                        <SelectInput 
+                            label="Duração do Curso:"
+                            inputName="duracao"
+                            inputId="duracao"
+                            v-model="duracaoSelected"
+                            :options="duracaoOptions"
+                            ariaLabel="Duração do curso"
+                        />
+                    </div>
+                
+                    <div>
+                        <SelectInput 
+                            label=" a"
+                            inputName="tipoPeriodo"
+                            inputId="tipoPeriodo"
+                            v-model="tipoPeriodoSelected"
+                            :options="tipoPeriodoOptions"
+                            ariaLabel="Periodo do curso"
+                        />
                     </div>
                 </div>
+
+                
+                
             
                 <div>
                     <label for="coordenador">Coordenador do Curso</label><br>
@@ -93,8 +99,8 @@ onMounted(() => {
                             <label>Noturno</label>         
                         </div>                           
                     </div>
-                </div>
-                <Button />        
+                </div>    
+                <Button>Cadastrar Curso</Button>                       
             </form>
         </div>
     </div>
@@ -102,5 +108,12 @@ onMounted(() => {
 
 
 <style >
-    
+    .div-flex-input{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        div{
+            width: 100%;
+        }
+    }
 </style>

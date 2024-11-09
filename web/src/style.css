@@ -182,35 +182,15 @@ body{
   justify-content: flex-end;
 }
 
-input[type="text"] {
+/* input[type="text"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
 
-}
+} */
 
-form {
-  label {
-    color: var(--font-color-label);
-  }
-
-  div {
-    /* input{
-      width: 100%; /* Ocupa 100% da largura da div 
-      box-sizing: border-box; /* Inclui padding e borda no cálculo do width 
-    } */
-    /* Inputs das telas */
-    input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"], select, input[type="file"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    } 
-  }
-}
 
 /* Corpo da pagina de login*/
 .main-login {
@@ -241,7 +221,7 @@ form {
 
 
 
-
+/* 
 .div-flex-input {
   display: flex;
   gap: 10px;
@@ -249,12 +229,12 @@ form {
   
   div {
       flex: 1; /* Faz com que cada campo ocupe metade da linha */
-  }
   
-  input, select {
+  
+  /* input, select {
       width: 100%; 
-  }
-}
+  } */
+/* } */ 
 
 .div-conteudo-principal {
   display: flex;
@@ -284,24 +264,24 @@ form {
 }
 
 
-/* Cadastrar Curso */
+/* Cadastrar Curso
 .col-checkbox {
   display: flex;
   flex-wrap: wrap; /* Permite que os elementos quebrem de linha */
-  gap: 20px; /* Espaço entre os campos */
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-bottom: 20px;
+  /* gap: 20px; /* Espaço entre os campos */
+  /* margin-top: 10px; */
+  /* margin-left: 10px; */
+  /* margin-bottom: 20px; */
  
-  div {
+  /* div {
     display: flex;
     input[type="checkbox"] {
       transform: scale(2.5);
       border: 1px solid #ccc;
-      margin-right: 20px;
-    }
-  }
-}
+      margin-right: 20px; */
+    /* } */
+  /* } */ 
+/* }; */
 
 /* Curso Especifico */
 .opcoes-curso {
