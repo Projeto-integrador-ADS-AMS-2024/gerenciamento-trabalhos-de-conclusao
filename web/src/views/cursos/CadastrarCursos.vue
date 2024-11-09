@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted } from 'vue';
+import Button from '../../components/forms/Button.vue'
 
  
 onMounted(() => {
@@ -93,9 +94,7 @@ onMounted(() => {
                         </div>                           
                     </div>
                 </div>
-                <div class="div-btn">
-                    <button type="submit">Cadastrar Curso</button>
-                </div>
+                <Button />        
             </form>
         </div>
     </div>

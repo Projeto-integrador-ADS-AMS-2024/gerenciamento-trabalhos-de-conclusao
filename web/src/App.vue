@@ -2,9 +2,9 @@
   // Importação dos componentes presentes no layout padrao
   import { useRoute } from 'vue-router';
 
-  import Aside from './components/Aside.vue'
+  import Aside from './components/menus/Aside.vue'
   import PluginAcessibility from './components/PluginAcessibility.vue'
-  import NavbarMobile from './components/NavbarMobile.vue';  
+  import NavbarMobile from './components/menus/NavbarMobile.vue';  
   const route = useRoute();
 </script>
 
