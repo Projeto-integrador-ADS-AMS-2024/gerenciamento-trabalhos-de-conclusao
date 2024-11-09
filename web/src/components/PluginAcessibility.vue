@@ -33,7 +33,3 @@
     
 </style>
 
-<!-- 
-// <script src="https://cdn.userway.org/widget.js" data-account="EIXt1YrjVs"></script>
-
-//  -->

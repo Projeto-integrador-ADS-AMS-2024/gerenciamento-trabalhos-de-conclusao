@@ -17,13 +17,12 @@
     <PluginAcessibility  /> <!-- Componente presente no layout padrao -->
     
     <router-view/> <!-- Renderiza conteudo diferenciais das paginas -->
-    
   </div>
 </template>
 
 
 <style scoped>
-.container {
-  display: flex;  
-}
+  .container{
+    display: flex; 
+  }
 </style>
