@@ -4,13 +4,11 @@
 
   import Aside from './components/Aside.vue'
   import PluginAcessibility from './components/PluginAcessibility.vue'
-  import NavbarMobile from './components/NavbarMobile.vue';
-  
+  import NavbarMobile from './components/NavbarMobile.vue';  
   const route = useRoute();
 </script>
 
 <template>
-
   <NavbarMobile v-if="!route.meta.hideDefaultComponents"/>
   <div class="container">
     <Aside v-if="!route.meta.hideDefaultComponents" /> <!-- Componente presente no layout padrao -->

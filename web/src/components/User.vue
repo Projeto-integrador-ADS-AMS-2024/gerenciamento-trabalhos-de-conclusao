@@ -3,7 +3,6 @@ defineProps({
     user: Object
 })
 </script>
-
 <template>
     <tr>
         <td>{{ user.ra || user.matricula }}</td>
