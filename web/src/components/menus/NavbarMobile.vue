@@ -1,24 +1,4 @@
-<template >
-    <!-- <div class="div-icon-menu">
-        <button @click="toggleSidebar">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
-            </svg>
-        </button>
-    </div>
-    
-    <div v-if="isSidebarOpen" class="sidebar">        
-        <button @click="toggleSidebar" class="close-button">Fechar</button>
-    </div>
-
-    <div v-if="isSidebarOpen"   class="overlay" @click="toggleSidebar"></div> 
-        
-    <div class="div-juncao-logo-navb">
-        <img src="../assets/img/logo-sgtc.svg" alt="Imagem da logo SGTC" class="img-logo">
-        <h1>SGTC</h1>
-
-    </div> -->
-
+<template>
     <nav>
         <div >
             <v-speed-dial
@@ -94,10 +74,8 @@
         <div>
             <h1>SGTC</h1>
         </div>
-
     </nav>
     
-
 </template> 
 
 <script>
@@ -159,8 +137,6 @@
         left: 0;
         top: 0;
 
-        
-
         div{
             h1{
                 color: white;
@@ -191,85 +167,4 @@
             }
         }
     } 
-
-    /* nav{
-        background-color: var(--bg-div-logo-aside);
-        padding: 20px;
-        display: none;
-        justify-content: space-between;
-        align-items: center ;
-
-        img{
-            width: 80px;
-        }
-
-        h1{
-            color: white;
-        }
-
-        .div-juncao-logo-navb{
-            display: flex;
-            align-items: center ;
-            gap: 10px;
-        }
-
-        .div-icon-menu{
-            button{
-                border: none;
-                cursor: pointer;
-                background-color: transparent;
-                width: 60px;
-                color: var(--font-logo);
-            }
-        }
-    } */
-
-    /* @media (max-width: 700px) {  
-        nav{
-            display: flex;
-        }
-    } */
-
-    
 </style>
-<!-- 
-
-<style >
-    nav{
-        background-color: var(--bg-div-logo-aside);
-        padding: 20px;
-        display: none;
-        justify-content: space-between;
-        align-items: center ;
-
-        img{
-            width: 80px;
-        }
-
-        h1{
-            color: white;
-        }
-
-        .div-juncao-logo-navb{
-            display: flex;
-            align-items: center ;
-            gap: 10px;
-        }
-
-        .div-icon-menu{
-            button{
-                border: none;
-                cursor: pointer;
-                background-color: transparent;
-                width: 60px;
-                color: var(--font-logo);
-            }
-        }
-    }
-
-    @media (max-width: 700px) {  
-        nav{
-            display: flex;
-        }
-    }
-</style> -->

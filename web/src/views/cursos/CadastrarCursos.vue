@@ -1,31 +1,21 @@
-<script setup>
-    import { ref } from 'vue';
-
+<script>
     import Button from '../../components/forms/Button.vue';
+    import CheckBoxInput from '@/components/forms/CheckBoxInput.vue';
     import TextInput from '../../components/forms/TextInput.vue';
     import SelectInput from '@/components/forms/SelectInput.vue';
 
-    const duracaoSelected = ref('');
-    const duracaoOptions = ref([
-        { text: '1', },
-        { text: '2', },
-        { text: '3', },
-        { text: '4', },
-        { text: '5', },
-        { text: '6', },
-        { text: '7', },
-        { text: '8', },
-        { text: '9', },
-        { text: '10', },
-        { text: '11', },
-        { text: '12', }, 
-    ]);
+    export default{
+        name: 'FormInputs',
+        components: { Button, TextInput, SelectInput, CheckBoxInput},
+        data(){
+            return{
+                duracao: [1,2,3,4,5,6,7,8,9,10,11,12],
+                tipoPeriodo: ['Ano(s)', 'Mese(s)'],
+                coordenadores: ['Jose', 'Jelton']
+            }
+        }
+    }
 
-    const tipoPeriodoSelected = ref('')
-    const tipoPeriodoOptions = ([
-        {text: 'Meses', value:'semestral'},
-        {text: 'Anos', value:'anual'},
-    ]);
 </script>
 
 <template>
@@ -37,69 +27,58 @@
             <form>
                 <div>
                     <TextInput
-                        label="Nome do Curso:"
-                        inputName="nome"
-                        inputId="nome"
-                        v-model="nome"
-                        ariaLabel="Digite o nome do curso"
+                        id="nome"
+                        label="Nome do Curso"
+                        placeholder="Insira o nome do curso"            
                     />
                 </div>
-
+                
                 <div class="div-flex-input">
                     <div>
                         <SelectInput 
-                            label="Duração do Curso:"
-                            inputName="duracao"
-                            inputId="duracao"
-                            v-model="duracaoSelected"
-                            :options="duracaoOptions"
-                            ariaLabel="Duração do curso"
+                            id="duracao"
+                            label="Duração do Curso"
+                            :option=duracao
+
                         />
                     </div>
-                
                     <div>
                         <SelectInput 
-                            label=" a"
-                            inputName="tipoPeriodo"
-                            inputId="tipoPeriodo"
-                            v-model="tipoPeriodoSelected"
-                            :options="tipoPeriodoOptions"
-                            ariaLabel="Periodo do curso"
+                            id="duracao"
+                            :option=tipoPeriodo
                         />
                     </div>
                 </div>
 
-                
-                
-            
                 <div>
-                    <label for="coordenador">Coordenador do Curso</label><br>
-                    <select name="coodernador" id="coodernador" required>
-                        <option value="" disabled selected>Selecione o Coordenador</option>   
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                    </select>
+                    <SelectInput 
+                        id="coodernador"
+                        label="Coordenador do Curso"
+                        :option=coordenadores
+
+                    />
                 </div>
-            
-                <div>
-                    <label>Período do Curso</label><br>
-                    <div class="col-checkbox">
-                        <div>
-                            <input type="checkbox" name="matutino" value="matutino"> 
-                            <label>Matutino</label>
-                        </div>
-            
-                        <div>
-                            <input type="checkbox" name="vespertino" value="vespertino">  
-                            <label>Vespertino</label>  
-                        </div>
-            
-                        <div>
-                            <input type="checkbox" name="noturno" value="noturno"> 
-                            <label>Noturno</label>         
-                        </div>                           
+
+                <div class="div-flex-checkbox">
+                    <div>
+                        <CheckBoxInput 
+                            id="matutino"
+                            label="Matutino"
+                        />
                     </div>
-                </div>    
+                    <div>
+                        <CheckBoxInput 
+                            id="vespertino"
+                            label="Vespertino"
+                        />
+                    </div>
+                    <div>
+                        <CheckBoxInput 
+                            id="noturno"
+                            label="Noturno"
+                        />
+                    </div>
+                </div>
                 <Button>Cadastrar Curso</Button>                       
             </form>
         </div>
@@ -108,6 +87,7 @@
 
 
 <style >
+
     .div-flex-input{
         display: flex;
         justify-content: space-between;
@@ -115,5 +95,10 @@
         div{
             width: 100%;
         }
+    }
+
+    .div-flex-checkbox{
+        display: flex;
+        gap: 20px;
     }
 </style>

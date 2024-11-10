@@ -1,25 +1,34 @@
 <template>
     <div>
-        <label :for="inputId">{{ label }}</label>
-        <input
-            type="text"
-            :name="inputName"
-            :id="inputId"
-            :aria-label="ariaLabel"
-            :value="modelValue"
-            @input="$emit('update:modelValue', $event.target.value)"
+        <label :for="id">{{ label }}</label>
+        <input :name="id" :id="id" :placeholder="placeholder"
         />
     </div>
 </template>
   
-<script setup>
-    defineProps({
-        label: String,
-        inputName: String,
-        inputId: String,
-        ariaLabel: String,
-        modelValue: String, // Aqui recebemos o valor através do v-model
-    });
+<script>
+    export default {
+        props:{
+            id: {
+                type: String,
+                default: 'id_text'
+            },
+            label: {
+                type: String,
+                default: 'Nome Campo'
+            },
+            placeholder:{
+                type: String,
+                default: 'Placeholder do campo'
+            }
+        }
+    }
+    // const props = defineProps({
+    //     label: String,
+    //     inputName: String,
+    //     inputId: String,
+    //     modelValue: String, // Aqui recebemos o valor através do v-model
+    // });
 </script>
   
   
@@ -32,6 +41,9 @@
         font-size: 14px;
         width: 100%;
         margin-top: 4px;
+        color: black;
+        margin-bottom: 20px;
     }
+    
 </style>
   

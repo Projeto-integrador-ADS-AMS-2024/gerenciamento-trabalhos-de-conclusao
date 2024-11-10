@@ -4,8 +4,8 @@
   --bg-div-acessibilidade:#afafaf;
   --font-color-acessibilidade: #000000;
 
-  --bg-div-logo-aside: #004D73;
-  --bg-div-login:#004D73;
+  --bg-div-logo-aside: #0F62FE;
+  --bg-div-login:#0F62FE;
   --h1-link-color: white;
   --link-color: rgb(0, 0, 0);
   --font-logo: white;
@@ -15,7 +15,7 @@
   --font-color-label: #000000;
 
   --bg-option-menu: #f1f1f1;
-  --bg-option-menu-active: #004D73;
+  --bg-option-menu-active: #0F62FE;
   --font-color-p-menu: #000000;
 
   --bg-footer-aside: #f1f1f1;
@@ -77,44 +77,7 @@ body{
   color: var(--font-color-h1-linkpag);
 }
 
-.div-cards{
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.card {
-  display: flex;
-  box-shadow: 0px 4px 8px var(--box-shadow-color);
-  border-radius: 10px;
-  flex-direction: column;
-  width: 300px;
-  padding: 20px; 
-  
-
-  .div-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem; 
-    padding: auto;
-    align-items: center;
-    text-align: center;
-    
-    img, svg {
-      width: 80px;
-      height: auto;
-      color: var(--font-color-p-menu);
-    }
-
-    span {
-      font-size: 1.2rem; 
-      font-weight: bold; 
-    }
-  }
-  
-}  
+ 
 
 .card-longo {
   display: flex;
@@ -176,11 +139,7 @@ body{
 
 }
 
-.div-funcoes-card {
-  display: flex;
-  gap: 0.5rem; 
-  justify-content: flex-end;
-}
+
 
 /* input[type="text"] {
   width: 100%;
@@ -239,10 +198,9 @@ body{
 .div-conteudo-principal {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1.5rem;
   gap: 20px;
   flex: 1;  
-  
 }
 
 
