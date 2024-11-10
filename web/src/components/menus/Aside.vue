@@ -56,7 +56,6 @@
                     <p>Usuários</p>
                 </div>
             </router-link>
-            
         </div>
         <div class="div-footer-aside">
             <div>
