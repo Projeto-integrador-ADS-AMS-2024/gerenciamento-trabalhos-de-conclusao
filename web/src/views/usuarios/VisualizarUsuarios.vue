@@ -1,19 +1,4 @@
 <script setup>
-import User from '@/components/User.vue';
-import { onMounted, ref } from 'vue';
-
-const users = ref(null);
-
-const fetchUsers = async () => {
-    const res = await fetch('http://localhost:3000/usuarios'); 
-    const data = await res.json();
-
-    users.value = [...data.alunos, ...data.professores];
-}
-
-onMounted(async () => {
-    await fetchUsers();
-});
 
 </script>
 
@@ -36,42 +21,9 @@ onMounted(async () => {
             <div class="div-cards">
                 <!-- listar usuarios -->
 
-                <span v-if="!users">Carregando usuários...</span>
                 
-                <div v-else class="users">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>RA</th>
-                                <th>Nome</th>
-                                <th>CPF</th>
-                                <th>Email</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <User v-for="user in users" :user="user" />
-                        </tbody>
-                    </table>
-                </div>
 
-                <!-- <router-link to="/cursoTal" id="cardLink" class="router-link">
-                    <div class="card-usuario">
-                        <div class="div-funcoes-card">
-                            <button>
-                                <router-link to="/editarUsuario" class="router-link">Editar</router-link>
-                            </button>
-                            <button>
-                                <router-link to="" class="router-link">Excluir</router-link>
-                            </button>
-                        </div>
-                        <div class="div-info">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                            </svg>
-                            <span>User 1</span>                    
-                        </div>
-                    </div>
-                </router-link>            -->
+               
             </div>
         </div>
     </div>
@@ -80,6 +32,7 @@ onMounted(async () => {
 
 
 <style>
+
 .users {
     width: 100%;
 }

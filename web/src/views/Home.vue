@@ -25,7 +25,12 @@
             <PageId label="Turmas" />
         </div>
         <div>
-            <Card />
+            <Card
+                name="nome do Turma"
+                routeCard="/visualizarTurma" 
+                routeEdit="/editarTurma"
+                routeDelete="/delete"
+            />
         </div>
     </div>
 </template>

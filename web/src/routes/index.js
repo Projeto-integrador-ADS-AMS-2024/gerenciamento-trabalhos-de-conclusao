@@ -3,7 +3,7 @@ import Home from '../views/Home.vue';
 
 // Rotas do sistema
 const routes = [
-  { path: '/', /*meta: { requiresAuth: false },*/ component: Home },// Rotas inicial (HOME->usuarios)
+  { path: '/', /*meta: { requiresAuth: false },*/ component: Home },// Rotas inicial (HOME->turmas)
 
   // Login
   {
@@ -17,7 +17,7 @@ const routes = [
 
   // Rotas de usuarios
   { path: '/cadastrarUsuarios', /*meta: { requiresAuth: false },*/ component: () => import('../views/usuarios/CadastrarUsuarios.vue') },
-  { path: '/visualizarUsuarios', /*meta: { requiresAuth: false },*/ component: () => import('../views/usuarios/VisualizarUsuarios.vue') },
+  { path: '/usuarios', /*meta: { requiresAuth: false },*/ component: () => import('../views/usuarios/Usuarios.vue') },
   { path: '/importarUsuarios', /*meta: { requiresAuth: false },*/ component: () => import('../views/usuarios/ImportarUsuarios.vue') },
   { path: '/editarUsuario', /*meta: { requiresAuth: false },*/ component: () => import('../views/usuarios/EditarUsuarios.vue') },
   

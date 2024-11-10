@@ -15,7 +15,7 @@
             },
             name:{
                 type: String,
-                default: 'Turma'
+                default: 'Nome'
             }
         }
     }
