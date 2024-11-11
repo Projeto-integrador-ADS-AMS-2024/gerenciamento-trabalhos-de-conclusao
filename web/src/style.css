@@ -204,22 +204,6 @@ body{
 }
 
 
-.div-filtro {
-  display: flex;
-  width: 100%;
-  gap: 10px;
-  align-items: center;
-  justify-items: center;
-
-  img, svg {
-    width: 36px;
-    height: auto;
-  }
-
-  .div-icon-pesquisa{
-    margin-bottom: 15px;
-  }
-}
 
 
 /* Cadastrar Curso

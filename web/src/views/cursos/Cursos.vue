@@ -1,13 +1,14 @@
 <script>
     import Card from '@/components/card/Card.vue';
+    import ButtonAdd from '@/components/util/ButtonAdd.vue';
     import PageId from '@/components/util/PageId.vue';
 
     export default {
         name: 'Cursos',
-        components: {Card, PageId},
+        components: {Card, PageId, ButtonAdd},
         data(){
             return{
-
+                labelBtnAdd: "Adicionar curso"
             }
         }
     }
@@ -27,6 +28,12 @@
                 routeEdit="/editarCurso"
                 routeDelete="/delete"
             />
+
+            <ButtonAdd 
+                
+            > 
+                {{labelBtnAdd}}
+            </ButtonAdd>
         </div>
     </div>
 

@@ -29,6 +29,6 @@ export default {
     }
 
     .h2-role{
-        color: gray;
+        color: #ccc;
     }
 </style>

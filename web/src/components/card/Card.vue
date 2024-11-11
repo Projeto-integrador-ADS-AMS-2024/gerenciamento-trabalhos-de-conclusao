@@ -26,11 +26,17 @@
             <div class="card">
                 <div class="div-funcoes-card">
                     <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" />
+                        </svg>
+                    </button>
+
+                    <!-- <button>
                         <router-link :to=routeEdit class="router-link">Editar</router-link>
                     </button>
                     <button>
                         <router-link :to=routeDelete class="router-link">Excluir</router-link>
-                    </button>
+                    </button> -->
                 </div>
                 <div class="div-info">
                     <!-- <svg role="img" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -62,6 +68,7 @@
         border: 1px solid #0F62FE;
         flex-direction: column;
         padding: 20px; 
+        margin-bottom: 24px;
         
 
         .div-info {
@@ -90,5 +97,10 @@
         display: flex;
         gap: 0.5rem; 
         justify-content: flex-end;
+
+        svg{
+            width: 26px;
+            height: auto;
+        }
     }
 </style>

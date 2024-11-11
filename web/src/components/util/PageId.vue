@@ -21,7 +21,7 @@ export default {
         
     }
     h3{
-        color: gray;
+        color: black;
         margin-bottom: 20px;
     }
 </style>
