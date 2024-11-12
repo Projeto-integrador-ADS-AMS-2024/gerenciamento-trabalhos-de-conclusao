@@ -1,3 +1,7 @@
+<script setup>
+
+</script>
+
 <template>
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
@@ -42,11 +46,6 @@
         </div>
     </div>
 </template>
-<script>
-    export default {
-        
-    }
-</script>
-<style >
-    
+
+<style scoped>
 </style>
