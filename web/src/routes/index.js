@@ -1,6 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 
+const adminRouteDefaultData = {
+  requiresAuth: true,
+  acceptUserType: ['admin']
+};
+
 const isAuth = async () => {
   const token = localStorage.getItem('token');
 
@@ -18,12 +23,13 @@ const isAuth = async () => {
   } catch(err) {
     console.log(err);
   }
-}
+};
 
 // Rotas do sistema
 const routes = [
   { 
     path: '/', 
+    name: 'home',
     meta: { requiresAuth: true }, 
     component: Home,
   },
@@ -31,6 +37,7 @@ const routes = [
   // Login
   {
     path: '/login',
+    name: 'login',
     meta: { 
       hideDefaultComponents: true, // Não mostrar o <RoterView> do App.vue
       requiresAuth: false 
@@ -46,29 +53,29 @@ const routes = [
 
   // Rotas do Admin
   // Usuarios
-  { path: '/cadastrarUsuarios', meta: { requiresAuth: true }, component: () => import('../views/admin/usuarios/CadastrarUsuarios.vue') },
-  { path: '/visualizarUsuarios', meta: { requiresAuth: true }, component: () => import('../views/admin/usuarios/VisualizarUsuarios.vue') },
-  { path: '/importarUsuarios', meta: { requiresAuth: true }, component: () => import('../views/admin/usuarios/ImportarUsuarios.vue') },
-  { path: '/editarUsuario', meta: { requiresAuth: true }, component: () => import('../views/admin/usuarios/EditarUsuarios.vue') },
+  { path: '/admin/cadastrarUsuarios', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/usuarios/CadastrarUsuarios.vue') },
+  { path: '/admin/visualizarUsuarios', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/usuarios/VisualizarUsuarios.vue') },
+  { path: '/admin/importarUsuarios', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/usuarios/ImportarUsuarios.vue') },
+  { path: '/editarUsuario', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/usuarios/EditarUsuarios.vue') },
   
   // Cursos
-  { path: '/cursos', meta: { requiresAuth: true }, component: () => import('../views/admin/cursos/Cursos.vue') },
-  { path: '/cadastrarCursos', meta: { requiresAuth: true }, component: () => import('../views/admin/cursos/CadastrarCursos.vue') },
-  { path: '/visualizarCursos', meta: { requiresAuth: true }, component: () => import('../views/admin/cursos/VisualizarCursos.vue') },
-  { path: '/editarCurso', meta: { requiresAuth: true }, component: () => import('../views/admin/cursos/EditarCursos.vue') },
+  { path: '/admin/cursos', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/cursos/Cursos.vue') },
+  { path: '/admin/cadastrarCursos', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/cursos/CadastrarCursos.vue') },
+  { path: '/admin/visualizarCursos', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/cursos/VisualizarCursos.vue') },
+  { path: '/admin/editarCurso', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/cursos/EditarCursos.vue') },
   
   // Turmas
-  { path: '/turmas', meta: { requiresAuth: true }, component: () => import('../views/admin/turmas/Turmas.vue') },
-  { path: '/cadastrarTurmas', meta: { requiresAuth: true }, component: () => import('../views/admin/turmas/CadastrarTurmas.vue') },
-  { path: '/visualizarTurmas', meta: { requiresAuth: true }, component: () => import('../views/admin/turmas/VisualizarTurmas.vue') },
-  { path: '/editarTurma', meta: { requiresAuth: true }, component: () => import('../views/admin/turmas/EditarTurmas.vue') },
+  { path: '/admin/turmas', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/turmas/Turmas.vue') },
+  { path: '/admin/cadastrarTurmas', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/turmas/CadastrarTurmas.vue') },
+  { path: '/admin/visualizarTurmas', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/turmas/VisualizarTurmas.vue') },
+  { path: '/admin/editarTurma', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/turmas/EditarTurmas.vue') },
 
   // Disciplinas
-  { path: '/disciplinas', meta: { requiresAuth: true }, component: () => import('../views/admin/disciplinas/Disciplinas.vue') },
-  { path: '/cadastrarDisciplinas', meta: { requiresAuth: true }, component: () => import('../views/admin/disciplinas/CadastrarDisciplinas.vue') },
-  { path: '/visualizarDisciplinas', meta: { requiresAuth: true }, component: () => import('../views/admin/disciplinas/VisualizarDisciplinas.vue') },
-  { path: '/editarDisciplina', meta: { requiresAuth: true }, component: () => import('../views/admin/disciplinas/EditarDisciplinas.vue') },
-]
+  { path: '/admin/disciplinas', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/disciplinas/Disciplinas.vue') },
+  { path: '/admin/cadastrarDisciplinas', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/disciplinas/CadastrarDisciplinas.vue') },
+  { path: '/admin/visualizarDisciplinas', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/disciplinas/VisualizarDisciplinas.vue') },
+  { path: '/admin/editarDisciplina', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/disciplinas/EditarDisciplinas.vue') },
+];
 
 const router = createRouter({
   history: createWebHistory(),
@@ -89,6 +96,12 @@ router.beforeEach(async (to, from) => {
   } 
 
   to.meta.userInfo = user;
+  
+  if (to.name != 'home' && !to.meta.acceptUserType.includes(to.meta.userInfo.role)) {
+    return {
+      path: '/'
+    }
+  }
 });
 
 // Exportando router
