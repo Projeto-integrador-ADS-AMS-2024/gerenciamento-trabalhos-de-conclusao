@@ -1,16 +1,16 @@
 <template>     
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/cursos" class="router-link">Cursos</router-link> > <router-link to="/visualizarCursos" class="router-link">Visualizar Cursos</router-link></h2>
+            <h2>Ferramentas > <router-link to="/admin/cursos" class="router-link">Cursos</router-link> > <router-link to="/admin/visualizarCursos" class="router-link">Visualizar Cursos</router-link></h2>
         </div>
         <div>
             <div class="div-cards">
                 <!-- listar cursos -->
-                <router-link to="/cursoEspecifico" class="router-link">
+                <router-link to="/admin/cursoEspecifico" class="router-link">
                     <div class="card">
                         <div class="div-funcoes-card">
                             <button>
-                                <router-link to="/editarCurso" class="router-link">Editar</router-link>
+                                <router-link to="/admin/editarCurso" class="router-link">Editar</router-link>
                             </button>
                             <button>
                                 <router-link to="" class="router-link">Excluir</router-link>

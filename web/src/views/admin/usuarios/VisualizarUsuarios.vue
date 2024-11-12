@@ -20,7 +20,7 @@ onMounted(async () => {
 <template>     
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/" class="router-link">Usuários</router-link>  > <router-link to="/visualizarUsuarios" class="router-link">Visualizar Usuários</router-link></h2>
+            <h2>Ferramentas > <router-link to="/admin/" class="router-link">Usuários</router-link>  > <router-link to="/admin/visualizarUsuarios" class="router-link">Visualizar Usuários</router-link></h2>
         </div>
         <div>
             <!-- <div class="div-filtro">
@@ -51,11 +51,11 @@ onMounted(async () => {
                     </table>
                 </div>
 
-                <!-- <router-link to="/cursoTal" id="cardLink" class="router-link">
+                <!-- <router-link to="/admin/cursoTal" id="cardLink" class="router-link">
                     <div class="card-usuario">
                         <div class="div-funcoes-card">
                             <button>
-                                <router-link to="/editarUsuario" class="router-link">Editar</router-link>
+                                <router-link to="/admin/editarUsuario" class="router-link">Editar</router-link>
                             </button>
                             <button>
                                 <router-link to="" class="router-link">Excluir</router-link>

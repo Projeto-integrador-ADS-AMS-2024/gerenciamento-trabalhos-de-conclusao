@@ -1,7 +1,7 @@
 <template>     
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/disciplinas" class="router-link">Disciplinas</router-link> > <router-link to="/visualizarDisciplinas" class="router-link">Visualizar Disciplinas</router-link></h2>
+            <h2>Ferramentas > <router-link to="/admin/disciplinas" class="router-link">Disciplinas</router-link> > <router-link to="/admin/visualizarDisciplinas" class="router-link">Visualizar Disciplinas</router-link></h2>
         </div>
         <div>
             <div class="div-filtro">
@@ -16,7 +16,7 @@
                     <div class="card">
                         <div class="div-funcoes-card">
                             <button>
-                                <router-link to="/editarDisciplina" class="router-link">Editar</router-link>
+                                <router-link to="/admin/editarDisciplina" class="router-link">Editar</router-link>
                             </button>
                             <button>
                                 <router-link to="" class="router-link">Excluir</router-link>
@@ -35,7 +35,7 @@
                     <div class="card">
                         <div class="div-funcoes-card">
                             <button>
-                                <router-link to="/editarDisciplina" class="router-link">Editar</router-link>
+                                <router-link to="/admin/editarDisciplina" class="router-link">Editar</router-link>
                             </button>
                             <button>
                                 <router-link to="" class="router-link">Excluir</router-link>
@@ -55,7 +55,7 @@
                     <div class="card">
                         <div class="div-funcoes-card">
                             <button>
-                                <router-link to="/editarDisciplina" class="router-link">Editar</router-link>
+                                <router-link to="/admin/editarDisciplina" class="router-link">Editar</router-link>
                             </button>
                             <button>
                                 <router-link to="" class="router-link">Excluir</router-link>

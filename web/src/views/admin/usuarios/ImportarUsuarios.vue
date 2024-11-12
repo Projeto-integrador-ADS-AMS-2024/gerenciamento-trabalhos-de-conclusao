@@ -1,7 +1,7 @@
 <template>
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/" class="router-link">Usuários</router-link> > <router-link to="/importarUsuarios" class="router-link">Importar Usuários</router-link></h2>
+            <h2>Ferramentas > <router-link to="/admin/" class="router-link">Usuários</router-link> > <router-link to="/admin/importarUsuarios" class="router-link">Importar Usuários</router-link></h2>
         </div>
         <div>
             <form>
@@ -13,7 +13,7 @@
                 </div>
                     
                 <div class="div-btn">
-                    <router-link to="/turmas">
+                    <router-link to="/admin/turmas">
                         <button type="submit">Cadastrar</button>
                     </router-link>
                 </div>

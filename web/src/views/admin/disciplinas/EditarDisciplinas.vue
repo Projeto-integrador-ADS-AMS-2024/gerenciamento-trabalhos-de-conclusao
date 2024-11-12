@@ -1,7 +1,7 @@
 <template>
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/disciplinas" class="router-link">Disciplinas</router-link> > <router-link to="/editarDisciplina" class="router-link">Editar Disciplina</router-link></h2>
+            <h2>Ferramentas > <router-link to="/admin/disciplinas" class="router-link">Disciplinas</router-link> > <router-link to="/admin/editarDisciplina" class="router-link">Editar Disciplina</router-link></h2>
         </div>
         <div>        
             <form action="turma.html">

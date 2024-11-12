@@ -40,7 +40,7 @@ onMounted(() => {
 <template>
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/cursos" class="router-link">Cursos</router-link> > <router-link to="/cadastrarCursos" class="router-link">Cadastrar Cursos</router-link></h2>
+            <h2>Ferramentas > <router-link to="/admin/cursos" class="router-link">Cursos</router-link> > <router-link to="/admin/cadastrarCursos" class="router-link">Cadastrar Cursos</router-link></h2>
         </div>
         <div>        
             <form>

@@ -1,7 +1,7 @@
 <template>
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/turmas" class="router-link">Turmas</router-link> > <router-link to="/cadastrarTurmas" class="router-link">Cadastrar Turmas</router-link></h2>
+            <h2>Ferramentas > <router-link to="/admin/turmas" class="router-link">Turmas</router-link> > <router-link to="/admin/cadastrarTurmas" class="router-link">Cadastrar Turmas</router-link></h2>
         </div>
         <div>        
             <form action="turma.html">

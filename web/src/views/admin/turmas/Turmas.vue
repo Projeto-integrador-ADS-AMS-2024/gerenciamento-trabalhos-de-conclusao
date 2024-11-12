@@ -1,10 +1,10 @@
 <template>
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/turmas" class="router-link">Turmas</router-link></h2>
+            <h2>Ferramentas > <router-link to="/admin/turmas" class="router-link">Turmas</router-link></h2>
         </div>
         <div class="div-cards">
-            <router-link to="/visualizarTurmas" class="router-link">
+            <router-link to="/admin/visualizarTurmas" class="router-link">
                 <div class="card">
                     <div class="div-info">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -17,7 +17,7 @@
                 </div>
             </router-link>
 
-            <router-link to="/cadastrarTurmas" class="router-link">
+            <router-link to="/admin/cadastrarTurmas" class="router-link">
                 <div class="card">
                     <div class="div-info">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
