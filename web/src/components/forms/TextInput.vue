@@ -32,7 +32,7 @@
 </script>
   
   
-<style>
+<style scoped>
     input{
         border-bottom: 1px solid #ccc;
         padding: 8px;

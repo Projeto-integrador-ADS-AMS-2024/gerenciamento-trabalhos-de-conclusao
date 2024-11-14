@@ -27,7 +27,7 @@
     </select>
 </template>
 
-<style>
+<style scoped>
     select {
         border-bottom: 1px solid #ccc;
         padding: 8px;

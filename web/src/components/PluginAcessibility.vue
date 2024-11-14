@@ -17,6 +17,7 @@
                 new window.VLibras.Widget("https://vlibras.gov.br/app");
             };
             document.body.appendChild(script);
+            
             const pluginTools = document.createElement("script");
             pluginTools.src = "https://cdn.userway.org/widget.js";
             pluginTools.setAttribute("data-account", "EIXt1YrjVs");

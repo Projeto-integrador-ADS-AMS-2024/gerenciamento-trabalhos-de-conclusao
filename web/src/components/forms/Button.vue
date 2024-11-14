@@ -18,7 +18,7 @@
     };
 </script>
 
-<style>
+<style scoped>
     .div-btn {
         text-align: center; 
         color: white;

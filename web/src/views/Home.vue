@@ -38,7 +38,7 @@
             />
 
             <ButtonAdd 
-                
+                route="/cadastrarTurmas"
             > 
                 {{labelBtnAdd}}
             </ButtonAdd>

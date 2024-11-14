@@ -24,7 +24,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
     .col-checkbox {
         display: flex;
         flex-wrap: wrap; /* Permite que os elementos quebrem de linha */

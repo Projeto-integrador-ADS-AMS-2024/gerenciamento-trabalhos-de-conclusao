@@ -30,7 +30,7 @@
             />
 
             <ButtonAdd 
-                
+                route="/cadastrarDisciplinas"
             > 
                 {{labelBtnAdd}}
             </ButtonAdd>

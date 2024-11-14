@@ -6,13 +6,18 @@
                 transition="fade-transition"
             >   
                 
-                <template v-slot:activator="{ props: activatorProps }">
-                    <v-fab
-                        v-bind="activatorProps"
-                        size="large"
-                        icon="$vuetify"
-                    ></v-fab>
-                </template>
+            <template v-slot:activator="{ props: activatorProps }">
+                <v-fab v-bind="activatorProps" size="large">
+                    <template v-slot:default>
+                        <v-icon>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+
+                        </v-icon>
+                    </template>
+                </v-fab>
+            </template>
                 
                 <v-btn key="1">
                     <router-link to="/" class="router-link"> 
@@ -71,7 +76,8 @@
                 </v-btn>
             </v-speed-dial>
         </div>
-        <div>
+        <div class="div-logo">
+            <img src="../../assets/img/logo-sgtc.svg" alt="Imagem da logo SGTC" class="img-logo">
             <h1>SGTC</h1>
         </div>
     </nav>
@@ -83,12 +89,18 @@
 </script>
 
 <style scoped>
+    .v-icon{
+        width: 30px;
+        height: auto;
+    }
+
     .div-opcao-menu-mobile{
         display: flex;
         gap: 12px;
         align-items: center;
         
     }
+
 
     .v-btn{
         padding: 10px;
@@ -134,6 +146,7 @@
         display: none;
         justify-content: space-between;
         align-items: center ;
+        flex-wrap: wrap;
         left: 0;
         top: 0;
 
@@ -144,11 +157,26 @@
         }
     }
 
+    .div-logo{
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        gap: 6px;
+        letter-spacing: 2px;
+        
+
+        img{
+            width: 70px;
+            height: auto;
+        }
+    }
+
     @media (max-width: 700px) {  
         nav{
             width: 100%;
             display: flex;
             position: static;
+            
         }
 
         .v-btn{
@@ -164,6 +192,23 @@
 
             p{
                 font-size: pt;
+            }
+        }
+    } 
+
+
+    @media (max-width: 450px){
+        nav{
+            /* flex-direction: column;
+            gap: 30px; */
+        }
+
+        .div-logo{
+            flex-direction: column;
+            font-size: 10pt;
+            img{
+                width: 40px;
+                height: auto;
             }
         }
     } 
