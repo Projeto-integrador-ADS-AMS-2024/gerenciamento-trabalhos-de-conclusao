@@ -1,41 +1,51 @@
 <template>
-    <label :for="id">{{ label }}</label>
-    <select :name="id" :id="id">
-        <option v-for="(item, index) in option" :key="index" :value="item">
-            {{ item }}
-        </option>
-    </select>
-</template>
-
-<script>
-    export default{
-        props:{
-            id:{
-                type: String,
-                default: 'id_select'
-            },
-            label:{
-                type: String,
-                default: 'Campo Select'
-            },
-            option:{
-                type: Array,
-                default: () => []
-            }
+    <div class="select-container">
+        <label :for="id">{{ label }}</label>
+        <select :id="id" :value="modelValue" @change="handleChange">
+            <!-- Placeholder Option -->
+            <option value="" disabled selected>{{ placeholder }}</option>
             
+            <!-- Opções -->
+            <option v-for="option in options" :key="option" :value="option">{{ option }}</option>
+        </select>
+    </div>
+</template>
+  
+<script setup>
+    defineProps({
+        id: String,
+        label: String,
+        modelValue: String,
+        options: Array,
+        placeholder: {
+            type: String,
+            default: 'Selecionar...'
         }
+        }
+    );
+
+    // Emite o valor selecionado para o componente pai
+    const emit = defineEmits(['update:modelValue']);
+
+    function handleChange(event) {
+        emit('update:modelValue', event.target.value);
     }
 </script>
 
 <style scoped>
-    select {
-        border-bottom: 1px solid #ccc;
-        padding: 8px;
-        background-color: #f1f1f1;
-        border-radius: 2px;
-        font-size: 14px;
-        width: 100%;
-        margin-top: 4px;
+    .select-container {
         margin-bottom: 20px;
     }
+
+    select {
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        width: 100%;
+    }
+
+    option[disabled] {
+        color: #aaa;
+    }
 </style>
+  

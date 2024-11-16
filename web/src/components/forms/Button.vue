@@ -23,7 +23,7 @@
         color: white;
     }
 
-    button {
+    button{
         background-color: #0F62FE;
         padding: 10px;
         width: 100%;
@@ -47,4 +47,3 @@
         opacity: 0.8;
     }
 </style>
-  

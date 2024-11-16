@@ -1,7 +1,8 @@
 <template>
-    <div>
+    <div class="div-inpt">
         <label :for="id">{{ label }}</label>
-        <input type="password" :name="id" :id="id" :placeholder="placeholder"/>
+        <input type="password" :name="id" :id="id" :placeholder="placeholder" required/>
+        <p class="info">{{ info }}</p>
     </div>
 </template>
   
@@ -10,7 +11,7 @@
         props:{
             id: {
                 type: String,
-                default: 'id_password'
+                default: 'id_text'
             },
             label: {
                 type: String,
@@ -19,13 +20,22 @@
             placeholder:{
                 type: String,
                 default: 'Placeholder do campo'
+            },
+            info:{
+                type: String,
+                default: 'info'
             }
+        },
+        methods:{
+
         }
     }
-
 </script>
   
 <style scoped>
+    .div-inpt{
+        margin-bottom: 20px;
+    }
     input{
         border-bottom: 1px solid #ccc;
         padding: 8px;
@@ -35,7 +45,11 @@
         width: 100%;
         margin-top: 4px;
         color: black;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+    }
+
+    .info{
+        display: none;
     }
 </style>
   

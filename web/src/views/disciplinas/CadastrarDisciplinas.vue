@@ -9,7 +9,7 @@
         components:{Button, SelectInput, TextInput},
         data(){
             return{
-                coordenadores: ['jailton', 'uel']
+                coordenadoresOptions: ['jailton', 'uel']
             }
         }
     }
@@ -33,7 +33,7 @@
                     <SelectInput 
                         id="coodernador"
                         label="Coordenador do Curso"
-                        :option=coordenadores
+                        :options=coordenadoresOptions
 
                     />
                 </div>

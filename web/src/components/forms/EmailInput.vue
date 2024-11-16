@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="div-inpt">
         <label :for="id">{{ label }}</label>
         <input type="email" :name="id" :id="id" :placeholder="placeholder"/>
     </div>
@@ -25,6 +25,10 @@
 </script>
   
 <style scoped>
+    .div-inpt{
+        margin-bottom: 20px;
+    }
+
     input{
         border-bottom: 1px solid #ccc;
         padding: 8px;

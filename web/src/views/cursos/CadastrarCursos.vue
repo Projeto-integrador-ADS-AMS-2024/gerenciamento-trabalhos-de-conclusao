@@ -5,13 +5,13 @@
     import SelectInput from '@/components/forms/SelectInput.vue';
 
     export default{
-        name: 'CadastrarCursos',
+        name: 'CadastrarCurso',
         components: { Button, TextInput, SelectInput, CheckBoxInput},
         data(){
             return{
-                duracao: [1,2,3,4,5,6,7,8,9,10,11,12],
-                tipoPeriodo: ['Ano(s)', 'Mese(s)'],
-                coordenadores: ['Jose', 'Jelton']
+                duracaoOptions: [1,2,3,4,5,6,7,8,9,10,11,12],
+                tipoPeriodoOptions: ['Ano(s)', 'Mese(s)'],
+                coordenadoresOptions: ['Jose', 'Jelton']
             }
         }
     }
@@ -34,17 +34,17 @@
                 <div class="div-flex-input">
                     <div>
                         <!-- Duracao -->
-                        <SelectInput id="duracao" label="Duração do Curso" :option=duracao />
+                        <SelectInput id="duracao" label="Duração do Curso" :options=duracaoOptions />
                     </div>
                     <div>
                         <!-- Periodo  -->
-                        <SelectInput id="duracao" :option=tipoPeriodo />
+                        <SelectInput id="duracao" label="." :options=tipoPeriodoOptions />
                     </div>
                 </div>
 
                 <div>
                     <!-- Coodenador do curso -->
-                    <SelectInput id="coodernador" label="Coordenador do Curso" :option=coordenadores />
+                    <SelectInput id="coodernador" label="Coordenador do Curso" :options=coordenadoresOptions />
                 </div>
 
                 <!-- Turno do curso -->

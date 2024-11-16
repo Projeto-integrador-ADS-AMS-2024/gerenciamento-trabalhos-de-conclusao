@@ -1,7 +1,8 @@
 <template>
-    <div>
+    <div class="div-inpt">
         <label :for="id">{{ label }}</label>
-        <input type="text" :name="id" :id="id" :placeholder="placeholder"/>
+        <input type="text" :name="id" :id="id" :placeholder="placeholder" required/>
+        <p class="info">{{ info }}</p>
     </div>
 </template>
   
@@ -19,12 +20,22 @@
             placeholder:{
                 type: String,
                 default: 'Placeholder do campo'
+            },
+            info:{
+                type: String,
+                default: 'info'
             }
+        },
+        methods:{
+
         }
     }
 </script>
   
 <style scoped>
+    .div-inpt{
+        margin-bottom: 20px;
+    }
     input{
         border-bottom: 1px solid #ccc;
         padding: 8px;
@@ -34,7 +45,12 @@
         width: 100%;
         margin-top: 4px;
         color: black;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+    }
+
+    .info{
+        display: block;
+        color: red;
     }
 </style>
   

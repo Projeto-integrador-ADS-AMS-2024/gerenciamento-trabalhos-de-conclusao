@@ -9,13 +9,12 @@
         components: {TextInput, SelectInput, CheckBoxInput, Button},
         data(){
             return{
-                disciplinas: ["PI", "TG", "TCC"],
-                cursos: ['ADS', 'AMS-ADS', 'LOG']
+                disciplinasOptions: ["PI", "TG", "TCC"],
+                cursosOptions: ['ADS', 'AMS-ADS', 'LOG']
             }
         }
     }
 </script>
-
 
 <template>
     <div class="div-conteudo-principal">
@@ -24,19 +23,33 @@
         </div>
         <div>        
             <form action="turma.html">
+                <!-- Nome da Turma -->
                 <div>
                     <TextInput id="nome" label="Nome da Turma" placeholder="Insira o nome da turma"            
                     />
                 </div>
                 
+                <!-- Disciplina -->
                 <div>
-                    <SelectInput id="disciplina" label="Disciplina da Turma"  :option=disciplinas />
-                </div>
-                
-                <div>
-                    <SelectInput id="disciplina" label="Curso da Turma" :option=cursos />
+                    <SelectInput
+                        id="disciplina"
+                        label="Disciplina da Turma"
+                        :options="disciplinasOptions"
+                        placeholder="Selecionar..."
+                    />
                 </div>
 
+                <!-- Curso -->
+                <div>
+                    <SelectInput 
+                        id="curso" 
+                        label="Curso da Turma" 
+                        :options=cursosOptions 
+                        placeholder="Selecionar..."
+                    />
+                </div>
+
+                <!-- Turno da turma -->
                 <div>
                     <label>Turno da Turma</label><br>
                     <div class="div-flex-checkbox">

@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="div-inpt">
         <label :for="id">{{ label }}</label>
-        <input type="date" :name="id" :id="id" :placeholder="placeholder"/>
+        <input type="date" :name="id" :id="id"/>
     </div>
 </template>
   
@@ -21,6 +21,10 @@
 </script>
    
 <style scoped>
+    .div-inpt{
+        margin-bottom: 20px;
+    }
+
     input{
         border-bottom: 1px solid #ccc;
         padding: 8px;

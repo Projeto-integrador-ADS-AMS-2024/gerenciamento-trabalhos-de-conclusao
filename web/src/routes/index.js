@@ -24,19 +24,15 @@ const routes = [
   // Rotas de cursos
   { path: '/cursos', /*meta: { requiresAuth: false },*/ component: () => import('../views/cursos/Cursos.vue') },
   { path: '/cadastrarCursos', /*meta: { requiresAuth: false },*/ component: () => import('../views/cursos/CadastrarCursos.vue') },
-  { path: '/visualizarCursos', /*meta: { requiresAuth: false },*/ component: () => import('../views/cursos/VisualizarCursos.vue') },
   { path: '/editarCurso', /*meta: { requiresAuth: false },*/ component: () => import('../views/cursos/EditarCursos.vue') },
   
   // Rotas de turmas
-  { path: '/turmas', /*meta: { requiresAuth: false },*/ component: () => import('../views/turmas/Turmas.vue') },
   { path: '/cadastrarTurmas', /*meta: { requiresAuth: false },*/ component: () => import('../views/turmas/CadastrarTurmas.vue') },
-  { path: '/visualizarTurmas', /*meta: { requiresAuth: false },*/ component: () => import('../views/turmas/VisualizarTurmas.vue') },
   { path: '/editarTurma', /*meta: { requiresAuth: false },*/ component: () => import('../views/turmas/EditarTurmas.vue') },
 
   // Rotas de disciplinas
   { path: '/disciplinas', /*meta: { requiresAuth: false },*/ component: () => import('../views/disciplinas/Disciplinas.vue') },
   { path: '/cadastrarDisciplinas', /*meta: { requiresAuth: false },*/ component: () => import('../views/disciplinas/CadastrarDisciplinas.vue') },
-  { path: '/visualizarDisciplinas', /*meta: { requiresAuth: false },*/ component: () => import('../views/disciplinas/VisualizarDisciplinas.vue') },
   { path: '/editarDisciplina', /*meta: { requiresAuth: false },*/ component: () => import('../views/disciplinas/EditarDisciplinas.vue') },
   
 ]
