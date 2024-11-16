@@ -17,28 +17,20 @@
 <template>     
     <div class="div-conteudo-principal">
         <div>
-            <PageId 
-                label="Cursos"
-            />
+            <PageId label="Cursos" />
         </div>
         <div>
-            <Card 
-                name="nome do Curso"
+            <Card name="nome do Curso" 
                 routeCard="/visualizarCurso" 
-                routeEdit="/editarCurso"
+                routeEdit="/editarCurso" 
                 routeDelete="/delete"
             />
 
-            <ButtonAdd 
-                route="/cadastrarCursos"
-            > 
-                {{labelBtnAdd}}
-            </ButtonAdd>
+            <ButtonAdd route="/cadastrarCursos"> {{labelBtnAdd}}</ButtonAdd>
         </div>
     </div>
 
 </template>
-
 
 <style >
     

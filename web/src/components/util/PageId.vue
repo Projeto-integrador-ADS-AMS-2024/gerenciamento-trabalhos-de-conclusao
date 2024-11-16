@@ -17,9 +17,6 @@ export default {
 </script>
 
 <style>
-    div{
-        
-    }
     h3{
         color: black;
         margin-bottom: 20px;

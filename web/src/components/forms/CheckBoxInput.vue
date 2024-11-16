@@ -8,19 +8,19 @@
 </template>
 
 <script>
-export default {
-    props:{
-        id:{
-            type: String,
-            default: 'id_checkbox'
-        },
-        label:{
-            type: String,
-            default: 'Campo checkbox'
-        }
+    export default {
+        props:{
+            id:{
+                type: String,
+                default: 'id_checkbox'
+            },
+            label:{
+                type: String,
+                default: 'Campo checkbox'
+            }
 
+        }
     }
-}
 </script>
 
 

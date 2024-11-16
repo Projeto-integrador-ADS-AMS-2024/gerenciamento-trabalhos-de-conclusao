@@ -5,7 +5,7 @@
     import SelectInput from '@/components/forms/SelectInput.vue';
 
     export default{
-        name: 'FormInputs',
+        name: 'CadastrarCursos',
         components: { Button, TextInput, SelectInput, CheckBoxInput},
         data(){
             return{
@@ -25,57 +25,39 @@
         </div>
         <div>        
             <form>
+                <!-- Nome do Curso -->
                 <div>
-                    <TextInput
-                        id="nome"
-                        label="Nome do Curso"
-                        placeholder="Insira o nome do curso"            
-                    />
+                    <TextInput id="nome" label="Nome do Curso" placeholder="Insira o nome do curso"/>
                 </div>
                 
+                <!-- Duração do Curso -->
                 <div class="div-flex-input">
                     <div>
-                        <SelectInput 
-                            id="duracao"
-                            label="Duração do Curso"
-                            :option=duracao
-
-                        />
+                        <!-- Duracao -->
+                        <SelectInput id="duracao" label="Duração do Curso" :option=duracao />
                     </div>
                     <div>
-                        <SelectInput 
-                            id="duracao"
-                            :option=tipoPeriodo
-                        />
+                        <!-- Periodo  -->
+                        <SelectInput id="duracao" :option=tipoPeriodo />
                     </div>
                 </div>
 
                 <div>
-                    <SelectInput 
-                        id="coodernador"
-                        label="Coordenador do Curso"
-                        :option=coordenadores
-
-                    />
+                    <!-- Coodenador do curso -->
+                    <SelectInput id="coodernador" label="Coordenador do Curso" :option=coordenadores />
                 </div>
 
+                <!-- Turno do curso -->
                 <div class="div-flex-checkbox">
                     <div>
-                        <CheckBoxInput 
-                            id="matutino"
-                            label="Matutino"
+                        <CheckBoxInput id="matutino" label="Matutino"/>
+                    </div>
+                    <div>
+                        <CheckBoxInput id="vespertino" label="Vespertino"
                         />
                     </div>
                     <div>
-                        <CheckBoxInput 
-                            id="vespertino"
-                            label="Vespertino"
-                        />
-                    </div>
-                    <div>
-                        <CheckBoxInput 
-                            id="noturno"
-                            label="Noturno"
+                        <CheckBoxInput id="noturno"label="Noturno"
                         />
                     </div>
                 </div>
@@ -87,7 +69,6 @@
 
 
 <style >
-
     .div-flex-input{
         display: flex;
         justify-content: space-between;

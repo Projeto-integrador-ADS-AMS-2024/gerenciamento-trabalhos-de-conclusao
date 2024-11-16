@@ -1,3 +1,12 @@
+<template>
+    <label :for="id">{{ label }}</label>
+    <select :name="id" :id="id">
+        <option v-for="(item, index) in option" :key="index" :value="item">
+            {{ item }}
+        </option>
+    </select>
+</template>
+
 <script>
     export default{
         props:{
@@ -17,15 +26,6 @@
         }
     }
 </script>
-
-<template>
-    <label :for="id">{{ label }}</label>
-    <select :name="id" id="id">
-        <option v-for="(item, index) in option" :key="index" :value="item">
-            {{ item }}
-        </option>
-    </select>
-</template>
 
 <style scoped>
     select {

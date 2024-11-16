@@ -8,8 +8,7 @@
                 </svg>
             </div>
         </button>
-    </div>
-    
+    </div> 
 </template>
   
 <script>

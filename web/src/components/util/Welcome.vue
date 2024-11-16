@@ -5,21 +5,20 @@
     </div>
 </template>
 
-
 <script>
-export default {
-    props:{
-        label:{
-            type: String,
-            default: 'Campo checkbox'
-        },
-        role:{
-            type: String,
-            default: 'Papel'
-        }
+    export default {
+        props:{
+            label:{
+                type: String,
+                default: 'Campo checkbox'
+            },
+            role:{
+                type: String,
+                default: 'Papel'
+            }
 
+        }
     }
-}
 </script>
 
 <style>

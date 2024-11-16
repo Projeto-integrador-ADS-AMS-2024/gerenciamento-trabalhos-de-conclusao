@@ -1,8 +1,6 @@
 <template>
     <!-- color="surface-light" -->
-    <v-card
-        class="mx-auto"
-    >
+    <v-card class="mx-auto" >
         <v-card-text>
             <v-text-field
                 :loading="loading"
@@ -17,6 +15,7 @@
         </v-card-text>
     </v-card>
 </template>
+
 <script>
     export default {
         data: () => ({

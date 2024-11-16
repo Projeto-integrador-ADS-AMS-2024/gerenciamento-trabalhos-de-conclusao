@@ -19,9 +19,7 @@
 <template>
     <div class="div-conteudo-principal">
         <div>
-            <Welcome 
-                label="Administrador"
-            />
+            <Welcome label="Administrador" />
         </div>
         <div>
             <PageId label="Turmas" />
@@ -37,11 +35,7 @@
                 routeDelete="/delete"
             />
 
-            <ButtonAdd 
-                route="/cadastrarTurmas"
-            > 
-                {{labelBtnAdd}}
-            </ButtonAdd>
+            <ButtonAdd route="/cadastrarTurmas"> {{labelBtnAdd}}</ButtonAdd>
         </div>
     </div>
 </template>

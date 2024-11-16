@@ -1,125 +1,98 @@
+<script setup>
+    import { ref, computed } from 'vue';
+    import TextInput from '@/components/forms/TextInput.vue';
+    import SelectInput from '@/components/forms/SelectInput.vue';
+    import Button from '@/components/forms/Button.vue';
+    import DateInput from '@/components/forms/DateInput.vue';
+    import EmailInput from '@/components/forms/EmailInput.vue';
+    import PasswordInput from '@/components/forms/PasswordInput.vue';
+
+    // Opções para os selects
+    const atuacaoOptions = ['Aluno', 'Professor'];
+    const turmaOptions = ['1° ADS', '2° AMS-ADS', '1° LOG'];
+    const papelOptions = ['Diretor', 'Coordenador', 'Orientador', 'TG'];
+
+    // Estados reativos
+    const areaAtuacao = ref('');
+    const nome = ref('');
+    const cpf = ref('');
+    const ra = ref('');
+    const turma = ref('');
+    const papel = ref('');
+    const email = ref('');
+    const senha = ref('');
+    const dtNascimento = ref('');
+
+    // Computed properties para controle de visibilidade
+    const showCamposAluno = computed(() => areaAtuacao.value === 'Aluno');
+    const showCamposProfessor = computed(() => areaAtuacao.value === 'Professor');
+</script>
+
 <template>
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/" class="router-link">Usuários</router-link> > <router-link to="/cadastrarUsuarios" class="router-link">Cadastrar Usuários</router-link></h2>
+            <h2>
+                Ferramentas >
+                <router-link to="/" class="router-link">Usuários</router-link> >
+                <router-link to="/cadastrarUsuarios" class="router-link">Cadastrar Usuários</router-link>
+            </h2>
         </div>
-        <div>
-            <form action="turma.html">
-                <div>
-                    <div>
-                        <label for="areaAtuacao">Área de Atuação:</label>
-                        <select name="areaAtuacao" id="areaAtuacao" required>
-                            <option value="" disabled selected> Selecione a Atuação do Usuário</option>   
-                            <option value="Aluno">Aluno</option>
-                            <option value="Professor">Professor</option>
-                        </select>
-                    </div>
-    
-                    <div id="campos-comuns" style="display: none;">
 
-                        <div id="campos-aluno" style="display: none;">
-                            <div>
-                                <label for="ra">RA:</label><br>
-                                <input type="text" id="ra" name="ra" placeholder="Insira o RA" required><br>
-                            </div>
+        <form>
+            <!-- Área de Atuação com Placeholder -->
+            <div>
+                <label for="areaAtuacao">Área de Atuação</label>
+                <select id="areaAtuacao" v-model="areaAtuacao" required>
+                    <option value="" disabled selected>Selecionar...</option>
+                    <option v-for="option in atuacaoOptions" :key="option" :value="option">{{ option }}</option>
+                </select>
+            </div>
 
-                            <div>
-                                <label for="turma">Turma:</label>
-                                <select name="turma" id="turma" required>
-                                    <option value="" disabled selected>Selecione uma Turma</option>   
-                                    <option value="A">A</option>
-                                    <option value="B">B</option>
-                                </select>
-                            </div>
-                        </div>
+            <!-- Campos Comuns -->
+            <div v-if="areaAtuacao">
+                <!-- Nome -->
+                <TextInput id="nome" label="Nome" placeholder="Insira o nome" v-model="nome" />
+                
+                <!-- CPF -->
+                <TextInput id="cpf" label="CPF" placeholder="Insira o CPF" v-model="cpf" />
+                
+                <!-- Data de Nascimento -->
+                <DateInput id="dt_nascimento" label="Data de Nascimento" v-model="dtNascimento" />
+                
+                <!-- Email -->
+                <EmailInput id="email" label="Email" placeholder="Insira o email" v-model="email" />
+                
+                <!-- Senha -->
+                <PasswordInput id="senha" label="Senha" placeholder="Insira a senha" v-model="senha" />
 
-                        <div>
-                            <label for="nome">Nome:</label><br>
-                            <input type="text" id="nome" name="nome" placeholder="Insira o nome" required><br>
-                        </div>
-
-                        <div>
-                            <label for="cpf">CPF:</label><br>
-                            <input type="text" id="cpf" name="cpf" placeholder="Insira o CPF" required><br>
-                        </div>
-                        
-                        <div>
-                            <label for="dt_nascimento">Data de Nascimento:</label><br>
-                            <input type="date" id="dt_nascimento" name="dt_nascimento" required><br>
-                        </div>
-
-                        <div>
-                            <label for="email">Email:</label><br>
-                            <input type="email" id="email" name="email" placeholder="Insira o email" required><br>
-                        </div>
-
-                        <div>
-                            <label for="senha">Senha:</label><br>
-                            <input type="password" id="senha" name="senha" placeholder="Insira a senha" required><br>
-                        </div>
-
-                        <div id="campos-professor" style="display: none;">
-                            <div>
-                                <label for="papel">Papel:</label>
-                                <select name="papel" id="papel" required>
-                                    <option value="" disabled selected>Selecione o Papel do Professor</option>   
-                                    <option value="Diretor">Diretor</option>
-                                    <option value="Coordenador">Coordenador</option>
-                                    <option value="Orientador">Orientador</option>
-                                    <option value="TG">TG</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Campos específicos para Aluno -->
+                <div v-if="showCamposAluno">
+                    <TextInput id="ra" label="RA" placeholder="Insira o RA" v-model="ra" />
+                    <SelectInput id="turma" label="Turma" :option="turmaOptions" v-model="turma" />
                 </div>
-                    
-                <div class="div-btn">
-                    <button type="submit" >Cadastrar Usuário</button>
+
+                <!-- Campos específicos para Professor -->
+                <div v-if="showCamposProfessor">
+                    <SelectInput id="papel" label="Papel" :option="papelOptions" v-model="papel" />
                 </div>
-            </form>
-        </div>
+            </div>
+
+            <!-- Botão de Submissão -->
+            <Button route="">Cadastrar Usuário</Button>
+        </form>
     </div>
 </template>
 
-<script>
-    
-    export default {
-        mounted() {
-            const areaAtuacao = document.getElementById("areaAtuacao");
-            const camposComuns = document.getElementById("campos-comuns");
-            const camposProfessor = document.getElementById("campos-professor");
-            const camposAluno = document.getElementById("campos-aluno");
+<style scoped>
+select {
+  margin-bottom: 20px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
 
-            areaAtuacao.addEventListener('change', function() {
-                // Exibe os campos comuns para ambas as posições
-                camposComuns.style.display = "block"; 
-
-                // Limpa a exibição de campos específicos
-                camposAluno.style.display = "none";
-                camposProfessor.style.display = "none";
-
-                const papel = document.getElementById("papel")
-                const ra = document.getElementById("ra")
-                const turma = document.getElementById("turma")
-                
-                papel.removeAttribute("disabled")
-                ra.removeAttribute("disabled")
-                turma.removeAttribute("disabled")
-
-                // Exibe os campos específicos de acordo com a posição selecionada
-                if(areaAtuacao.value === "Aluno"){
-                    camposAluno.style.display = "block";
-                    papel.setAttribute("disabled", "");
-                } else if(areaAtuacao.value === "Professor"){
-                    camposProfessor.style.display = "block";
-                    ra.setAttribute("disabled", "");
-                    turma.setAttribute("disabled", "");              
-                }
-            });
-        }
-    }
-</script>
-
-<style >
-    
+option[disabled] {
+  color: #aaa;
+}
 </style>

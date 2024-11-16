@@ -1,7 +1,7 @@
 <template>
     <div>
         <label :for="id">{{ label }}</label>
-        <input type="text" :name="id" :id="id" :placeholder="placeholder"/>
+        <input type="password" :name="id" :id="id" :placeholder="placeholder"/>
     </div>
 </template>
   
@@ -10,7 +10,7 @@
         props:{
             id: {
                 type: String,
-                default: 'id_text'
+                default: 'id_password'
             },
             label: {
                 type: String,
@@ -22,6 +22,7 @@
             }
         }
     }
+
 </script>
   
 <style scoped>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <label :for="id">{{ label }}</label>
-        <input type="text" :name="id" :id="id" :placeholder="placeholder"/>
+        <input type="date" :name="id" :id="id" :placeholder="placeholder"/>
     </div>
 </template>
   
@@ -15,15 +15,11 @@
             label: {
                 type: String,
                 default: 'Nome Campo'
-            },
-            placeholder:{
-                type: String,
-                default: 'Placeholder do campo'
             }
         }
     }
 </script>
-  
+   
 <style scoped>
     input{
         border-bottom: 1px solid #ccc;
