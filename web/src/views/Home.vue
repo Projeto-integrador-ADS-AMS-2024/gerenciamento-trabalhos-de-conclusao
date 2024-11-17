@@ -4,6 +4,7 @@
     import PageId from '@/components/util/PageId.vue';
     import ButtonAdd from '@/components/util/ButtonAdd.vue';
     import SearchField from '@/components/util/SearchField.vue';
+    import { onMounted, ref } from 'vue';
 
     export default {
         name: 'Home',
@@ -12,6 +13,29 @@
             return{
                 labelBtnAdd: 'Adicionar turma'
             }
+        },
+        setup() {
+            const turmas = ref([]); // Inicializa o array de turmas
+
+            const fetchTurmas = async () => {
+                try {
+                    const res = await fetch('http://localhost:3000/turmas');
+                    const data = await res.json();
+                    
+                    // Atribui os dados recebidos ao `turmas.value`
+                    turmas.value = data;
+                    
+                    console.log('Turmas:', turmas.value);
+                } catch (error) {
+                    console.error('Erro ao buscar turmas:', error);
+                }
+            };
+
+            onMounted(fetchTurmas);
+
+            return { 
+                turmas 
+            };
         }
     }
 </script>
@@ -28,17 +52,22 @@
             <SearchField />
         </div>
         <div>
-            <Card
-                name="nome do Turma"
-                routeCard="/visualizarTurma" 
-                routeEdit="/editarTurma"
-                routeDelete="/delete"
-            />
-
-            <ButtonAdd route="/cadastrarTurmas"> {{labelBtnAdd}}</ButtonAdd>
-        </div>
+            <span v-if="!turmas">Carregando turmas...</span>
+            <div v-else>
+                <div v-for="(turma, index) in turmas" :key="index">
+                    <Card 
+                        :name="turma.nome"
+                        routeCard="/visualizarTurma" 
+                        routeEdit="/editarTurma"
+                        routeDelete="/delete"
+                    />
+                </div>
+                
+                <ButtonAdd route="/cadastrarTurmas"> {{labelBtnAdd}}</ButtonAdd>
+            </div>
+        </div>    
     </div>
 </template>
 <style >
-    
+      
 </style>

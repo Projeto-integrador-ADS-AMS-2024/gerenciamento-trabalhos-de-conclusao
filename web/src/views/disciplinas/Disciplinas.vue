@@ -2,6 +2,7 @@
     import Card from '@/components/card/Card.vue';
     import ButtonAdd from '@/components/util/ButtonAdd.vue';
     import PageId from '@/components/util/PageId.vue';
+    import { onMounted, ref } from 'vue';
 
     export default {
         name: 'Disciplinas',
@@ -10,6 +11,29 @@
             return{
                 labelBtnAdd: "Adicionar disciplina" 
             }
+        },
+        setup(){
+            const disciplinas = ref([]);
+
+            const fetchDisciplinas = async () => {
+                try{
+                    const res = await fetch('http://localhost:3000/disciplinas');
+                    const data = await res.json();
+
+                    disciplinas.value = data;
+                    console.log('Disciplinas:', disciplinas.value);
+                }
+                catch (error){
+                    console.log('Erro ao buscar disciplinas:', error)
+                }
+            }
+
+            onMounted(fetchDisciplinas)
+
+            return{
+                disciplinas
+            }
+
         }
     }
 </script>
@@ -22,12 +46,20 @@
             />
         </div>
         <div>
-            <Card 
-                name="nome do Disciplinas"
-                routeCard="/visualizarDisciplinas" 
-                routeEdit="/editarDisciplinas"
-                routeDelete="/delete"
-            />
+            <div>
+                <span v-if="!disciplinas">Carregando disciplinas...</span>
+                <div v-else>
+                    <div v-for="(disciplina, index) in disciplinas" :key="index">
+                        <Card  
+                            :name="disciplina.nome"
+                            routeCard="/visualizarDisciplinas" 
+                            routeEdit="/editarDisciplinas"
+                            routeDelete="/delete"
+                        />
+                    </div>
+                </div>
+
+            </div>
 
             <ButtonAdd 
                 route="/cadastrarDisciplinas"

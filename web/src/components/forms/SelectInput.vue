@@ -1,7 +1,7 @@
 <template>
     <div class="select-container">
         <label :for="id">{{ label }}</label>
-        <select :id="id" :value="modelValue" @change="handleChange">
+        <select :id="id" :value="modelValue" @change="handleChange" required>
             <!-- Placeholder Option -->
             <option value="" disabled selected>{{ placeholder }}</option>
             

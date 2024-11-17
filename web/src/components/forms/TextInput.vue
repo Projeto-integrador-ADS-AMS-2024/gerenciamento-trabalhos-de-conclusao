@@ -1,8 +1,8 @@
 <template>
     <div class="div-inpt">
         <label :for="id">{{ label }}</label>
-        <input type="text" :name="id" :id="id" :placeholder="placeholder" required/>
-        <p class="info">{{ info }}</p>
+        <input type="text" :name="id" :id="id" :placeholder="placeholder" v-on:blur="focusInput(id)" required/>
+        <p id="infoP">{{ info }}</p>
     </div>
 </template>
   
@@ -27,7 +27,19 @@
             }
         },
         methods:{
+            focusInput(id){
+                const pValidation = document.getElementById('infoP');
+                const input = document.querySelector('input'); 
 
+                // Validate input value
+                if (!input.value.trim()) { // ignora espaços
+                    pValidation.style.display = 'block';
+                    input.style.borderBottom = '1px solid red'; 
+                } else {
+                    pValidation.style.display = 'none';
+                    input.style.borderBottom = '1px solid #ccc'; 
+                }        
+            }
         }
     }
 </script>
@@ -48,8 +60,8 @@
         margin-bottom: 10px;
     }
 
-    .info{
-        display: block;
+    #infoP{
+        display: none;
         color: red;
     }
 </style>

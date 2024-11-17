@@ -1,7 +1,7 @@
 <template>
     <div class="div-inpt">
         <label :for="id">{{ label }}</label>
-        <input type="email" :name="id" :id="id" :placeholder="placeholder"/>
+        <input type="email" :name="id" :id="id" :placeholder="placeholder" required/>
     </div>
 </template>
   

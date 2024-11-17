@@ -26,7 +26,7 @@
                 <!-- Nome da Turma -->
                 <div>
                     <TextInput id="nome" label="Nome da Turma" placeholder="Insira o nome da turma"            
-                    />
+                    @blur="focusInput(id)" info="Preencha corretamente este campo!"/>
                 </div>
                 
                 <!-- Disciplina -->
