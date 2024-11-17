@@ -30,7 +30,7 @@ module.exports = {
       {
         matricula: 'P002',
         nome: 'Adelson',
-        papel: 'Coordenador',
+        papel: 'Admin',
         cpf: '781.856.530-20',
         email: 'adelson@example.com',
         senha: hashPassword('senha456'),
