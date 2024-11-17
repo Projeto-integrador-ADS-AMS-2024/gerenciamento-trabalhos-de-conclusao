@@ -22,7 +22,7 @@ const isAuth = async () => {
 
 // Rotas do sistema
 const routes = [
-  { path: '/', meta: { requiresAuth: true }, component: Home },// Rotas inicial (HOME->usuarios)
+  { path: '/', /*meta: { requiresAuth: false },*/ component: Home },// Rotas inicial (HOME->turmas)
 
   // Login
   {

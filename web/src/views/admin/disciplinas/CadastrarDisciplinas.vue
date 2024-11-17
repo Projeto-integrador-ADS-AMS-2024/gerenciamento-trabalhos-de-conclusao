@@ -1,3 +1,19 @@
+
+<script>
+    import Button from '@/components/forms/Button.vue';
+    import SelectInput from '@/components/forms/SelectInput.vue';
+    import TextInput from '@/components/forms/TextInput.vue';
+
+    export default {
+        name: 'CadastrarDisciplinas',
+        components:{Button, SelectInput, TextInput},
+        data(){
+            return{
+                coordenadoresOptions: ['jailton', 'uel']
+            }
+        }
+    }
+</script>
 <template>
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
@@ -6,31 +22,27 @@
         <div>        
             <form action="turma.html">
                 <div>
-                    <label for="nome">Nome da Disciplina</label><br>
-                    <input type="text" id="disciplina" name="disciplina" placeholder="Insira a disciplina" required><br>
+                    <TextInput 
+                        id="nome"
+                        label="Nome da Disciplina"
+                        placeholder="Insira o nome da disciplina"
+                    />
                 </div>
+
                 <div>
-                    <label for="professor">Professor:</label>
-                    <select name="professor" id="professor" required>
-                        <option value="" disabled selected>Selecione o Professor</option>   
-                        <option value="A">A1</option>
-                        <option value="B">B1</option>
-                    </select>
-                </div>                            
-                <div class="div-btn">
-                    <button type="submit">Cadastrar Disciplina</button>
+                    <SelectInput 
+                        id="coodernador"
+                        label="Coordenador do Curso"
+                        :options=coordenadoresOptions
+
+                    />
                 </div>
+                          
+                <Button>Cadastrar Disciplina</Button>
             </form>
         </div>
     </div>
 </template>
-
-<script>
-    
-    export default {
-        
-    }
-</script>
 
 <style >
     

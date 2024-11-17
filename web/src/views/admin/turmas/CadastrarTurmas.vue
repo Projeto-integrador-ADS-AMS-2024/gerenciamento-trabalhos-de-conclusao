@@ -1,3 +1,21 @@
+<script>
+    import TextInput from '@/components/forms/TextInput.vue';
+    import SelectInput from '@/components/forms/SelectInput.vue';
+    import CheckBoxInput from '@/components/forms/CheckBoxInput.vue';
+    import Button from '@/components/forms/Button.vue';
+    
+    export default {
+        name: 'CadastrarTurmas',
+        components: {TextInput, SelectInput, CheckBoxInput, Button},
+        data(){
+            return{
+                disciplinasOptions: ["PI", "TG", "TCC"],
+                cursosOptions: ['ADS', 'AMS-ADS', 'LOG']
+            }
+        }
+    }
+</script>
+
 <template>
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
@@ -5,97 +23,65 @@
         </div>
         <div>        
             <form action="turma.html">
+                <!-- Nome da Turma -->
                 <div>
-                    <label for="nome">Nome da Turma</label><br>
-                    <input type="text" id="nome" name="nome" placeholder="Insira o Nome da Turma" required><br>
-                </div>
-
-                <div>
-                    <label for="disciplina">Disciplina da Turma</label><br>
-                    <select name="disciplina" id="disciplina" required>
-                        <option value="" disabled selected>Selecione a Disciplina da Turma</option>   
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label for="curso">Curso da Turma</label><br>
-                    <select name="curso" id="curso" required>
-                        <option value="" disabled selected>Selecione o Curso da Turma</option>   
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                    </select>
-                </div>
-
-
-                <div>
-                    <label>Turno da Turma</label><br>
-                    <div class="col-checkbox">
-                        <div>
-                            <input type="checkbox" name="matutino" value="matutino"> 
-                            <label>Matutino</label>
-                        </div>
-
-                        <div>
-                            <input type="checkbox" name="vespertino" value="vespertino">  
-                            <label>Vespertino</label>  
-                        </div>
-
-                        <div>
-                            <input type="checkbox" name="noturno" value="noturno"> 
-                            <label>Noturno</label>         
-                        </div>                           
-                    </div>
+                    <TextInput id="nome" label="Nome da Turma" placeholder="Insira o nome da turma"            
+                    @blur="focusInput(id)" info="Preencha corretamente este campo!"/>
                 </div>
                 
-                <div class="div-btn">
-                    <button type="submit">Cadastrar Turma</button>
+                <!-- Disciplina -->
+                <div>
+                    <SelectInput
+                        id="disciplina"
+                        label="Disciplina da Turma"
+                        :options="disciplinasOptions"
+                        placeholder="Selecionar..."
+                    />
                 </div>
+
+                <!-- Curso -->
+                <div>
+                    <SelectInput 
+                        id="curso" 
+                        label="Curso da Turma" 
+                        :options=cursosOptions 
+                        placeholder="Selecionar..."
+                    />
+                </div>
+
+                <!-- Turno da turma -->
+                <div>
+                    <label>Turno da Turma</label><br>
+                    <div class="div-flex-checkbox">
+                        <div>
+                            <CheckBoxInput id="matutino" label="Matutino" />
+                        </div>
+                        <div>
+                            <CheckBoxInput id="vespertino" label="Vespertino" />
+                        </div>
+                        <div>
+                            <CheckBoxInput id="noturno" label="Noturno"/>
+                        </div>
+                    </div>
+                </div>
+                <Button>Cadastrar Turma</Button>
             </form>
         </div>
     </div>
 </template>
 
-<script>
-    
-    export default {
-        mounted() {
-            const areaAtuacao = document.getElementById("areaAtuacao");
-            const camposComuns = document.getElementById("campos-comuns");
-            const camposProfessor = document.getElementById("campos-professor");
-            const camposAluno = document.getElementById("campos-aluno");
-
-            areaAtuacao.addEventListener('change', function() {
-                // Exibe os campos comuns para ambas as posições
-                camposComuns.style.display = "block"; 
-
-                // Limpa a exibição de campos específicos
-                camposAluno.style.display = "none";
-                camposProfessor.style.display = "none";
-
-                const papel = document.getElementById("papel")
-                const ra = document.getElementById("ra")
-                const turma = document.getElementById("turma")
-                
-                papel.removeAttribute("disabled")
-                ra.removeAttribute("disabled")
-                turma.removeAttribute("disabled")
-
-                // Exibe os campos específicos de acordo com a posição selecionada
-                if(areaAtuacao.value === "Aluno"){
-                    camposAluno.style.display = "block";
-                    papel.setAttribute("disabled", "");
-                } else if(areaAtuacao.value === "Professor"){
-                    camposProfessor.style.display = "block";
-                    ra.setAttribute("disabled", "");
-                    turma.setAttribute("disabled", "");              
-                }
-            });
+<style >
+    .div-flex-input{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        div{
+            width: 100%;
         }
     }
-</script>
 
-<style >
-    
+    .div-flex-checkbox{
+        display: flex;
+        gap: 20px;
+    }
 </style>

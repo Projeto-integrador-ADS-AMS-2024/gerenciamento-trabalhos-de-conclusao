@@ -2,8 +2,10 @@
 :root{
   --bg-body:#f8f7f4;
   --bg-div-acessibilidade:#afafaf;
-  --bg-div-logo-aside: #004D73;
-  --bg-div-login:#004D73;
+  --font-color-acessibilidade: #000000;
+
+  --bg-div-logo-aside: #0F62FE;
+  --bg-div-login:#0F62FE;
   --h1-link-color: white;
   --link-color: rgb(0, 0, 0);
   --font-logo: white;
@@ -13,7 +15,7 @@
   --font-color-label: #000000;
 
   --bg-option-menu: #f1f1f1;
-  --bg-option-menu-active: #004D73;
+  --bg-option-menu-active: #0F62FE;
   --font-color-p-menu: #000000;
 
   --bg-footer-aside: #f1f1f1;
@@ -24,6 +26,7 @@
 /* .dark-mode:root{
   --bg-body:#000000;
   --bg-div-acessibilidade:#2c2c2c;
+  --font-color-acessibilidade: #ffffff;
   --bg-div-logo-aside: black;
   --h1-link-color: #fff333;
   --link-color: #fff333;
@@ -74,44 +77,7 @@ body{
   color: var(--font-color-h1-linkpag);
 }
 
-.div-cards{
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.card {
-  display: flex;
-  box-shadow: 0px 4px 8px var(--box-shadow-color);
-  border-radius: 10px;
-  flex-direction: column;
-  width: 300px;
-  padding: 20px; 
-  
-
-  .div-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem; 
-    padding: auto;
-    align-items: center;
-    text-align: center;
-    
-    img, svg {
-      width: 80px;
-      height: auto;
-      color: var(--font-color-p-menu);
-    }
-
-    span {
-      font-size: 1.2rem; 
-      font-weight: bold; 
-    }
-  }
-  
-}  
+ 
 
 .card-longo {
   display: flex;
@@ -173,41 +139,17 @@ body{
 
 }
 
-.div-funcoes-card {
-  display: flex;
-  gap: 0.5rem; 
-  justify-content: flex-end;
-}
 
-input[type="text"] {
+
+/* input[type="text"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
 
-}
+} */
 
-form {
-  label {
-    color: var(--font-color-label);
-  }
-
-  div {
-    /* input{
-      width: 100%; /* Ocupa 100% da largura da div 
-      box-sizing: border-box; /* Inclui padding e borda no cálculo do width 
-    } */
-    /* Inputs das telas */
-    input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"], select, input[type="file"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    } 
-  }
-}
 
 /* Corpo da pagina de login*/
 .main-login {
@@ -237,25 +179,8 @@ form {
 }
 
 
-.div-btn {
-  text-align: center; 
-  
-  button {
-    background-color: rgb(49, 48, 48);
-    padding: 10px;
-    width: 50vw;
-    color: #e4e2e2;
-    border-radius: 4px;
-    font-size: 14pt;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    opacity: 1;
-  }
-}
 
+/* 
 .div-flex-input {
   display: flex;
   gap: 10px;
@@ -263,59 +188,42 @@ form {
   
   div {
       flex: 1; /* Faz com que cada campo ocupe metade da linha */
-  }
   
-  input, select {
+  
+  /* input, select {
       width: 100%; 
-  }
-}
+  } */
+/* } */ 
 
 .div-conteudo-principal {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1.5rem;
   gap: 20px;
   flex: 1;  
-  
 }
 
 
-.div-filtro {
-  display: flex;
-  width: 100%;
-  gap: 10px;
-  align-items: center;
-  justify-items: center;
-
-  img, svg {
-    width: 36px;
-    height: auto;
-  }
-
-  .div-logo-pesquisa {
-    margin-bottom: 15px;
-  }
-}
 
 
-/* Cadastrar Curso */
+/* Cadastrar Curso
 .col-checkbox {
   display: flex;
   flex-wrap: wrap; /* Permite que os elementos quebrem de linha */
-  gap: 20px; /* Espaço entre os campos */
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-bottom: 20px;
+  /* gap: 20px; /* Espaço entre os campos */
+  /* margin-top: 10px; */
+  /* margin-left: 10px; */
+  /* margin-bottom: 20px; */
  
-  div {
+  /* div {
     display: flex;
     input[type="checkbox"] {
       transform: scale(2.5);
       border: 1px solid #ccc;
-      margin-right: 20px;
-    }
-  }
-}
+      margin-right: 20px; */
+    /* } */
+  /* } */ 
+/* }; */
 
 /* Curso Especifico */
 .opcoes-curso {
