@@ -42,18 +42,18 @@ const routes = [
 
   // Rotas de usuarios
   { path: '/cadastrarUsuarios', meta: { requiresAuth: true }, component: () => import('../views/admin/usuarios/CadastrarUsuarios.vue') },
-  { path: '/visualizarUsuarios', meta: { requiresAuth: true }, component: () => import('../views/admin/usuarios/VisualizarUsuarios.vue') },
+  // { path: '/visualizarUsuarios', meta: { requiresAuth: true }, component: () => import('../views/admin/usuarios/VisualizarUsuarios.vue') },
   { path: '/importarUsuarios', meta: { requiresAuth: true }, component: () => import('../views/admin/usuarios/ImportarUsuarios.vue') },
   { path: '/editarUsuario', meta: { requiresAuth: true }, component: () => import('../views/admin/usuarios/EditarUsuarios.vue') },
   
   // Rotas de cursos
   { path: '/cursos', meta: { requiresAuth: true }, component: () => import('../views/admin/cursos/Cursos.vue') },
   { path: '/cadastrarCursos', meta: { requiresAuth: true }, component: () => import('../views/admin/cursos/CadastrarCursos.vue') },
-  { path: '/visualizarCursos', meta: { requiresAuth: true }, component: () => import('../views/admin/cursos/VisualizarCursos.vue') },
+  // { path: '/visualizarCursos', meta: { requiresAuth: true }, component: () => import('../views/admin/cursos/VisualizarCursos.vue') },
   { path: '/editarCurso', meta: { requiresAuth: true }, component: () => import('../views/admin/cursos/EditarCursos.vue') },
   
   // Rotas de turmas
-  { path: '/turmas', meta: { requiresAuth: true }, component: () => import('../views/admin/turmas/Turmas.vue') },
+  // { path: '/turmas', meta: { requiresAuth: true }, component: () => import('../views/admin/turmas/Turmas.vue') },
   { path: '/cadastrarTurmas', meta: { requiresAuth: true }, component: () => import('../views/admin/turmas/CadastrarTurmas.vue') },
   { path: '/visualizarTurmas', meta: { requiresAuth: true }, component: () => import('../views/admin/turmas/VisualizarTurmas.vue') },
   { path: '/editarTurma', meta: { requiresAuth: true }, component: () => import('../views/admin/turmas/EditarTurmas.vue') },
@@ -61,7 +61,7 @@ const routes = [
   // Rotas de disciplinas
   { path: '/disciplinas', meta: { requiresAuth: true }, component: () => import('../views/admin/disciplinas/Disciplinas.vue') },
   { path: '/cadastrarDisciplinas', meta: { requiresAuth: true }, component: () => import('../views/admin/disciplinas/CadastrarDisciplinas.vue') },
-  { path: '/visualizarDisciplinas', meta: { requiresAuth: true }, component: () => import('../views/admin/disciplinas/VisualizarDisciplinas.vue') },
+  // { path: '/visualizarDisciplinas', meta: { requiresAuth: true }, component: () => import('../views/admin/disciplinas/VisualizarDisciplinas.vue') },
   { path: '/editarDisciplina', meta: { requiresAuth: true }, component: () => import('../views/admin/disciplinas/EditarDisciplinas.vue') },
   
 ]
