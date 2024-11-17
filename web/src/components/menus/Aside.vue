@@ -21,7 +21,7 @@
             </router-link>
 
             <!-- opcao p/ page cursos -->
-            <router-link to="/cursos" class="router-link"> 
+            <router-link to="/admin/cursos" class="router-link"> 
                 <div>
                     <svg role="img" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <title>Icone de um chapéu de formatura</title>
@@ -32,7 +32,7 @@
             </router-link>             
             
             <!-- opcao p/ page disciplinas -->
-            <router-link to="/disciplinas" class="router-link"> 
+            <router-link to="/admin/disciplinas" class="router-link"> 
                 <div>
                     <svg role="img" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <title>Icone de um livro aberto</title>
@@ -43,7 +43,7 @@
             </router-link>
             
             <!-- opcao p/ page usuarios -->
-            <router-link to="/usuarios" class="router-link" id="menu-aside"> 
+            <router-link to="/admin/usuarios" class="router-link" id="menu-aside"> 
                 <div>
                     <svg role="img" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <title>Icone de um usuário</title>

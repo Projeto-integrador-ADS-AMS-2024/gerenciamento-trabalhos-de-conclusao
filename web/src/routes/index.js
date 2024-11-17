@@ -1,10 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
-
-const adminRouteDefaultData = {
-  requiresAuth: true,
-  acceptUserType: ['admin']
-};
+import adminRoutes from './adminRoutes';
 
 const isAuth = async () => {
   const token = localStorage.getItem('token');
@@ -52,29 +48,11 @@ const routes = [
   },
 
   // Rotas do Admin
-  // Usuarios
-  { path: '/admin/cadastrarUsuarios', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/usuarios/CadastrarUsuarios.vue') },
-  { path: '/admin/visualizarUsuarios', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/usuarios/VisualizarUsuarios.vue') },
-  { path: '/admin/importarUsuarios', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/usuarios/ImportarUsuarios.vue') },
-  { path: '/editarUsuario', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/usuarios/EditarUsuarios.vue') },
-  
-  // Cursos
-  { path: '/admin/cursos', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/cursos/Cursos.vue') },
-  { path: '/admin/cadastrarCursos', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/cursos/CadastrarCursos.vue') },
-  { path: '/admin/visualizarCursos', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/cursos/VisualizarCursos.vue') },
-  { path: '/admin/editarCurso', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/cursos/EditarCursos.vue') },
-  
-  // Turmas
-  { path: '/admin/turmas', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/turmas/Turmas.vue') },
-  { path: '/admin/cadastrarTurmas', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/turmas/CadastrarTurmas.vue') },
-  { path: '/admin/visualizarTurmas', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/turmas/VisualizarTurmas.vue') },
-  { path: '/admin/editarTurma', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/turmas/EditarTurmas.vue') },
+  ...adminRoutes
 
-  // Disciplinas
-  { path: '/admin/disciplinas', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/disciplinas/Disciplinas.vue') },
-  { path: '/admin/cadastrarDisciplinas', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/disciplinas/CadastrarDisciplinas.vue') },
-  { path: '/admin/visualizarDisciplinas', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/disciplinas/VisualizarDisciplinas.vue') },
-  { path: '/admin/editarDisciplina', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/disciplinas/EditarDisciplinas.vue') },
+  // Rotas do Aluno
+
+  // Rotas do professor
 ];
 
 const router = createRouter({
@@ -96,12 +74,17 @@ router.beforeEach(async (to, from) => {
   } 
 
   to.meta.userInfo = user;
-  
-  if (to.name != 'home' && !to.meta.acceptUserType.includes(to.meta.userInfo.role)) {
-    return {
-      path: '/'
+
+  // Route authorization
+  if (to.meta.acceptUserType) {
+
+    if (to.name != 'home' && !to.meta.acceptUserType.includes(to.meta.userInfo.role)) {
+      return {
+        path: '/'
+      }
     }
   }
+  
 });
 
 // Exportando router
