@@ -13,7 +13,7 @@
 <template>     
     <div class="div-conteudo-principal">
         <div class="div-link-pagina">
-            <h2>Ferramentas > <router-link to="/turmas" class="router-link">Turmas</router-link> > <router-link to="/visualizarTurmas" class="router-link">Visualizar Turmas</router-link></h2>
+            <h2>Ferramentas > <router-link to="/admin/turmas" class="router-link">Turmas</router-link> > <router-link to="/admin/visualizarTurmas" class="router-link">Visualizar Turmas</router-link></h2>
         </div>
         <div>
             <div class="div-filtro">
@@ -26,11 +26,11 @@
                 </div>
             </div>
             <div class="div-cards">
-                <!-- <router-link to="/cursoTal" id="cardLink" class="router-link">
+                <!-- <router-link to="/admin/cursoTal" id="cardLink" class="router-link">
                     <div class="card">
                         <div class="div-funcoes-card">
                             <button>
-                                <router-link to="/editarTurma" class="router-link">Editar</router-link>
+                                <router-link to="/admin/editarTurma" class="router-link">Editar</router-link>
                             </button>
                             <button>
                                 <router-link to="" class="router-link">Excluir</router-link>
