@@ -1,7 +1,7 @@
 <template>
     <div class="select-container">
         <label :for="id">{{ label }}</label>
-        <select :id="id" :value="modelValue" @change="handleChange" required>
+        <select :id="id" :v-model="id" @change="handleChange" @input="$emit('update:modelValue', $event.target.value)" required>
             <!-- Placeholder Option -->
             <option value="" disabled selected>{{ placeholder }}</option>
             
@@ -21,8 +21,7 @@
             type: String,
             default: 'Selecionar...'
         }
-        }
-    );
+    });
 
     // Emite o valor selecionado para o componente pai
     const emit = defineEmits(['update:modelValue']);

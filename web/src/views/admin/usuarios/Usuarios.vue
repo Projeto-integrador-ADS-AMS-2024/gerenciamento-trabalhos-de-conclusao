@@ -5,6 +5,7 @@
     import User from '@/components/User.vue';
     import { onMounted, ref } from 'vue';
     import ButtonAdd from '@/components/util/ButtonAdd.vue';
+import { Usuario } from '@/services/usuarios';
 
     export default {
         name: 'Disciplinas',
@@ -19,8 +20,7 @@
 
             const fetchUsers = async () => {
                 try {
-                    const res = await fetch('http://localhost:3000/usuarios');
-                    const data = await res.json();
+                    const data = await Usuario.getAllUsuarios();
                     users.value = [...data.alunos, ...data.professores];
                 } catch (error) {
                     console.error('Erro ao buscar usuários:', error);

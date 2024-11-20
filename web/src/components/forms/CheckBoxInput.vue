@@ -1,26 +1,56 @@
 <template>
     <div class="col-checkbox">
         <div>
-            <input type="checkbox" :name="id" :id="id" :value="id"> 
-            <label :for="id">{{label}}</label>
+            <input 
+                type="checkbox" 
+                :name="id" 
+                :id="id" 
+                :value="value" 
+                :checked="isChecked" 
+                @change="updateTurnos"> 
+            <label :for="id">{{ label }}</label>
         </div>                         
     </div>
 </template>
 
 <script>
-    export default {
-        props:{
-            id:{
-                type: String,
-                default: 'id_checkbox'
-            },
-            label:{
-                type: String,
-                default: 'Campo checkbox'
-            }
+export default {
+    props: {
+        id: {
+            type: String,
+            default: 'id_checkbox'
+        },
+        label: {
+            type: String,
+            default: 'Campo checkbox'
+        },
+        value: {
+            type: String,
+            required: true
+        },
+        turnos: {
+            type: Array,
+            default: () => [] // Deve ser uma função que retorna um array
+        }
+    },
+    computed: {
+        isChecked() {
+            return this.turnos.includes(this.value);
+        }
+    },
+    methods: {
+        updateTurnos(event) {
+            const checked = event.target.checked;
 
+            // Emite um evento para o componente pai
+            this.$emit('update:turnos', 
+                checked 
+                    ? [...this.turnos, this.value] 
+                    : this.turnos.filter(turno => turno !== this.value)
+            );
         }
     }
+};
 </script>
 
 

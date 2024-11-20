@@ -5,6 +5,7 @@
   import Aside from './components/menus/Aside.vue'
   import PluginAcessibility from './components/PluginAcessibility.vue'
   import NavbarMobile from './components/menus/NavbarMobile.vue';  
+  import MenuTasks from './components/tasks-/MenuTasks.vue';
   const route = useRoute();
 </script>
 
