@@ -2,6 +2,7 @@
     import Card from '@/components/card/Card.vue';
     import ButtonAdd from '@/components/util/ButtonAdd.vue';
     import PageId from '@/components/util/PageId.vue';
+    import { Disciplinas } from '@/services/disciplinas';
     import { onMounted, ref } from 'vue';
 
     export default {
@@ -17,9 +18,7 @@
 
             const fetchDisciplinas = async () => {
                 try{
-                    const res = await fetch('http://localhost:3000/disciplinas');
-                    const data = await res.json();
-
+                    const data = await Disciplinas.getAllDisciplinas();
                     disciplinas.value = data;
                     console.log('Disciplinas:', disciplinas.value);
                 }

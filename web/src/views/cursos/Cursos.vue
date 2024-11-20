@@ -2,6 +2,7 @@
     import Card from '@/components/card/Card.vue';
     import ButtonAdd from '@/components/util/ButtonAdd.vue';
     import PageId from '@/components/util/PageId.vue';
+    import { Curso } from '@/services/curso';
     import { onMounted, ref } from 'vue';
 
     export default {
@@ -17,10 +18,9 @@
 
             const fetchCursos = async () => {
                 try {
-                    const res = await fetch('http://localhost:3000/cursos');
-                    const data = await res.json();
-
+                    const data = await Curso.getAllCursos()
                     cursos.value = data;
+
                     console.log('Cursos:', cursos.value);
                 }   
                 catch(error){
@@ -30,9 +30,7 @@
 
             onMounted(fetchCursos);
 
-            return { 
-                cursos 
-            };
+            return { cursos }
         }
     }
 </script>

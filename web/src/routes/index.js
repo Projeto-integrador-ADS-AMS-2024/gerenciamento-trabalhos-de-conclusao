@@ -15,26 +15,28 @@ const routes = [
     component: () => import('../views/LoginView.vue')
   },
 
-  // Rotas de usuarios
-  { path: '/cadastrarUsuarios', /*meta: { requiresAuth: false },*/ component: () => import('../views/usuarios/CadastrarUsuarios.vue') },
-  { path: '/usuarios', /*meta: { requiresAuth: false },*/ component: () => import('../views/usuarios/Usuarios.vue') },
-  { path: '/importarUsuarios', /*meta: { requiresAuth: false },*/ component: () => import('../views/usuarios/ImportarUsuarios.vue') },
-  { path: '/editarUsuario', /*meta: { requiresAuth: false },*/ component: () => import('../views/usuarios/EditarUsuarios.vue') },
+  // Rotas de turmas
+  { path: '/cadastrarTurmas', /*meta: { requiresAuth: false },*/ component: () => import('../views/turmas/CadastrarTurmas.vue') },
+  { path: '/editarTurma', /*meta: { requiresAuth: false },*/ component: () => import('../views/turmas/EditarTurmas.vue') },
   
   // Rotas de cursos
   { path: '/cursos', /*meta: { requiresAuth: false },*/ component: () => import('../views/cursos/Cursos.vue') },
   { path: '/cadastrarCursos', /*meta: { requiresAuth: false },*/ component: () => import('../views/cursos/CadastrarCursos.vue') },
   { path: '/editarCurso', /*meta: { requiresAuth: false },*/ component: () => import('../views/cursos/EditarCursos.vue') },
   
-  // Rotas de turmas
-  { path: '/cadastrarTurmas', /*meta: { requiresAuth: false },*/ component: () => import('../views/turmas/CadastrarTurmas.vue') },
-  { path: '/editarTurma', /*meta: { requiresAuth: false },*/ component: () => import('../views/turmas/EditarTurmas.vue') },
-
   // Rotas de disciplinas
   { path: '/disciplinas', /*meta: { requiresAuth: false },*/ component: () => import('../views/disciplinas/Disciplinas.vue') },
   { path: '/cadastrarDisciplinas', /*meta: { requiresAuth: false },*/ component: () => import('../views/disciplinas/CadastrarDisciplinas.vue') },
   { path: '/editarDisciplina', /*meta: { requiresAuth: false },*/ component: () => import('../views/disciplinas/EditarDisciplinas.vue') },
   
+  // Rotas de usuarios
+  { path: '/cadastrarUsuarios', /*meta: { requiresAuth: false },*/ component: () => import('../views/usuarios/CadastrarUsuarios.vue') },
+  { path: '/usuarios', /*meta: { requiresAuth: false },*/ component: () => import('../views/usuarios/Usuarios.vue') },
+  { path: '/importarUsuarios', /*meta: { requiresAuth: false },*/ component: () => import('../views/usuarios/ImportarUsuarios.vue') },
+  { path: '/editarUsuario', /*meta: { requiresAuth: false },*/ component: () => import('../views/usuarios/EditarUsuarios.vue') },
+  
+  
+  { path: '/tarefas', /*meta: { requiresAuth: false },*/ component: () => import('../views/Tarefas.vue') },
 ]
 
 const router = createRouter({

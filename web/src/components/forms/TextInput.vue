@@ -1,7 +1,7 @@
 <template>
     <div class="div-inpt">
         <label :for="id">{{ label }}</label>
-        <input type="text" :name="id" :id="id" :placeholder="placeholder" v-on:blur="focusInput(id)" required/>
+        <input type="text" @input="$emit('update:modelValue', $event.target.value)" :name="id" :id="id" :placeholder="placeholder" v-on:blur="focusInput(id)" required/>
         <p id="infoP">{{ info }}</p>
     </div>
 </template>

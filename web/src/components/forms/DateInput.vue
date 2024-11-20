@@ -1,7 +1,7 @@
 <template>
     <div class="div-inpt">
         <label :for="id">{{ label }}</label>
-        <input type="date" :name="id" :id="id" required/>
+        <input type="date" :v-model="id" :name="id" :id="id" required/>
     </div>
 </template>
   

@@ -5,6 +5,7 @@
     import ButtonAdd from '@/components/util/ButtonAdd.vue';
     import SearchField from '@/components/util/SearchField.vue';
     import { onMounted, ref } from 'vue';
+    import { Turma } from '@/services/turma.js';
 
     export default {
         name: 'Home',
@@ -16,26 +17,23 @@
         },
         setup() {
             const turmas = ref([]); // Inicializa o array de turmas
-
+         
             const fetchTurmas = async () => {
-                try {
-                    const res = await fetch('http://localhost:3000/turmas');
-                    const data = await res.json();
-                    
-                    // Atribui os dados recebidos ao `turmas.value`
+                try{
+                    const data = await Turma.getAllTurmas();
                     turmas.value = data;
-                    
-                    console.log('Turmas:', turmas.value);
-                } catch (error) {
-                    console.error('Erro ao buscar turmas:', error);
+                    console.log('Turmas carregadas:', turmas.value);
                 }
-            };
+                catch(error){
+                    console.error('Erro ao carregar turmas:', error);
+                }
+            }
 
-            onMounted(fetchTurmas);
+            // Chama a função ao montar o componente
+            onMounted(fetchTurmas)
 
-            return { 
-                turmas 
-            };
+            // Retorna os dados para o template
+            return { turmas };
         }
     }
 </script>
@@ -52,7 +50,8 @@
             <SearchField />
         </div>
         <div>
-            <span v-if="!turmas">Carregando turmas...</span>
+            <span v-if="turmas.length === 0">Carregando turmas...</span>
+
             <div v-else>
                 <div v-for="(turma, index) in turmas" :key="index">
                     <Card 
