@@ -1,7 +1,7 @@
 <script>
-    import Button from '../../components/forms/Button.vue';
+    import Button from '@/components/forms/Button.vue';
     import CheckBoxInput from '@/components/forms/CheckBoxInput.vue';
-    import TextInput from '../../components/forms/TextInput.vue';
+    import TextInput from '@/components/forms/TextInput.vue';
     import SelectInput from '@/components/forms/SelectInput.vue';
 
     export default{
@@ -12,6 +12,24 @@
                 duracaoOptions: [1,2,3,4,5,6,7,8,9,10,11,12],
                 tipoPeriodoOptions: ['Ano(s)', 'Mese(s)'],
                 coordenadoresOptions: ['Jose', 'Jelton']
+            }
+        },
+        methods: {
+            async newCourse() {
+                try {
+                    const novaCurso = {
+                        nome: this.nome,
+                        disciplinaId: this.disciplinaId,
+                        cursoId: this.cursoId,
+                        turno: this.turnos.join(',') // Transforma o array em uma string separada por vírgulas
+                    };
+
+                    const cursoCriado = await Turma.createTurma(novaCurso);
+
+                    console.log('Curso criada:', cursoCriado);
+                } catch (error) {
+                    console.error('Erro ao criar curso:', error);
+                }
             }
         }
     }

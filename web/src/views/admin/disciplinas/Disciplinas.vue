@@ -55,7 +55,7 @@ export default {
 
             </div>
 
-            <ButtonAdd route="/cadastrarDisciplinas">
+            <ButtonAdd route="/admin/cadastrarDisciplinas">
                 {{ labelBtnAdd }}
             </ButtonAdd>
         </div>

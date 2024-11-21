@@ -24,6 +24,12 @@ export default {
     },
     methods: {
         async newClass() {
+            console.log('Turnos selecionados:', this.turnos);
+            if (!this.nome || !this.disciplinaId || !this.cursoId || this.turnos.length === 0) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+
             try {
                 const novaTurma = {
                     nome: this.nome,
@@ -33,13 +39,16 @@ export default {
                 };
 
                 const turmaCriada = await Turma.createTurma(novaTurma);
-
                 console.log('Turma criada:', turmaCriada);
+
+                // Redireciona para a lista de turmas após a criação
+                this.$router.push('/turmas');
             } catch (error) {
                 console.error('Erro ao criar turma:', error);
             }
         }
     }
+
 };
 </script>
 
@@ -86,15 +95,10 @@ export default {
                     <label>Turno da Turma</label><br>
                     <div class="div-flex-checkbox">
                         <!-- <div>Checked names: {{ turnos }}</div> -->
-                        <div>
-                            <CheckBoxInput id="matutino" label="Matutino" value="matutino" v-model:turnos="turnos" />
-                        </div>
-                        <div>
-                            <CheckBoxInput id="vespertino" label="Vespertino" value="vespertino" v-model:turnos="turnos" />
-                        </div>
-                        <div>
-                            <CheckBoxInput id="noturno" label="Noturno" value="noturno" v-model:turnos="turnos" />
-                        </div>
+                        <CheckBoxInput id="matutino" label="Matutino" value="matutino" v-model="turnos" />
+                        <CheckBoxInput id="vespertino" label="Vespertino" value="vespertino" v-model="turnos" />
+                        <CheckBoxInput id="noturno" label="Noturno" value="noturno" v-model="turnos" />
+
                     </div>
                 </div>
                 <Button>Cadastrar Turma</Button>

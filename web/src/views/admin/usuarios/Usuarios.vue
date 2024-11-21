@@ -43,7 +43,7 @@ import { Usuario } from '@/services/usuarios';
         </div>
 
         <div>
-            <ButtonAdd route="/cadastrarUsuarios">Adicionar Usuário</ButtonAdd>
+            <ButtonAdd route="/admin/cadastrarUsuarios">Adicionar Usuário</ButtonAdd>
         </div>
 
         <div>

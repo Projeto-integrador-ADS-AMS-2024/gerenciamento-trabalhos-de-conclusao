@@ -55,7 +55,7 @@
                 </div>
             </div>
 
-            <ButtonAdd route="/cadastrarCursos"> {{labelBtnAdd}}</ButtonAdd>
+            <ButtonAdd route="/admin/cadastrarCursos"> {{labelBtnAdd}}</ButtonAdd>
         </div>
     </div>
 

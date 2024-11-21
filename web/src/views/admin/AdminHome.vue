@@ -63,11 +63,12 @@
                     />
                 </div>
                 
-                <ButtonAdd route="/cadastrarTurmas"> {{labelBtnAdd}}</ButtonAdd>
+                <ButtonAdd route="/admin/cadastrarTurmas"> {{labelBtnAdd}}</ButtonAdd>
             </div>
         </div>    
     </div>
 </template>
+
 <style >
       
 </style>
