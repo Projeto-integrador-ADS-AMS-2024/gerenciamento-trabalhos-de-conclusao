@@ -1,6 +1,5 @@
 <script setup>
 import Button from '@/components/forms/Button.vue';
-import PasswordInput from '@/components/forms/PasswordInput.vue';
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
@@ -52,7 +51,7 @@ const handleSubmit = async (event) => {
             <form @submit="handleSubmit">
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="password" required minlength="8">
+                    <input type="email" id="email" name="email" required minlength="8">
                 </div>
     
                 <div class="form-group">
@@ -88,6 +87,7 @@ body{
     border-radius: 15px;
     width: 300px;
     display: flex;
+    height: auto;
     justify-self: center;
     align-items: center;
     
@@ -114,7 +114,8 @@ body{
 .div-form-login{
     background-color: #dbd9d9;
     border-radius: 15px;
-    width: 350px;
+    width: 300px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -151,6 +152,19 @@ button:hover {
 @media (max-width: 900px) {  
     .login-container{
         flex-direction: column;
+    }
+
+    .div-logo-login{
+        padding: 30px;
+        div{
+            img{
+                width: 60px;
+            }
+        }
+    }
+
+    .div-form-login{
+        padding: 30px;
     }
 }
 
