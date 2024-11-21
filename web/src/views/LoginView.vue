@@ -1,4 +1,6 @@
 <script setup>
+import Button from '@/components/forms/Button.vue';
+import PasswordInput from '@/components/forms/PasswordInput.vue';
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
@@ -50,7 +52,7 @@ const handleSubmit = async (event) => {
             <form @submit="handleSubmit">
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="password" required minlength="8">
                 </div>
     
                 <div class="form-group">
@@ -60,27 +62,31 @@ const handleSubmit = async (event) => {
     
                 <span class="error" ref="errorRef"></span>
     
-                <button type="submit">Entrar</button>
+                <Button>Logar</Button>
             </form>
         </div>
     </div>
 </template>
 
 <style scoped>
+body{
+    background-color: red;
+}
+
 .login-container {
     position: absolute;
     
     display: flex;
     top: 50%;
     left: 50%;
-    height: 55vh;
+    height: 50vh;
     transform: translate(-50%, -50%);
 }
 
 .div-logo-login{
     background-color: var(--bg-div-login);
     border-radius: 15px;
-    width: 400px;
+    width: 300px;
     display: flex;
     justify-self: center;
     align-items: center;
@@ -93,7 +99,7 @@ const handleSubmit = async (event) => {
         width: 400px;
         
         img{
-            width: 170px;
+            width: 130px;
         }
 
         h1{
@@ -106,9 +112,9 @@ const handleSubmit = async (event) => {
 }
 
 .div-form-login{
-    background-color: #f1f1f1;
+    background-color: #dbd9d9;
     border-radius: 15px;
-    width: 400px;
+    width: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,6 +152,23 @@ button:hover {
     .login-container{
         flex-direction: column;
     }
+}
+
+input{
+    border-bottom: 1px solid #0F62FE;
+    padding: 8px;
+    background-color: #f1f1f1;
+    border-radius: 2px;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 4px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+input:focus{
+    border: 1px solid #0F62FE;
+    outline: none; /* Remove o outline padrão */
 }
 
 </style>
