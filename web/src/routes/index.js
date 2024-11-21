@@ -76,6 +76,7 @@ router.beforeEach(async (to, from) => {
   to.meta.userInfo = user;
 
   // Route authorization
+  console.log(to.meta)
   if (to.meta.acceptUserType) {
 
     if (to.name != 'home' && !to.meta.acceptUserType.includes(to.meta.userInfo.role)) {

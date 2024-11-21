@@ -67,11 +67,7 @@
 </template>
 
 <script>
-    document.addEventListener('keydown', (event) => {
-        if (event.key === '2') {
-            window.location.href = '#menu-aside'; // Redireciona para a seção "Início"
-        } 
-    });
+
 </script>
 
 <style scoped>    

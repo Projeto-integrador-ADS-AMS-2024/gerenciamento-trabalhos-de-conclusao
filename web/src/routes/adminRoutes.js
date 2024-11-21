@@ -1,6 +1,6 @@
 const adminRouteDefaultData = {
     requiresAuth: true,
-    acceptUserType: ['admin']
+    acceptUserType: ['Admin']
 };
 
 export default [
