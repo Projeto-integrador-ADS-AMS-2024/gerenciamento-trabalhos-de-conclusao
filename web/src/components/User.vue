@@ -4,13 +4,14 @@ defineProps({
 })
 </script>
 <template>
-    <tr>
-        <td>{{ user.ra || user.matricula }}</td>
-        <td>{{ user.nome }}</td>
-        <td>{{ user.cpf }}</td>
-        <td>{{ user.email }}</td>
-    </tr>
+        <tr>       
+            <td><router-link>{{ user.ra || user.matricula }}</router-link></td>
+            <td><router-link>{{ user.nome }}</router-link></td>
+            <td><router-link>{{ user.cpf }}</router-link></td>
+            <td><router-link>{{ user.email }}</router-link></td>
+        </tr>
 </template>
 
 <style scoped>
+
 </style>

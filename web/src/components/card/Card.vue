@@ -70,6 +70,12 @@
     
     } 
 
+    .card:hover {
+        transform: scale(1.02);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+
     .div-funcoes-card {
         display: flex;
         gap: 0.5rem; 

@@ -48,9 +48,9 @@
                 <div v-for="(curso, index) in cursos" :key="index">
                     <Card 
                         :name="curso.nome" 
-                        routeCard="/visualizarCurso" 
-                        routeEdit="/editarCurso" 
-                        routeDelete="/delete"
+                        :routeCard="`/cursos/${curso.id}`" 
+                        :routeEdit="`/cursos/${curso.id}`" 
+                        :routeDelete="`/cursos/${curso.id}`"
                     />
                 </div>
             </div>

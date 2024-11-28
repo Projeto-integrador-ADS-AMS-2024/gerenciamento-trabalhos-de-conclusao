@@ -25,7 +25,6 @@
                     // Atribui os dados recebidos ao `turmas.value`
                     turmas.value = data;
                     
-                    console.log('Turmas:', turmas.value);
                 } catch (error) {
                     console.error('Erro ao buscar turmas:', error);
                 }
@@ -57,9 +56,9 @@
                 <div v-for="(turma, index) in turmas" :key="index">
                     <Card 
                         :name="turma.nome"
-                        routeCard="/visualizarTurma" 
-                        routeEdit="/editarTurma"
-                        routeDelete="/delete"
+                        :routeCard="`/admin/turmas/${turma.id}`" 
+                        :routeEdit="`/admin/turmas/${turma.id}`"
+                        :routeDelete="`/admin/turmas/${turma.id}`"
                     />
                 </div>
                 

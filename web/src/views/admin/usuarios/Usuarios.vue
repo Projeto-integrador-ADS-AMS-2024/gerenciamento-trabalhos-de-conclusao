@@ -91,5 +91,10 @@ import { Usuario } from '@/services/usuarios';
 
     th:hover, td:hover {
         cursor: default;
-    }   
+    }  
+    
+    tbody{
+        width: 100%;
+    }
+    
 </style>

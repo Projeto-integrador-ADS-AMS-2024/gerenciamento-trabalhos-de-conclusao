@@ -48,8 +48,8 @@ export default {
                 <span v-if="!disciplinas">Carregando disciplinas...</span>
                 <div v-else>
                     <div v-for="(disciplina, index) in disciplinas" :key="index">
-                        <Card :name="disciplina.nome" routeCard="/visualizarDisciplinas" routeEdit="/editarDisciplinas"
-                            routeDelete="/delete" />
+                        <Card :name="disciplina.nome" :routeCard="`/disciplinas/${disciplina.id}`" :routeEdit="`/disciplinas/${disciplina.id}`"
+                            :routeDelete="`/disciplinas/${disciplina.id}`" />
                     </div>
                 </div>
 

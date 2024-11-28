@@ -17,6 +17,7 @@ export default [
     // Turmas
     { path: '/admin/cadastrarTurmas', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/turmas/CadastrarTurmas.vue') },
     { path: '/admin/editarTurma', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/turmas/EditarTurmas.vue') },
+    { path: '/admin/turmas/:id',  props: true, meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/turmas/turmaEspecifica.vue') },
 
     // Disciplinas
     { path: '/admin/disciplinas', meta: { ...adminRouteDefaultData }, component: () => import('../views/admin/disciplinas/Disciplinas.vue') },
