@@ -3,11 +3,8 @@
         <div>
             <input 
                 type="checkbox" 
-                :name="id" 
                 :id="id" 
-                :value="value" 
-                :checked="isChecked" 
-                @change="updateTurnos"> 
+                :value="value"> 
             <label :for="id">{{ label }}</label>
         </div>                         
     </div>
@@ -26,30 +23,10 @@ export default {
         },
         value: {
             type: String,
-            required: true
+            default: 'value'
         },
-        turnos: {
-            type: Array,
-            default: () => [] // Deve ser uma função que retorna um array
-        }
-    },
-    computed: {
-        isChecked() {
-            return this.turnos.includes(this.value);
-        }
-    },
-    methods: {
-        updateTurnos(event) {
-            const checked = event.target.checked;
 
-            // Emite um evento para o componente pai
-            this.$emit('update:turnos', 
-                checked 
-                    ? [...this.turnos, this.value] 
-                    : this.turnos.filter(turno => turno !== this.value)
-            );
-        }
-    }
+    },
 };
 </script>
 

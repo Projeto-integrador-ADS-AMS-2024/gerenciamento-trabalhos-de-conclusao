@@ -3,16 +3,17 @@ const Turma = require("../models/Turma.js");
 // Criar uma nova turma (Create)
 const createTurma = async (req, res) => {
     try {
-        const { nome, cursoId, disciplinaId } = req.body; // Pegando os dados do corpo da requisição
+        const { nome, turno, cursoId, disciplinaId } = req.body; // Pegando os dados do corpo da requisição
 
         // Validação simples
-        if (!nome || !cursoId || !disciplinaId) {
+        if (!nome || !turno || !cursoId ||!disciplinaId) {
             return res.status(400).json({ message: "Todos os campos são obrigatórios." });
         }
 
         // Criação da turma
         const novaTurma = await Turma.create({
             nome,
+            turno,
             cursoId,
             disciplinaId
         });

@@ -49,7 +49,7 @@ export default {
                 <div v-else>
                     <div v-for="(disciplina, index) in disciplinas" :key="index">
                         <Card :name="disciplina.nome" :routeCard="`/disciplinas/${disciplina.id}`" :routeEdit="`/disciplinas/${disciplina.id}`"
-                            :routeDelete="`/disciplinas/${disciplina.id}`" />
+                            :routeDelete="`/admin/disciplinas/${disciplina.id}`" />
                     </div>
                 </div>
 

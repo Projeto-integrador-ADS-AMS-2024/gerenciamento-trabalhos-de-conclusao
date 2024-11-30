@@ -3,16 +3,21 @@
     import CheckBoxInput from '@/components/forms/CheckBoxInput.vue';
     import TextInput from '@/components/forms/TextInput.vue';
     import SelectInput from '@/components/forms/SelectInput.vue';
+    import { ref } from 'vue';
 
     export default{
         name: 'CadastrarCurso',
         components: { Button, TextInput, SelectInput, CheckBoxInput},
-        data(){
+        setup() {
+            const nome = ref('')
+
+            const duracaoOptions = [1,2,3,4,5,6,7,8,9,10,11,12]
+            const tipoPeriodoOptions = ['Ano(s)', 'Mese(s)']
+            const coordenadoresOptions = ['Jose', 'Jelton']
             return{
-                duracaoOptions: [1,2,3,4,5,6,7,8,9,10,11,12],
-                tipoPeriodoOptions: ['Ano(s)', 'Mese(s)'],
-                coordenadoresOptions: ['Jose', 'Jelton']
+                nome,duracaoOptions,tipoPeriodoOptions,coordenadoresOptions
             }
+            
         },
         methods: {
             async newCourse() {
@@ -52,7 +57,7 @@
                 <div class="div-flex-input">
                     <div>
                         <!-- Duracao -->
-                        <SelectInput id="duracao" label="Duração do Curso" :options=duracaoOptions />
+                        <SelectInput id="duracao" label="Duração do Curso" :options=duracaoOptions  />
                     </div>
                     <div>
                         <!-- Periodo  -->

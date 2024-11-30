@@ -1,34 +1,30 @@
 <template>
     <div class="select-container">
         <label :for="id">{{ label }}</label>
-        <select :id="id" :v-model="id" @change="handleChange" @input="$emit('update:modelValue', $event.target.value)" required>
-            <!-- Placeholder Option -->
-            <option value="" disabled selected>{{ placeholder }}</option>
-            
-            <!-- Opções -->
+        <select
+            :id="id"
+            :value="modelValue"
+            @change="$emit('update:modelValue', $event.target.value)"
+        >
+            <option value="" disabled>{{ placeholder }}</option>
             <option v-for="option in options" :key="option" :value="option">{{ option }}</option>
         </select>
     </div>
 </template>
   
-<script setup>
-    defineProps({
+<script>
+export default {
+    props: {
         id: String,
         label: String,
-        modelValue: String,
-        options: Array,
-        placeholder: {
-            type: String,
-            default: 'Selecionar...'
-        }
-    });
-
-    // Emite o valor selecionado para o componente pai
-    const emit = defineEmits(['update:modelValue']);
-
-    function handleChange(event) {
-        emit('update:modelValue', event.target.value);
-    }
+        placeholder: String,
+        modelValue: [String, Number],
+        options: {
+            type: Array,
+            required: true,
+        },
+    },
+};
 </script>
 
 <style scoped>
