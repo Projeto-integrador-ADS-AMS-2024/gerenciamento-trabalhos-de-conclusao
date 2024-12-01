@@ -18,6 +18,7 @@ module.exports = {
         nome: "1º ano AMS",
         cursoId: 2,
         disciplinaId: 3,
+        turno: "Noite",
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -25,6 +26,7 @@ module.exports = {
         nome: "5º Semestre ADS",
         cursoId: 1,
         disciplinaId: 1,
+        turno: "Noite",
         createdAt: new Date(),
         updatedAt: new Date(),
       }
