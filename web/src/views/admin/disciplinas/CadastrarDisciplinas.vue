@@ -3,34 +3,53 @@ import Button from '@/components/forms/Button.vue';
 import SelectInput from '@/components/forms/SelectInput.vue';
 import TextInput from '@/components/forms/TextInput.vue';
 import { Disciplina } from '@/services/disciplina';
+import { ref, onMounted } from 'vue';
 
 export default {
     name: 'CadastrarDisciplinas',
     components: { Button, SelectInput, TextInput },
-    data() {
+    setup() {
+        const nome = ref('')               // Para armazenar o nome da disciplina
+        const coodernador = ref('')
+        const coordenadoresOptions = ref([])
+
+        const fetchCoodenadorOptions = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/professores');
+                const data = await response.json();
+                // Filtrar apenas os que têm o atributo 'coordenador'
+                coordenadoresOptions.value = data.filter(professor => professor.papel === 'Coordenador');
+            } catch (error) {
+                console.error('Erro ao buscar os dados:', error);
+            }
+        };
+
+        onMounted(fetchCoodenadorOptions); 
+        
         return {
-            nome: '',               // Para armazenar o nome da disciplina
-            coordenador: '',        // Para armazenar o coordenador selecionado
-            coordenadoresOptions: ['jailton', 'uel']  // Opções dos coordenadores
+            nome, coodernador, coordenadoresOptions    
         };
     },
     methods: {
         async newDisciplines() {
+            if (!this.nome) {
+                // alert('Por favor, preencha todos os campos.');
+                console.log('Preencha:', this.nome)
+                return;
+            }
+
             try {
                 const novaDisciplina = {
-                    nome: this.nome,
-                    coordenador: this.coordenador
+                    nome: this.nome
                 };
+                // console.log(novaDisciplina)
 
                 const disciplinaCriada = await Disciplina.createDiscipline(novaDisciplina);
-
-                // Redireciona para a página de disciplinas após a criação
-                this.$router.push('/admin/disciplinas'); // Pode substituir com o caminho de sua escolha
-
+                location.replace('/admin/disciplinas')
+                console.log('Disciplina criada:', novaDisciplina);
 
                 // Aqui você pode adicionar a lógica de criação da turma
                 // Exemplo: Chamar uma API para criar a turma ou realizar a lógica necessária
-                console.log('Disciplina criada:', Disciplina);
             } catch (error) {
                 console.error('Erro ao criar disciplina:', error);
             }
@@ -47,23 +66,8 @@ export default {
         <div>        
             <form @submit.prevent="newDisciplines">
                 <div>
-                    <TextInput 
-                        id="nome"
-                        label="Nome da Disciplina"
-                        placeholder="Insira o nome da disciplina"
-                        v-model="nome" 
-                    />
+                    <TextInput id="nome" v-model="nome" label="Nome da Disciplina" placeholder="Insira o nome da disciplina"  />
                 </div>
-
-                <div>
-                    <SelectInput 
-                        id="coordenador"
-                        label="Coordenador do Curso"
-                        :options="coordenadoresOptions"
-                        v-model="coordenador" 
-                    />
-                </div>
-
                 <div>
                     <Button>Cadastrar Disciplina</Button>
                 </div>

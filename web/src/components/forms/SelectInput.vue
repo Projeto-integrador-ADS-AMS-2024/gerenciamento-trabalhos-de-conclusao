@@ -7,26 +7,50 @@
             @change="$emit('update:modelValue', $event.target.value)"
         >
             <option value="" disabled>{{ placeholder }}</option>
-            <option v-for="option in options" :key="option" :value="option">{{ option }}</option>
+            <!-- Renderiza as opções -->
+            <option
+                v-for="option in options"
+                :key="getOptionKey(option)"
+                :value="getOptionValue(option)"
+            >
+                {{ getOptionLabel(option) }}
+            </option>
         </select>
     </div>
 </template>
   
 <script>
-export default {
-    props: {
-        id: String,
-        label: String,
-        placeholder: String,
-        modelValue: [String, Number],
-        options: {
-            type: Array,
-            required: true,
+    export default {
+        props: {
+            id: { type: String, required: true },
+            label: { type: String, required: true },
+            modelValue: { required: true },
+            options: { 
+                type: Array, 
+                default: () => [] 
+            }, // Pode ser um array de strings/números ou objetos
+            placeholder: { 
+                type: String, 
+                default: 'Selecionar...' 
+            },
         },
-    },
-};
+        methods: {
+            // Determina o valor para o atributo "value"
+            getOptionValue(option) {
+                return typeof option === 'object' ? option.id : option;
+            },
+            // Determina o rótulo exibido no <option>
+            getOptionLabel(option) {
+                return typeof option === 'object' ? option.nome : option;
+            },
+            // Determina a chave única para o v-for
+            getOptionKey(option) {
+                return typeof option === 'object' ? option.id : option;
+            },
+        },
+    };
 </script>
-
+  
 <style scoped>
     .select-container {
         margin-bottom: 20px;

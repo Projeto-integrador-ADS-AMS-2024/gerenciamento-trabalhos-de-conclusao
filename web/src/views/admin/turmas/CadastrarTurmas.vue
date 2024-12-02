@@ -3,7 +3,7 @@ import TextInput from '@/components/forms/TextInput.vue';
 import SelectInput from '@/components/forms/SelectInput.vue';
 import CheckBoxInput from '@/components/forms/CheckBoxInput.vue';
 import Button from '@/components/forms/Button.vue';
-import { ref } from 'vue';
+import { ref, onMounted} from 'vue';
 import { Turma } from '@/services/turma';
 
 export default {
@@ -15,8 +15,36 @@ export default {
         const disciplinaId = ref('')// Definido como único para simplificar a seleção
         const cursoId = ref('') // Definido como único para simplificar a seleção
 
-        const disciplinasOptions = [1,2,3]
-        const cursosOptions = [1,2,3]
+        
+        const cursosOptions = ref([])
+
+        const disciplinasOptions = ref([])
+
+        const fetchDisciplinasOptions = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/disciplinas');
+                const data = await response.json();
+                disciplinasOptions.value = data
+            } catch (error) {
+                console.error('Erro ao buscar os dados:', error);
+            }
+        };
+
+
+        const fetchCursosOptions = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/cursos');
+                const data = await response.json();
+                cursosOptions.value = data
+            } catch (error) {
+                console.error('Erro ao buscar os dados:', error);
+            }
+        };
+
+        onMounted(fetchDisciplinasOptions); 
+        onMounted(fetchCursosOptions); 
+
+
         return{
             nome,disciplinaId,cursoId,disciplinasOptions,cursosOptions,turnosSelecionados
         }
@@ -42,39 +70,13 @@ export default {
                 // console.log(novaTurma)
 
                 const turmaCriada = await Turma.createTurma(novaTurma);
+                location.replace('/')
                 console.log('Turma criada:', turmaCriada);
                 
             }catch (error) {
                 console.error('Erro ao criar turma:', error);
             }
-            
-            // const turmaCriada = await Turma.createTurma(novaTurma);
-            // console.log('FRONT - Turma criada:', turmaCriada);
 
-            // const turmaCriada = await Turma.createTurma(novaTurma);
-            // console.log('Turma criada:', turmaCriada);
-            // if (!this.nome || !this.disciplinaId || !this.cursoId || this.turnos.length === 0) {
-            //     alert('Por favor, preencha todos os campos.');
-            //     console.log(this.nome, this.disciplinaId, this.cursoId, this.turnos)
-            //     return;
-            // }
-
-            // try {
-            //     const novaTurma = {
-            //         nome: this.nome,
-            //         disciplinaId: this.disciplinaId,
-            //         cursoId: this.cursoId,
-            //         turno: this.turnos.join(',') // Transforma o array em uma string separada por vírgulas
-            //     };
-
-            //     const turmaCriada = await Turma.createTurma(novaTurma);
-            //     console.log('Turma criada:', turmaCriada);
-
-            //     // Redireciona para a lista de turmas após a criação
-            //     this.$router.push('/turmas');
-            // } catch (error) {
-            //     console.error('Erro ao criar turma:', error);
-            // }
         }
     }
 
@@ -97,28 +99,44 @@ export default {
                     @blur="focusInput(id)" info="Preencha corretamente este campo!"/>
                 </div>
 
-                <!-- Disciplina -->
-                <div>
-                    <SelectInput
-                        id="disciplinaId"
-                        label="Disciplina da Turma"
-                        :options="disciplinasOptions"
-                        v-model="disciplinaId"
-                        placeholder="Selecionar..."
-                    />
-                </div>
-                
                 <!-- Curso -->
                 <div>
                     <SelectInput 
-                        v-model="cursoId"
                         id="cursoId" 
+                        v-model="cursoId"
                         label="Curso da Turma" 
                         :options="cursosOptions" 
                         placeholder="Selecionar..."
                     />
+
+                    <!-- <SelectInput
+                        id="disciplinaId"
+                        v-model="disciplinaId"
+                        label="Disciplina da Turma"
+                        :options="disciplinasOptions"
+                        placeholder="Selecionar..."
+                    /> -->
                 </div>
 
+                <!-- Disciplina -->
+                <div>
+                    <SelectInput
+                        id="disciplinaId"
+                        v-model="disciplinaId"
+                        label="Disciplina da Turma"
+                        :options="disciplinasOptions"
+                        placeholder="Selecionar..."
+                    />
+                    <!-- {{ disciplinaId }} -->
+                    <!-- <SelectInput
+                        id="coordenador"
+                        v-model="coodernador"
+                        label="Coordenador do Curso"
+                        :options="coordenadoresOptions"
+                        placeholder="Selecionar..."
+                    /> -->
+                </div>
+                
                 <!-- Turno da turma -->
                 <div>
                     <label>Turno da Turma</label><br>

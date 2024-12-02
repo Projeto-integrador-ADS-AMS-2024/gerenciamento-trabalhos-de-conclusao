@@ -1,7 +1,7 @@
 <template>
     <div class="div-inpt">
         <label :for="id">{{ label }}</label>
-        <input type="password" :v-model="id" :name="id" :id="id" :placeholder="placeholder" required/>
+        <input type="password" @input="$emit('update:modelValue', $event.target.value)" :name="id" :id="id" :placeholder="placeholder" required/>
         <p class="info">{{ info }}</p>
     </div>
 </template>

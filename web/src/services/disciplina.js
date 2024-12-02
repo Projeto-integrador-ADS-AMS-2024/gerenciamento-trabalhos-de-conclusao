@@ -15,7 +15,6 @@ export class Disciplina{
 
     static async createDiscipline (novaDisciplina) {
         try {
-            console.log('func',novaDisciplina)
             const res = await fetch('http://localhost:3000/disciplinas', {
                 method: 'POST',
                 headers: {
@@ -23,6 +22,7 @@ export class Disciplina{
                 },
                 body: JSON.stringify(novaDisciplina),
             });
+            
             if (!res.ok) {
                 const errorDetails = await res.text(); // Captura os detalhes do erro da resposta
                 console.error('Erro no serviço createDisciplinas:', errorDetails);
