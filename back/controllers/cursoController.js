@@ -4,12 +4,12 @@ const Coordenador = require("../models/Professor.js");
 // Criar um novo curso (Create)
 const createCurso = async (req, res) => {
     try {
-        const { nome, duracao, turno, coordenador } = req.body; // Pegando os dados do corpo da requisição
+        const { nome, duracao, turno, tipoPeriodo, coordenador } = req.body; // Pegando os dados do corpo da requisição
         
         console.log(nome, duracao, turno, coordenador);
 
         // Validação simples
-        if (!nome || !duracao || !turno || !coordenador) {
+        if (!nome || !duracao || !turno || !coordenador || !tipoPeriodo) {
             return res.status(400).json({ message: "Todos os campos são obrigatórios.", });
         }
 
@@ -18,7 +18,8 @@ const createCurso = async (req, res) => {
             nome,
             duracao,
             turno, 
-            coordenador
+            coordenadorId: Number(coordenador),
+            tipoPeriodo
         });
 
         return res.status(201).json(novoCurso); // Retorna o novo curso criado
@@ -58,7 +59,7 @@ const getCursoById = async (req, res) => {
 const editCurso = async (req, res) => {
     try {
         const { id } = req.params; // Pegando o ID dos parâmetros da URL
-        const { nome, duracao, tipoPeriodo } = req.body; // Pegando os novos dados do corpo da requisição
+        const { nome, duracao, tipoPeriodo, turno } = req.body; // Pegando os novos dados do corpo da requisição
 
         // Busca o curso pelo ID
         const curso = await Curso.findByPk(id);
@@ -71,6 +72,7 @@ const editCurso = async (req, res) => {
         curso.nome = nome || curso.nome;
         curso.duracao = duracao || curso.duracao;
         curso.tipoPeriodo = tipoPeriodo || curso.tipoPeriodo;
+        curso.turno = turno || curso.turno;
 
         // Salva as alterações no banco de dados
         await curso.save();

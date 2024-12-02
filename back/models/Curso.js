@@ -21,6 +21,10 @@ const Curso = db.define('cursos', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    turno: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     coordenadorId: {
         type: DataTypes.INTEGER,
         allowNull: false
